@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Details | AI & ML Engineering Portfolio</title>
+  <meta name="description" content="Detailed engineering breakdown, architecture diagrams, and technical deep-dives." />
+
+  <!-- Google Analytics 4: replace G-XXXXXXXXXX with the real measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="project-detail.css" />
+</head>
+<body class="project-detail-body">
+  <div class="tech-grid-bg" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-symbol">&lt;/&gt;</span>
+        <span class="logo-text">Ishraq Ahmad<span class="accent-dot">.</span>ai</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html#hero" class="nav-link">Home</a>
+        <a href="index.html#projects" class="nav-link active">All Projects</a>
+        <a href="index.html#about" class="nav-link">About</a>
+        <a href="index.html#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="index.html#projects" class="btn btn-sm btn-secondary">
+          <i class="fa-solid fa-arrow-left"></i>
+          <span>Back to Projects</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="project-detail-main">
+    <div class="container">
+      <!-- Breadcrumb -->
+      <nav class="detail-breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html#projects"><i class="fa-solid fa-chevron-left"></i> Back to Portfolio</a>
+        <span class="breadcrumb-separator">/</span>
+        <span id="breadcrumbCategory" class="breadcrumb-current">AI Engineering</span>
+      </nav>
+
+      <!-- Project Hero Header -->
+      <header class="detail-hero">
+        <div class="detail-badges">
+          <span class="detail-tag" id="detailCategory">Category</span>
+          <span class="detail-role" id="detailRole">Full-Stack AI Engineer</span>
+        </div>
+        <h1 class="detail-title" id="detailTitle">Project Title</h1>
+        <p class="detail-subtitle" id="detailSubtitle">Project executive summary and high-level technical scope.</p>
+
+        <!-- Metadata Grid -->
+        <div class="detail-meta-bar">
+          <div class="meta-col">
+            <span class="meta-label">Domain</span>
+            <span class="meta-val" id="detailDomain">Applied AI / System Architecture</span>
+          </div>
+          <div class="meta-col">
+            <span class="meta-label">Core Models / Tech</span>
+            <span class="meta-val" id="detailModels">PyTorch, LLMs</span>
+          </div>
+          <div class="meta-col">
+            <span class="meta-label">Execution Type</span>
+            <span class="meta-val" id="detailExecution">End-to-End Production</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Two-Column Content Layout -->
+      <div class="detail-content-layout">
+        <!-- Left: Deep Dive Sections -->
+        <div class="detail-body-col" id="detailBodyContent">
+          <!-- Injected via JavaScript -->
+        </div>
+
+        <!-- Right: Sticky Tech Specs Sidebar -->
+        <aside class="detail-sidebar-col">
+          <div class="sidebar-card">
+            <h3 class="sidebar-heading"><i class="fa-solid fa-layer-group"></i> Architecture Stack</h3>
+            <div class="sidebar-tags" id="detailTechStack">
+              <!-- Injected via JS -->
+            </div>
+
+            <div class="sidebar-divider"></div>
+
+            <h3 class="sidebar-heading"><i class="fa-solid fa-chart-line"></i> Engineering Highlights</h3>
+            <ul class="sidebar-highlights-list" id="detailHighlights">
+              <!-- Injected via JS -->
+            </ul>
+
+            <div class="sidebar-divider"></div>
+
+            <div class="sidebar-cta">
+              <a href="index.html#contact" class="btn btn-primary btn-block">
+                <span>Discuss a Similar Project</span>
+                <i class="fa-regular fa-paper-plane"></i>
+              </a>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <!-- Bottom Navigation (Next / Previous Project) -->
+      <div class="detail-footer-nav">
+        <a href="#" class="nav-project-btn prev-btn" id="prevProjectBtn">
+          <i class="fa-solid fa-arrow-left"></i>
+          <div>
+            <span class="nav-hint">Previous Project</span>
+            <span class="nav-name" id="prevProjectName">Project Name</span>
+          </div>
+        </a>
+        <a href="index.html#projects" class="nav-all-btn">
+          <i class="fa-solid fa-grid-2"></i>
+          <span>View All 9 Projects</span>
+        </a>
+        <a href="#" class="nav-project-btn next-btn" id="nextProjectBtn">
+          <div>
+            <span class="nav-hint">Next Project</span>
+            <span class="nav-name" id="nextProjectName">Project Name</span>
+          </div>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Ishraq Ahmad. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="projects-data.js"></script>
+  <script src="project-detail.js"></script>
+</body>
+</html>
