@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Automated SQL Generation System | Ishraq Ahmad</title>
+  <meta name="description" content="A local-first language-model workflow that turns spreadsheet mapping rules into structured SQL and JSON, with fine-tuning, input normalization, and validation." />
+  <link rel="canonical" href="https://karlmagus.github.io/projects/mapping-to-sql-gemma/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Automated SQL Generation System | Ishraq Ahmad" />
+  <meta property="og:description" content="A local-first language-model workflow that turns spreadsheet mapping rules into structured SQL and JSON, with fine-tuning, input normalization, and validation." />
+  <meta property="og:url" content="https://karlmagus.github.io/projects/mapping-to-sql-gemma/" />
+  <meta name="twitter:card" content="summary" />
+  <script defer src="../../js/analytics.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="stylesheet" href="../../project-detail.css" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":"Automated SQL Generation System","description":"A local-first language-model workflow that turns spreadsheet mapping rules into structured SQL and JSON, with fine-tuning, input normalization, and validation.","url":"https://karlmagus.github.io/projects/mapping-to-sql-gemma/","creator":{"@type":"Person","name":"Ishraq Ahmad","url":"https://karlmagus.github.io/"},"keywords":"Mistral, QLoRA, PyTorch, Python API, ANSI SQL"}</script>
+</head>
+<body class="project-detail-body">
+  <div class="tech-grid-bg" aria-hidden="true"></div>
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="../../index.html" class="logo"><span class="logo-text">Ishraq Ahmad</span></a>
+      <nav class="nav-links">
+        <a href="../../index.html#hero" class="nav-link">Home</a>
+        <a href="../../index.html#projects" class="nav-link active">Projects</a>
+        <a href="../../index.html#about" class="nav-link">About</a>
+        <a href="../../index.html#contact" class="nav-link">Contact</a>
+      </nav>
+      <div class="nav-cta">
+        <a href="../../index.html#projects" class="btn btn-sm btn-secondary"><i class="fa-solid fa-arrow-left"></i><span>All Projects</span></a>
+      </div>
+    </div>
+  </header>
+  <main class="project-detail-main">
+    <div class="container">
+      <nav class="detail-breadcrumb" aria-label="Breadcrumb">
+        <a href="../../index.html#projects"><i class="fa-solid fa-chevron-left"></i> Portfolio</a>
+        <span class="breadcrumb-separator">/</span>
+        <span class="breadcrumb-current">LLMs &amp; Fine-Tuning</span>
+      </nav>
+      <header class="detail-hero">
+        <div class="detail-badges">
+          <span class="detail-tag">Project 01</span>
+          <span class="detail-role">Lead AI Engineer / MLOps</span>
+        </div>
+        <h1 class="detail-title">Automated SQL Generation System</h1>
+        <p class="detail-subtitle">A local-first language-model workflow that turns spreadsheet mapping rules into structured SQL and JSON, with fine-tuning, input normalization, and validation.</p>
+        <div class="detail-meta-bar">
+          <div class="meta-col"><span class="meta-label">Focus</span><span class="meta-val">Model adaptation, preprocessing, structured generation, and local API serving.</span></div>
+          <div class="meta-col"><span class="meta-label">Core Technologies</span><span class="meta-val">Mistral · QLoRA · PyTorch · Python API</span></div>
+          <div class="meta-col"><span class="meta-label">Project Type</span><span class="meta-val">LLMs &amp; Fine-Tuning</span></div>
+        </div>
+      </header>
+      <div class="detail-content-layout">
+        <div class="detail-body-col">
+          
+    <div class="live-demo-banner" style="background: linear-gradient(135deg, rgba(37,99,235,0.15) 0%, rgba(15,23,42,0.8) 100%); border: 1px solid rgba(59,130,246,0.35); border-radius: var(--radius-md); padding: 1.25rem 1.5rem; margin-bottom: 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+      <div style="max-width: 680px;">
+        <div style="display: flex; align-items: center; gap: 0.5rem; color: #4ade80; font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.3rem;">
+          <span style="width: 8px; height: 8px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 8px #22c55e;"></span>
+          <span>Interactive Browser Demo · Simulated</span>
+        </div>
+        <h3 style="color: #ffffff; font-size: 1.15rem; font-weight: 600; margin: 0 0 0.25rem;">Interactive Model Evaluation &amp; Fine-Tuning Inspector</h3>
+        <p style="color: #94a3b8; font-size: 0.88rem; margin: 0; line-height: 1.5;">Inspect step-by-step training loss curves (1.049 → 0.184), compare base vs fine-tuned sample SQL generation, and test typo-normalization in an interactive browser simulation.</p>
+      </div>
+      <a href="../../demo-sql-finetuning.html" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem; white-space: nowrap;">
+        <i class="fa-solid fa-play"></i>
+        <span>Launch Interactive Demo</span>
+      </a>
+    </div>
+  
+          
+    <div class="detail-star-card" style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 1.5rem; margin-bottom: 2rem;">
+      <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-text); font-weight: 700; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem;">
+        <i class="fa-solid fa-compass"></i>
+        <span>Summary</span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;">
+        <div style="background: var(--bg-primary); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 1rem;">
+          <div style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">
+            <i class="fa-solid fa-building" style="color: var(--accent-bright);"></i> Situation
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin: 0;">Enterprise migrations require converting messy source-to-target mapping sheets into SQL. Off-the-shelf models repeatedly hallucinated join aliases and failed to handle null-fallback expressions.</p>
+        </div>
+        <div style="background: var(--bg-primary); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 1rem;">
+          <div style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">
+            <i class="fa-solid fa-list-check" style="color: var(--accent-bright);"></i> Task
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin: 0;">Fine-tune an open-source, air-gappable foundation model on 900 enterprise mapping pairs to synthesize deterministic ANSI SQL with consistent schema structure and zero cloud data leaks.</p>
+        </div>
+        <div style="background: var(--bg-primary); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 1rem;">
+          <div style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">
+            <i class="fa-solid fa-brain" style="color: var(--accent-bright);"></i> Action
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin: 0;">Evaluated Google Gemma 2B baseline before adapting Mistral-7B-Instruct-v0.3 with 8-bit quantized LoRA (r=8, alpha=16); built an automated typo-healing preprocessor; served via Python API.</p>
+        </div>
+        <div style="background: var(--bg-primary); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 1rem;">
+          <div style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">
+            <i class="fa-solid fa-chart-line" style="color: var(--accent-bright);"></i> Result
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin: 0;">Training loss dropped from 1.049 to 0.184 over 700 steps (minimum 0.173 at step 500); verified syntactically valid ANSI SQL across client test datasets; delivered valuation report with sign-off.</p>
+        </div>
+      </div>
+    </div>
+  
+          
+        <section class="detail-section">
+          <h2 class="detail-section-title">
+            <i class="fa-solid fa-bullseye"></i>
+            <span>System Overview & Privacy-Constrained Scope</span>
+          </h2>
+          <div class="detail-prose">
+            
+          <p>Enterprise data warehouse modernizations require converting business analyst mapping workbooks into production SQL queries. Because financial and regulatory policies strictly prohibit sending proprietary banking schemas to multi-tenant cloud APIs, the objective was building a self-contained, air-gappable neural compiler running on modest commodity GPUs (8.5 GB VRAM budget) for deterministic ANSI SQL synthesis.</p>
+        
+          </div>
+        </section>
+      
+        <section class="detail-section">
+          <h2 class="detail-section-title">
+            <i class="fa-solid fa-brain"></i>
+            <span>Quantized LoRA Adaptation & Preprocessing</span>
+          </h2>
+          <div class="detail-prose">
+            
+          <p>Base foundation models failed to resolve complex joins or suffered prompt truncation. The fine-tuning and preprocessing pipeline was engineered with:</p>
+          <ul>
+            <li><strong>8-Bit Quantized LoRA:</strong> Adapted Mistral-7B-Instruct-v0.3 using bitsandbytes and Hugging Face SFTTrainer (rank r=8, alpha=16) targeting attention projections (q_proj, k_proj, v_proj, o_proj) within 8.5 GB peak VRAM.</li>
+            <li><strong>Dataset Curation:</strong> Built 900 verified enterprise mapping-to-SQL JSONL pairs enforcing explicit table-column relationship prompts.</li>
+            <li><strong>Heuristic Typo Resilience:</strong> Pre-tokenization normalization algorithm resolving common analyst misspellings (e.g. COLEASE to COALESCE, LOWWER to LOWER) and inferring required foreign keys from join conditions.</li>
+          </ul>
+        
+          </div>
+        </section>
+      
+        <section class="detail-section">
+          <h2 class="detail-section-title">
+            <i class="fa-solid fa-server"></i>
+            <span>System Architecture, Evaluation & Demo</span>
+          </h2>
+          <div class="detail-prose">
+            
+          <p>Production engineering and verification highlights:</p>
+          <ul>
+            <li><strong>Local API Serving:</strong> Packaged lightweight Python Flask API service with local web UI and ngrok tunnels for interactive enterprise evaluation without external cloud dependencies.</li>
+            <li><strong>Loss Convergence:</strong> Training cross-entropy loss decreased from 1.049 at step 10 to 0.184 at step 700 (minimum 0.173 at step 500) without general syntax degradation.</li>
+            <li><strong>Dialect & Join Verification:</strong> Validated syntactic validity across client test sets, guaranteeing strict sequential alias projection (t1..tN).</li>
+            <li><strong>Interactive Demo:</strong> Inspect training loss curves, compare base vs. fine-tuned SQL generation, and test typo normalization in the <a href="../../demo-sql-finetuning.html" style="color:var(--accent-bright); text-decoration:underline; font-weight:600;">Interactive SQL Fine-Tuning Demo</a>.</li>
+          </ul>
+        
+          </div>
+        </section>
+      
+        </div>
+        <aside class="detail-sidebar-col">
+          <div class="sidebar-card">
+            <h2 class="sidebar-heading"><i class="fa-solid fa-layer-group"></i> Architecture Stack</h2>
+            <div class="sidebar-tags"><span class="sidebar-tag">Mistral-7B-Instruct-v0.3</span><span class="sidebar-tag">PEFT / LoRA</span><span class="sidebar-tag">bitsandbytes (8-bit)</span><span class="sidebar-tag">PyTorch</span><span class="sidebar-tag">HuggingFace SFTTrainer</span><span class="sidebar-tag">Transformers</span><span class="sidebar-tag">Flask / ngrok API</span><span class="sidebar-tag">JSONL Dataset (900 pairs)</span><span class="sidebar-tag">ANSI SQL</span></div>
+            <div class="sidebar-divider"></div>
+            <h2 class="sidebar-heading"><i class="fa-solid fa-chart-line"></i> Engineering Highlights</h2>
+            <ul class="sidebar-highlights-list"><li>Fine-tuned Mistral-7B-Instruct-v0.3 on 900 curated JSONL enterprise pairs with 8-bit QLoRA (r=8, alpha=16)</li><li>Reduced cross-entropy training loss from 1.049 (step 10) to 0.184 (step 700), with a minimum of 0.173 (step 500)</li><li>Engineered autonomous typo-healing: semantically resolves misspellings like &#39;COLEASE&#39; to &#39;COALESCE&#39;</li><li>Constrained training &amp; inference VRAM to 8.5 GB for cost-effective deployment on commodity GPUs (NVIDIA T4 / RTX 3090)</li><li>Automated foreign key extraction and join alias projection (t1...tN) without cloud metadata leakage</li></ul>
+            <div class="sidebar-divider"></div>
+            
+    <a href="../../demo-sql-finetuning.html" class="btn btn-primary btn-block">
+      <span>Open Interactive Demo</span>
+      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+    </a>
+  
+            <a href="../../index.html#contact" class="btn btn-secondary btn-block"><span>Discuss Similar Work</span></a>
+          </div>
+        </aside>
+      </div>
+      <nav class="detail-footer-nav" aria-label="Project navigation">
+        <a href="../autonomous-social-content-engine/" class="nav-project-btn"><i class="fa-solid fa-arrow-left"></i><span><span class="nav-hint">Previous Project</span><span class="nav-name">AI Social Media Automation Platform</span></span></a>
+        <a href="../../index.html#projects" class="nav-all-btn"><i class="fa-solid fa-grid-2"></i><span>View All Projects</span></a>
+        <a href="../enterprise-json-query-enhancer/" class="nav-project-btn"><span><span class="nav-hint">Next Project</span><span class="nav-name">AI-Powered Query Automation</span></span><i class="fa-solid fa-arrow-right"></i></a>
+      </nav>
+    </div>
+  </main>
+  <footer class="site-footer"><div class="container footer-bottom"><p>&copy; 2026 Ishraq Ahmad. All rights reserved.</p></div></footer>
+</body>
+</html>
