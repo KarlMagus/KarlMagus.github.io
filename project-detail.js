@@ -53,59 +53,7 @@ function renderProjectDetail() {
   // Render Detailed Body Sections
   const detailBodyContent = document.getElementById('detailBodyContent');
   if (detailBodyContent && project.sections) {
-    const liveDemoBanner = project.liveDemo ? `
-      <div class="live-demo-banner" style="background: linear-gradient(135deg, rgba(37,99,235,0.15) 0%, rgba(15,23,42,0.8) 100%); border: 1px solid rgba(59,130,246,0.35); border-radius: var(--radius-md); padding: 1.25rem 1.5rem; margin-bottom: 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
-        <div style="max-width: 680px;">
-          <div style="display: flex; align-items: center; gap: 0.5rem; color: #4ade80; font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.3rem;">
-            <span style="width: 8px; height: 8px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 8px #22c55e;"></span>
-            <span>Live Interactive Demo Available</span>
-          </div>
-          <h3 style="color: #ffffff; font-size: 1.15rem; font-weight: 600; margin: 0 0 0.25rem;">${project.liveDemoTitle || 'Test the Pipeline in Your Browser'}</h3>
-          <p style="color: #94a3b8; font-size: 0.88rem; margin: 0; line-height: 1.5;">${project.liveDemoDesc || 'Upload or choose mapping spreadsheets, inspect join keys, and synthesize ANSI SQL & Spark DAGs in real time.'}</p>
-        </div>
-        <a href="${project.liveDemo}" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem; white-space: nowrap;">
-          <i class="fa-solid fa-play"></i>
-          <span>Launch Live Demo</span>
-        </a>
-      </div>
-    ` : '';
-
-    const starCard = project.starSummary ? `
-      <div class="detail-star-card" style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 1.5rem; margin-bottom: 2rem;">
-        <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-text); font-weight: 700; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem;">
-          <i class="fa-solid fa-compass"></i>
-          <span>Executive Summary & STAR Framework Breakdown</span>
-        </div>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;">
-          <div style="background: var(--bg-primary); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 1rem;">
-            <div style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">
-              <i class="fa-solid fa-building" style="color: var(--accent-bright);"></i> Situation
-            </div>
-            <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin: 0;">${project.starSummary.situation}</p>
-          </div>
-          <div style="background: var(--bg-primary); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 1rem;">
-            <div style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">
-              <i class="fa-solid fa-list-check" style="color: var(--accent-bright);"></i> Task
-            </div>
-            <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin: 0;">${project.starSummary.task}</p>
-          </div>
-          <div style="background: var(--bg-primary); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 1rem;">
-            <div style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">
-              <i class="fa-solid fa-brain" style="color: var(--accent-bright);"></i> Action
-            </div>
-            <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin: 0;">${project.starSummary.action}</p>
-          </div>
-          <div style="background: var(--bg-primary); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 1rem;">
-            <div style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">
-              <i class="fa-solid fa-chart-line" style="color: var(--accent-bright);"></i> Result
-            </div>
-            <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin: 0;">${project.starSummary.result}</p>
-          </div>
-        </div>
-      </div>
-    ` : '';
-
-    detailBodyContent.innerHTML = liveDemoBanner + starCard + project.sections.map(sec => `
+    detailBodyContent.innerHTML = project.sections.map(sec => `
       <section class="detail-section">
         <h2 class="detail-section-title">
           <i class="fa-solid ${sec.icon || 'fa-layer-group'}"></i>
@@ -134,21 +82,6 @@ function renderProjectDetail() {
     `).join('');
   }
 
-  // Sidebar Live Demo CTA
-  const sidebarCta = document.querySelector('.sidebar-cta');
-  if (sidebarCta && project.liveDemo) {
-    sidebarCta.innerHTML = `
-      <a href="${project.liveDemo}" class="btn btn-primary btn-block" style="margin-bottom: 0.75rem;">
-        <i class="fa-solid fa-play"></i>
-        <span>Launch Interactive Demo</span>
-      </a>
-      <a href="index.html#contact" class="btn btn-secondary btn-block">
-        <span>Discuss a Similar Project</span>
-        <i class="fa-regular fa-paper-plane"></i>
-      </a>
-    `;
-  }
-
   // Next / Previous Navigation Links
   const currentIndex = PORTFOLIO_PROJECTS.findIndex(p => p.id === project.id);
   const prevIndex = (currentIndex - 1 + PORTFOLIO_PROJECTS.length) % PORTFOLIO_PROJECTS.length;
@@ -160,14 +93,14 @@ function renderProjectDetail() {
   const prevBtn = document.getElementById('prevProjectBtn');
   const prevProjectName = document.getElementById('prevProjectName');
   if (prevBtn && prevProjectName) {
-    prevBtn.href = `projects/${encodeURIComponent(prevProject.id)}/`;
+    prevBtn.href = `project-detail.html#id=${encodeURIComponent(prevProject.id)}`;
     prevProjectName.textContent = prevProject.title;
   }
 
   const nextBtn = document.getElementById('nextProjectBtn');
   const nextProjectName = document.getElementById('nextProjectName');
   if (nextBtn && nextProjectName) {
-    nextBtn.href = `projects/${encodeURIComponent(nextProject.id)}/`;
+    nextBtn.href = `project-detail.html#id=${encodeURIComponent(nextProject.id)}`;
     nextProjectName.textContent = nextProject.title;
   }
 
