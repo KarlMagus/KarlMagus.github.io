@@ -27,6 +27,9 @@ function renderProjectDetail() {
   const breadcrumbCategory = document.getElementById('breadcrumbCategory');
   if (breadcrumbCategory) breadcrumbCategory.textContent = project.categoryLabel;
 
+  const detailNum = document.getElementById('detailNum');
+  if (detailNum) detailNum.textContent = `Project ${project.num}`;
+
   const detailCategory = document.getElementById('detailCategory');
   if (detailCategory) detailCategory.textContent = project.categoryLabel;
 
@@ -54,18 +57,18 @@ function renderProjectDetail() {
   const detailBodyContent = document.getElementById('detailBodyContent');
   if (detailBodyContent && project.sections) {
     const liveDemoBanner = project.liveDemo ? `
-      <div class="live-demo-banner" style="background: linear-gradient(135deg, rgba(37,99,235,0.15) 0%, rgba(15,23,42,0.8) 100%); border: 1px solid rgba(59,130,246,0.35); border-radius: var(--radius-md); padding: 1.25rem 1.5rem; margin-bottom: 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
-        <div style="max-width: 680px;">
-          <div style="display: flex; align-items: center; gap: 0.5rem; color: #4ade80; font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.3rem;">
-            <span style="width: 8px; height: 8px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 8px #22c55e;"></span>
-            <span>Live Interactive Demo Available</span>
+      <div class="live-demo-banner">
+        <div class="live-demo-copy">
+          <div class="live-demo-kicker">
+            <span class="live-demo-dot"></span>
+            <span>Interactive Browser Demo · Simulated</span>
           </div>
-          <h3 style="color: #ffffff; font-size: 1.15rem; font-weight: 600; margin: 0 0 0.25rem;">${project.liveDemoTitle || 'Test the Pipeline in Your Browser'}</h3>
-          <p style="color: #94a3b8; font-size: 0.88rem; margin: 0; line-height: 1.5;">${project.liveDemoDesc || 'Upload or choose mapping spreadsheets, inspect join keys, and synthesize ANSI SQL & Spark DAGs in real time.'}</p>
+          <h3>${project.liveDemoTitle || 'Test the Pipeline in Your Browser'}</h3>
+          <p>${project.liveDemoDesc || 'Upload or choose mapping spreadsheets, inspect join keys, and synthesize ANSI SQL & Spark DAGs in real time.'}</p>
         </div>
-        <a href="${project.liveDemo}" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem; white-space: nowrap;">
+        <a href="${project.liveDemo}" class="btn btn-primary">
           <i class="fa-solid fa-play"></i>
-          <span>Launch Live Demo</span>
+          <span>Launch Interactive Demo</span>
         </a>
       </div>
     ` : '';

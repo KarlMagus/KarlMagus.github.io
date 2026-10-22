@@ -14,7 +14,7 @@
   <script defer src="../../js/analytics.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="../../style.css" />
   <link rel="stylesheet" href="../../project-detail.css" />
@@ -41,11 +41,12 @@
       <nav class="detail-breadcrumb" aria-label="Breadcrumb">
         <a href="../../index.html#projects"><i class="fa-solid fa-chevron-left"></i> Portfolio</a>
         <span class="breadcrumb-separator">/</span>
-        <span class="breadcrumb-current">Computer Vision &amp; Cloud Edge</span>
+        <span class="breadcrumb-current">Production ML</span>
       </nav>
       <header class="detail-hero">
         <div class="detail-badges">
           <span class="detail-tag">Project 03</span>
+          <span class="detail-tag">Production ML</span>
           <span class="detail-role">Full-Stack AI Engineer (Sole Developer)</span>
         </div>
         <h1 class="detail-title">AI Classroom Monitoring System</h1>
@@ -53,22 +54,22 @@
         <div class="detail-meta-bar">
           <div class="meta-col"><span class="meta-label">Focus</span><span class="meta-val">Computer vision integration, video processing, telemetry presentation, and cloud storage.</span></div>
           <div class="meta-col"><span class="meta-label">Core Technologies</span><span class="meta-val">AWS Rekognition · OpenCV · MoviePy · Django</span></div>
-          <div class="meta-col"><span class="meta-label">Project Type</span><span class="meta-val">Computer Vision &amp; Cloud Edge</span></div>
+          <div class="meta-col"><span class="meta-label">Project Type</span><span class="meta-val">Production ML</span></div>
         </div>
       </header>
       <div class="detail-content-layout">
         <div class="detail-body-col">
           
-    <div class="live-demo-banner" style="background: linear-gradient(135deg, rgba(37,99,235,0.15) 0%, rgba(15,23,42,0.8) 100%); border: 1px solid rgba(59,130,246,0.35); border-radius: var(--radius-md); padding: 1.25rem 1.5rem; margin-bottom: 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
-      <div style="max-width: 680px;">
-        <div style="display: flex; align-items: center; gap: 0.5rem; color: #4ade80; font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.3rem;">
-          <span style="width: 8px; height: 8px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 8px #22c55e;"></span>
+    <div class="live-demo-banner">
+      <div class="live-demo-copy">
+        <div class="live-demo-kicker">
+          <span class="live-demo-dot"></span>
           <span>Interactive Browser Demo · Simulated</span>
         </div>
-        <h3 style="color: #ffffff; font-size: 1.15rem; font-weight: 600; margin: 0 0 0.25rem;">Interactive Computer Vision Telemetry Demo</h3>
-        <p style="color: #94a3b8; font-size: 0.88rem; margin: 0; line-height: 1.5;">Experience live video telemetry simulation: inspect bounding boxes (faces, laptops, phones, sleeping alerts), scrub through time-aligned events, and test the mathematical attentiveness scoring algorithm in real time.</p>
+        <h3>Interactive Computer Vision Telemetry Demo</h3>
+        <p>Experience live video telemetry simulation: inspect bounding boxes (faces, laptops, phones, sleeping alerts), scrub through time-aligned events, and test the mathematical attentiveness scoring algorithm in real time.</p>
       </div>
-      <a href="../../demo-classroom-cv.html" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem; white-space: nowrap;">
+      <a href="../../demo-classroom-cv.html" class="btn btn-primary">
         <i class="fa-solid fa-play"></i>
         <span>Launch Interactive Demo</span>
       </a>
@@ -103,7 +104,7 @@
           <div style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">
             <i class="fa-solid fa-chart-line" style="color: var(--accent-bright);"></i> Result
           </div>
-          <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin: 0;">Deployed across 4 institutions, automating student face search, engagement tracking, and secure video streaming via S3 pre-signed URLs.</p>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin: 0;">Delivered student face search, engagement tracking, overlay playback, and secure video streaming via S3 pre-signed URLs.</p>
         </div>
       </div>
     </div>
@@ -149,7 +150,7 @@
           <p>Full-stack backend architecture and deployment details:</p>
           <ul>
             <li><strong>Server-Side Overlay Compositing:</strong> OpenCV and MoviePy engine burning color-coded bounding boxes (green for enrolled, red for unauthorized/distractions) into H.264 video for instant browser playback.</li>
-            <li><strong>Hybrid Storage Architecture:</strong> AWS DynamoDB for sub-millisecond telemetry search paired with Django relational ORM (PostgreSQL/SQLite) for audit logs and session metadata.</li>
+            <li><strong>Hybrid Storage Architecture:</strong> AWS DynamoDB for telemetry search paired with Django and SQLite for audit logs and session metadata.</li>
             <li><strong>Secure Media Delivery:</strong> S3 pre-signed URLs with dynamic 1-hour expiration and HTTP Range header streaming for buffer-free timeline scrubbing.</li>
             <li><strong>Interactive Demo:</strong> Inspect bounding boxes, scrub time-aligned distraction events, and test scoring formulas in the <a href="../../demo-classroom-cv.html" style="color:var(--accent-bright); text-decoration:underline; font-weight:600;">Interactive Computer Vision Telemetry Demo</a>.</li>
           </ul>
@@ -161,10 +162,10 @@
         <aside class="detail-sidebar-col">
           <div class="sidebar-card">
             <h2 class="sidebar-heading"><i class="fa-solid fa-layer-group"></i> Architecture Stack</h2>
-            <div class="sidebar-tags"><span class="sidebar-tag">AWS Rekognition Video</span><span class="sidebar-tag">OpenCV / MoviePy</span><span class="sidebar-tag">Django 5</span><span class="sidebar-tag">AWS DynamoDB</span><span class="sidebar-tag">AWS S3 (Pre-Signed URLs)</span><span class="sidebar-tag">SQLite / PostgreSQL</span><span class="sidebar-tag">React / Vite</span><span class="sidebar-tag">REST APIs</span><span class="sidebar-tag">Token Authentication</span></div>
+            <div class="sidebar-tags"><span class="sidebar-tag">AWS Rekognition Video</span><span class="sidebar-tag">OpenCV / MoviePy</span><span class="sidebar-tag">Django 5</span><span class="sidebar-tag">AWS DynamoDB</span><span class="sidebar-tag">AWS S3 (Pre-Signed URLs)</span><span class="sidebar-tag">SQLite</span><span class="sidebar-tag">Preact / Vite</span><span class="sidebar-tag">REST APIs</span><span class="sidebar-tag">Token Authentication</span></div>
             <div class="sidebar-divider"></div>
             <h2 class="sidebar-heading"><i class="fa-solid fa-chart-line"></i> Engineering Highlights</h2>
-            <ul class="sidebar-highlights-list"><li>Engineered end-to-end video analytics pipeline deployed across 4 educational institutions</li><li>Integrated AWS Rekognition Video for face search, 8 discrete emotions, and object label detection</li><li>Formulated mathematical attentiveness scoring &amp; heuristic sleeping detection (head pose roll/pitch + eye closure)</li><li>Built server-side video compositing engine burning color-coded bounding-box overlays via MoviePy &amp; OpenCV</li><li>Architected hybrid DynamoDB + SQLite persistence with S3 pre-signed HTTP Range streaming</li></ul>
+            <ul class="sidebar-highlights-list"><li>Engineered an end-to-end video analytics pipeline for recorded lectures: enrollment, analysis, and overlay playback</li><li>Integrated AWS Rekognition Video for face search, 8 discrete emotions, and object label detection</li><li>Formulated mathematical attentiveness scoring &amp; heuristic sleeping detection (head pose roll/pitch + eye closure)</li><li>Built server-side video compositing engine burning color-coded bounding-box overlays via MoviePy &amp; OpenCV</li><li>Architected DynamoDB telemetry with SQLite session metadata and S3 pre-signed HTTP Range streaming</li></ul>
             <div class="sidebar-divider"></div>
             
     <a href="../../demo-classroom-cv.html" class="btn btn-primary btn-block">
@@ -179,7 +180,7 @@
       <nav class="detail-footer-nav" aria-label="Project navigation">
         <a href="../enterprise-json-query-enhancer/" class="nav-project-btn"><i class="fa-solid fa-arrow-left"></i><span><span class="nav-hint">Previous Project</span><span class="nav-name">AI-Powered Query Automation</span></span></a>
         <a href="../../index.html#projects" class="nav-all-btn"><i class="fa-solid fa-grid-2"></i><span>View All Projects</span></a>
-        <a href="../ai-healthcare-scribe/" class="nav-project-btn"><span><span class="nav-hint">Next Project</span><span class="nav-name">Autonomous AI Voice Front Desk &amp; Central Patient Health Record (EHR/HIS) Platform</span></span><i class="fa-solid fa-arrow-right"></i></a>
+        <a href="../ai-healthcare-scribe/" class="nav-project-btn"><span><span class="nav-hint">Next Project</span><span class="nav-name">CareLoop — Voice Front Desk &amp; EHR</span></span><i class="fa-solid fa-arrow-right"></i></a>
       </nav>
     </div>
   </main>

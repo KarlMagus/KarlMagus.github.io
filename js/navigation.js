@@ -1,5 +1,18 @@
-/* Mobile navigation and active-section highlighting. */
+/* Mobile navigation, active-section highlighting, and the skills index. */
 document.addEventListener('DOMContentLoaded', () => {
+  const skillButtons = document.querySelectorAll('.skill-row-button');
+  skillButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const wasOpen = button.getAttribute('aria-expanded') === 'true';
+      skillButtons.forEach((other) => {
+        const panel = document.getElementById(other.getAttribute('aria-controls'));
+        const open = other === button && !wasOpen;
+        other.setAttribute('aria-expanded', open ? 'true' : 'false');
+        if (panel) panel.hidden = !open;
+      });
+    });
+  });
+
   const toggleButton = document.getElementById('mobileToggle');
   const navLinks = document.getElementById('navLinks');
   const links = document.querySelectorAll('.nav-link');

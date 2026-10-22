@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
@@ -38,7 +38,7 @@
     .eval-header {
       padding: 3.5rem 0 2rem;
       border-bottom: 1px solid var(--border-subtle);
-      background: radial-gradient(circle at 15% 10%, rgba(37, 99, 235, 0.08) 0%, transparent 65%);
+      background: none;
     }
 
     .eval-badge {
@@ -51,9 +51,9 @@
       font-weight: 600;
       letter-spacing: 0.05em;
       text-transform: uppercase;
-      background: rgba(59, 130, 246, 0.1);
-      border: 1px solid rgba(59, 130, 246, 0.3);
-      color: #93c5fd;
+      background: var(--accent-subtle);
+      border: 1px solid var(--accent);
+      color: var(--accent-text);
       margin-bottom: 1rem;
     }
 
@@ -61,8 +61,8 @@
       width: 7px;
       height: 7px;
       border-radius: 50%;
-      background: #3b82f6;
-      box-shadow: 0 0 8px #3b82f6;
+      background: var(--accent);
+      box-shadow: none;
     }
 
     .star-card {
@@ -159,7 +159,7 @@
     }
 
     .compare-box {
-      background: #05080f;
+      background: var(--bg-primary);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-md);
       padding: 1.25rem;
@@ -172,7 +172,7 @@
     }
 
     .compare-box.good {
-      border-color: rgba(34, 197, 94, 0.4);
+      border-color: var(--accent);
     }
 
     .compare-badge {
@@ -195,8 +195,8 @@
     }
 
     .badge-good {
-      background: rgba(34, 197, 94, 0.15);
-      color: #86efac;
+      background: var(--accent-subtle);
+      color: var(--accent-text);
     }
 
     .code-view {
@@ -239,7 +239,7 @@
 
     /* Interactive Loss SVG Chart */
     .chart-container {
-      background: #05080f;
+      background: var(--bg-primary);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-md);
       padding: 1.5rem;
@@ -264,7 +264,7 @@
         <!-- Demos Dropdown -->
         <div class="demos-dropdown" id="demosDropdown">
           <button class="demos-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
-            <i class="fa-solid fa-play" style="font-size: 0.7rem; color: #34d399;"></i>
+            <i class="fa-solid fa-play" style="font-size: 0.7rem; color: var(--accent-text);"></i>
             <span>Demos</span>
             <i class="fa-solid fa-chevron-down dd-chevron"></i>
           </button>
@@ -273,17 +273,17 @@
             <a href="demo-sql-finetuning.html" class="dd-item dd-active" role="menuitem">
               <span class="dd-item-icon live"><i class="fa-solid fa-brain"></i></span>
               <span class="dd-item-text"><span class="dd-item-title">01 · NL-to-SQL Fine-Tuning</span></span>
-              <span class="dd-item-badge dd-badge-live">Live</span>
+              <span class="dd-item-badge dd-badge-live">Simulated</span>
             </a>
             <a href="demo-etl-generator.html" class="dd-item" role="menuitem">
               <span class="dd-item-icon live"><i class="fa-solid fa-bolt"></i></span>
               <span class="dd-item-text"><span class="dd-item-title">03 · Schema & ETL Generator</span></span>
-              <span class="dd-item-badge dd-badge-live">Live</span>
+              <span class="dd-item-badge dd-badge-live">Simulated</span>
             </a>
             <a href="demo-classroom-cv.html" class="dd-item" role="menuitem">
               <span class="dd-item-icon live"><i class="fa-solid fa-video"></i></span>
               <span class="dd-item-text"><span class="dd-item-title">04 · Classroom CV Analytics</span></span>
-              <span class="dd-item-badge dd-badge-live">Live</span>
+              <span class="dd-item-badge dd-badge-live">Simulated</span>
             </a>
             <div class="dd-divider"></div>
             <div class="dd-section-label">Coming Soon</div>
@@ -392,17 +392,17 @@
 
           <!-- Input Schema Display -->
           <div
-            style="background:#05080f; border:1px solid var(--border-subtle); border-radius:var(--radius-sm); padding:1rem; margin-bottom:1.25rem;">
+            style="background:var(--bg-primary); border:1px solid var(--border-subtle); border-radius:var(--radius-sm); padding:1rem; margin-bottom:1.25rem;">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
               <div style="font-size:0.75rem; text-transform:uppercase; color:var(--text-muted); font-weight:700;">
                 Input Mapping Specifications (Analyst Spreadsheet Extract):
               </div>
               <span id="inferenceTelemetry"
-                style="font-size:0.72rem; font-family:var(--font-mono); color:#38bdf8;">Illustrative sample metrics ·
+                style="font-size:0.72rem; font-family:var(--font-mono); color:var(--text-secondary);">Illustrative sample metrics ·
                 not live inference</span>
             </div>
             <div id="evalInputPrompt"
-              style="font-family:var(--font-mono); font-size:0.8rem; color:#93c5fd; white-space:pre-wrap;"></div>
+              style="font-family:var(--font-mono); font-size:0.8rem; color:var(--text-secondary); white-space:pre-wrap;"></div>
           </div>
 
           <!-- Output Comparison Grid -->
@@ -414,11 +414,8 @@
                   Baseline)</span>
               </div>
               <pre class="code-view" id="baseModelOutput"></pre>
-              <div id="baseErrorNote"
-                style="margin-top:0.75rem; font-size:0.76rem; color:#f87171; border-top:1px solid rgba(239,68,68,0.2); padding-top:0.5rem;">
-                ❌ Hallucinated alias <code>t5</code>, missed join key <code>ref_id</code>, invalid unclosed parenthesis
-                in CASE statement.
-              </div>
+              <div id="baseErrorNote" hidden
+                style="margin-top:0.75rem; font-size:0.76rem; color:#f87171; border-top:1px solid rgba(239,68,68,0.2); padding-top:0.5rem;"></div>
             </div>
 
             <!-- Good: Fine-tuned -->
@@ -427,16 +424,13 @@
                 <span class="compare-badge badge-good"><i class="fa-solid fa-check"></i> Fine-Tuned Mistral-7B (8-Bit
                   QLoRA)</span>
                 <button onclick="copySqlCode()"
-                  style="background:transparent; border:1px solid rgba(34,197,94,0.3); color:#86efac; border-radius:4px; padding:0.2rem 0.5rem; font-size:0.72rem; cursor:pointer;">
+                  style="background:transparent; border:1px solid var(--accent); color:var(--accent-text); border-radius:4px; padding:0.2rem 0.5rem; font-size:0.72rem; cursor:pointer;">
                   <i class="fa-regular fa-copy"></i> Copy SQL
                 </button>
               </div>
               <pre class="code-view" id="finetunedModelOutput"></pre>
-              <div id="fineSuccessNote"
-                style="margin-top:0.75rem; font-size:0.76rem; color:#4ade80; border-top:1px solid rgba(34,197,94,0.2); padding-top:0.5rem;">
-                ✅ Strict sequential aliases <code>t1...t4</code>, correct <code>COALESCE</code> resolution, fully valid
-                ANSI SQL syntax.
-              </div>
+              <div id="fineSuccessNote" hidden
+                style="margin-top:0.75rem; font-size:0.76rem; color:var(--accent-text); border-top:1px solid var(--border-subtle); padding-top:0.5rem;"></div>
             </div>
           </div>
         </div>
@@ -450,11 +444,11 @@
 
           <div class="metrics-stats-grid">
             <div class="stat-pill">
-              <div class="stat-num" style="color:#60a5fa;">0.184</div>
+              <div class="stat-num" style="color:var(--accent-text);">0.184</div>
               <div class="stat-sub">Final Training Loss (Down from 1.049)</div>
             </div>
             <div class="stat-pill">
-              <div class="stat-num" style="color:#34d399;">900</div>
+              <div class="stat-num" style="color:var(--accent-text);">900</div>
               <div class="stat-sub">Curated Enterprise JSONL Pairs</div>
             </div>
             <div class="stat-pill">
@@ -469,21 +463,21 @@
 
           <!-- Training Loss Chart -->
           <div class="chart-container"
-            style="background:#05080f; border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:1.25rem; margin-bottom:1.5rem;">
+            style="background:var(--bg-primary); border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:1.25rem; margin-bottom:1.5rem;">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
               <span style="font-size:0.85rem; font-weight:600; color:#fff;">Training Loss Convergence Curve (Mistral-7B
                 LoRA over 700 Steps)</span>
-              <span style="font-size:0.75rem; color:#4ade80; font-family:var(--font-mono);"><i
+              <span style="font-size:0.75rem; color:var(--accent-text); font-family:var(--font-mono);"><i
                   class="fa-solid fa-arrow-down"></i> 82.5% Loss Reduction</span>
             </div>
 
             <!-- SVG Line Chart -->
             <svg viewBox="0 0 700 220" style="width:100%; height:220px; overflow:visible;">
               <!-- Grid Lines -->
-              <line x1="50" y1="20" x2="680" y2="20" stroke="#1e293b" stroke-dasharray="3,3" />
-              <line x1="50" y1="70" x2="680" y2="70" stroke="#1e293b" stroke-dasharray="3,3" />
-              <line x1="50" y1="120" x2="680" y2="120" stroke="#1e293b" stroke-dasharray="3,3" />
-              <line x1="50" y1="170" x2="680" y2="170" stroke="#1e293b" stroke-dasharray="3,3" />
+              <line x1="50" y1="20" x2="680" y2="20" stroke="#2c2824" stroke-dasharray="3,3" />
+              <line x1="50" y1="70" x2="680" y2="70" stroke="#2c2824" stroke-dasharray="3,3" />
+              <line x1="50" y1="120" x2="680" y2="120" stroke="#2c2824" stroke-dasharray="3,3" />
+              <line x1="50" y1="170" x2="680" y2="170" stroke="#2c2824" stroke-dasharray="3,3" />
 
               <!-- Y-Axis Labels -->
               <text x="15" y="25" fill="#64748b" font-size="11" font-family="monospace">1.05</text>
@@ -494,22 +488,22 @@
               <!-- Convergence Area & Path -->
               <path
                 d="M 60 20 L 140 145 L 220 155 L 300 162 L 380 165 L 460 172 L 540 170 L 620 170 L 620 190 L 60 190 Z"
-                fill="rgba(59, 130, 246, 0.1)" />
+                fill="rgba(196, 165, 116, 0.12)" />
               <path d="M 60 20 Q 110 135, 140 145 T 220 155 T 300 162 T 380 165 T 460 172 T 540 170 T 620 170"
-                fill="none" stroke="#3b82f6" stroke-width="3" />
+                fill="none" stroke="#c4a574" stroke-width="3" />
 
               <!-- Data Points with values -->
-              <circle cx="60" cy="20" r="4" fill="#60a5fa" />
-              <text x="65" y="15" fill="#93c5fd" font-size="10" font-family="monospace">1.049 (Step 10)</text>
+              <circle cx="60" cy="20" r="4" fill="#c4a574" />
+              <text x="65" y="15" fill="#b7b0a4" font-size="10" font-family="monospace">1.049 (Step 10)</text>
 
-              <circle cx="140" cy="145" r="4" fill="#60a5fa" />
-              <text x="145" y="140" fill="#93c5fd" font-size="10" font-family="monospace">0.290 (Step 100)</text>
+              <circle cx="140" cy="145" r="4" fill="#c4a574" />
+              <text x="145" y="140" fill="#b7b0a4" font-size="10" font-family="monospace">0.290 (Step 100)</text>
 
-              <circle cx="300" cy="162" r="4" fill="#60a5fa" />
-              <circle cx="460" cy="172" r="4" fill="#60a5fa" />
+              <circle cx="300" cy="162" r="4" fill="#c4a574" />
+              <circle cx="460" cy="172" r="4" fill="#c4a574" />
 
-              <circle cx="620" cy="170" r="4" fill="#34d399" />
-              <text x="540" y="195" fill="#86efac" font-size="10" font-family="monospace">0.184 (Step 700 Final)</text>
+              <circle cx="620" cy="170" r="4" fill="#c4a574" />
+              <text x="540" y="195" fill="#c4a574" font-size="10" font-family="monospace">0.184 (Step 700 Final)</text>
             </svg>
 
             <!-- X-Axis Labels -->
@@ -527,7 +521,7 @@
           </div>
 
           <!-- Interactive LoRA Parameter & VRAM Calculator -->
-          <div style="background:#0a101d; border:1px solid #1e293b; border-radius:var(--radius-md); padding:1.25rem;">
+          <div style="background:var(--bg-primary); border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:1.25rem;">
             <div
               style="font-size:0.9rem; font-weight:600; color:#fff; margin-bottom:0.75rem; display:flex; align-items:center; gap:0.5rem;">
               <i class="fa-solid fa-calculator" style="color:var(--accent-bright);"></i>
@@ -540,7 +534,7 @@
                   style="display:block; font-size:0.75rem; color:var(--text-muted); font-weight:600; margin-bottom:0.3rem;">LoRA
                   Rank (r):</label>
                 <select id="calcRank" onchange="calculateLoraParams()"
-                  style="width:100%; background:#05080f; border:1px solid #334155; color:#fff; padding:0.4rem; border-radius:4px; font-size:0.85rem;">
+                  style="width:100%; background:var(--bg-primary); border:1px solid var(--border-bold); color:#fff; padding:0.4rem; border-radius:4px; font-size:0.85rem;">
                   <option value="4">r = 4 (Lightweight)</option>
                   <option value="8" selected>r = 8 (Production Baseline)</option>
                   <option value="16">r = 16 (High Capacity)</option>
@@ -552,7 +546,7 @@
                   style="display:block; font-size:0.75rem; color:var(--text-muted); font-weight:600; margin-bottom:0.3rem;">Quantization
                   Precision:</label>
                 <select id="calcPrecision" onchange="calculateLoraParams()"
-                  style="width:100%; background:#05080f; border:1px solid #334155; color:#fff; padding:0.4rem; border-radius:4px; font-size:0.85rem;">
+                  style="width:100%; background:var(--bg-primary); border:1px solid var(--border-bold); color:#fff; padding:0.4rem; border-radius:4px; font-size:0.85rem;">
                   <option value="8" selected>8-Bit (bitsandbytes) ~8.2 GB</option>
                   <option value="4">4-Bit (QLoRA) ~5.8 GB</option>
                   <option value="16">16-Bit Float (FP16) ~15.5 GB</option>
@@ -563,7 +557,7 @@
                   style="display:block; font-size:0.75rem; color:var(--text-muted); font-weight:600; margin-bottom:0.3rem;">Max
                   Sequence Length:</label>
                 <select id="calcSeqLen" onchange="calculateLoraParams()"
-                  style="width:100%; background:#05080f; border:1px solid #334155; color:#fff; padding:0.4rem; border-radius:4px; font-size:0.85rem;">
+                  style="width:100%; background:var(--bg-primary); border:1px solid var(--border-bold); color:#fff; padding:0.4rem; border-radius:4px; font-size:0.85rem;">
                   <option value="512">512 Tokens</option>
                   <option value="1024" selected>1024 Tokens (Production)</option>
                   <option value="2048">2048 Tokens</option>
@@ -571,7 +565,7 @@
               </div>
             </div>
             <div id="loraCalcResults"
-              style="background:#05080f; border:1px solid rgba(59,130,246,0.3); border-radius:4px; padding:0.75rem 1rem; font-family:var(--font-mono); font-size:0.8rem; color:#93c5fd;">
+              style="background:var(--bg-primary); border:1px solid var(--border-subtle); border-radius:4px; padding:0.75rem 1rem; font-family:var(--font-mono); font-size:0.8rem; color:var(--text-secondary);">
               Trainable Parameters: 13.6M (0.19% of 7B) | Peak VRAM: 8.48 GB | Memory Efficiency: 4.2x vs FP16 Full
               Finetuning
             </div>
@@ -598,18 +592,16 @@
             Type a transformation expression with typos to test live sanitization:
           </label>
           <input type="text" id="typoInput" value="COLEASE(t1.FEE_AMT, 0.00)" oninput="testTypoHealing(this.value)"
-            style="width:100%; background:#05080f; border:1px solid var(--border-subtle); color:#fff; padding:0.75rem; border-radius:var(--radius-sm); font-family:var(--font-mono); font-size:0.88rem;">
+            style="width:100%; background:var(--bg-primary); border:1px solid var(--border-subtle); color:#fff; padding:0.75rem; border-radius:var(--radius-sm); font-family:var(--font-mono); font-size:0.88rem;">
         </div>
 
         <div
-          style="background:#05080f; border:1px solid rgba(34,197,94,0.3); border-radius:var(--radius-sm); padding:1.25rem;">
+          style="background:var(--bg-primary); border:1px solid var(--accent); border-radius:var(--radius-sm); padding:1.25rem;">
           <div
-            style="font-size:0.75rem; text-transform:uppercase; color:#86efac; font-weight:700; margin-bottom:0.4rem;">
+            style="font-size:0.75rem; text-transform:uppercase; color:var(--accent-text); font-weight:700; margin-bottom:0.4rem;">
             Sanitized Output (Ready for Model Tokenization):
           </div>
-          <div id="typoOutput" style="font-family:var(--font-mono); font-size:1rem; color:#4ade80;">
-            COALESCE(t1.FEE_AMT, 0.00)
-          </div>
+          <div id="typoOutput" style="font-family:var(--font-mono); font-size:1rem; color:var(--accent-text);"></div>
         </div>
 
         <!-- Common Typo Dictionary -->
@@ -654,7 +646,9 @@ ON t1.entity_id = t5.entity_key`,
   COALESCE(t2.ADJUSTMENT_AMOUNT, t1.BASE_AMOUNT) AS TOTAL_AMOUNT
 FROM SOURCE_PROFILE_DF t1
 INNER JOIN SOURCE_ADJUSTMENT_DF t2
-  ON t1.entity_id = t2.entity_id`
+  ON t1.entity_id = t2.entity_id`,
+        baseNote: "❌ Hallucinated alias t5, missed join key ref_id, invalid unclosed parenthesis in CASE statement.",
+        fineNote: "✅ Strict sequential aliases t1...t4, correct COALESCE resolution, fully valid ANSI SQL syntax."
       },
       case2: {
         input: `Table Source: SOURCE_PROFILE (t1), SOURCE_ACTIVITY (t3), SOURCE_REFERENCE (t4)
@@ -705,7 +699,6 @@ INNER JOIN SOURCE_ADJUSTMENT_DF t2
 
     window.addEventListener('DOMContentLoaded', () => {
       loadEvalScenario('case1');
-      testTypoHealing(document.getElementById('typoInput').value);
       calculateLoraParams();
     });
 
@@ -713,13 +706,17 @@ INNER JOIN SOURCE_ADJUSTMENT_DF t2
       const data = SCENARIOS[key];
       if (!data) return;
       document.getElementById('evalInputPrompt').textContent = data.input;
-      document.getElementById('baseModelOutput').textContent = data.base;
-      document.getElementById('finetunedModelOutput').textContent = data.finetuned;
-      if (document.getElementById('baseErrorNote')) {
-        document.getElementById('baseErrorNote').textContent = data.baseNote || "❌ Hallucinated alias t5, missed join key ref_id, invalid unclosed parenthesis in CASE statement.";
+      document.getElementById('baseModelOutput').textContent = '';
+      document.getElementById('finetunedModelOutput').textContent = '';
+      const baseNote = document.getElementById('baseErrorNote');
+      const fineNote = document.getElementById('fineSuccessNote');
+      if (baseNote) {
+        baseNote.textContent = '';
+        baseNote.hidden = true;
       }
-      if (document.getElementById('fineSuccessNote')) {
-        document.getElementById('fineSuccessNote').textContent = data.fineNote || "✅ Strict sequential aliases t1...t4, correct COALESCE resolution, fully valid ANSI SQL syntax.";
+      if (fineNote) {
+        fineNote.textContent = '';
+        fineNote.hidden = true;
       }
     }
 
@@ -760,6 +757,16 @@ INNER JOIN SOURCE_ADJUSTMENT_DF t2
           clearInterval(timer);
           btn.disabled = false;
           btn.innerHTML = `<i class="fa-solid fa-play"></i> Run Inference`;
+          const baseNote = document.getElementById('baseErrorNote');
+          const fineNote = document.getElementById('fineSuccessNote');
+          if (baseNote) {
+            baseNote.textContent = data.baseNote || '';
+            baseNote.hidden = !baseNote.textContent;
+          }
+          if (fineNote) {
+            fineNote.textContent = data.fineNote || '';
+            fineNote.hidden = !fineNote.textContent;
+          }
           document.getElementById('inferenceTelemetry').textContent =
             `Latency: ${(190 + Math.random() * 60).toFixed(0)}ms | 52.4 tok/s | VRAM: 8.24 GB`;
         }

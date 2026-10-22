@@ -1,6 +1,6 @@
 /* ==========================================================================
    PORTFOLIO PROJECTS DATA REPOSITORY
-   All 9 projects from Work Done.txt sanitized of proprietary brand URLs/clients
+   Eight public projects. Client brand names and account URLs stay out of copy.
    ========================================================================== */
 
 const PORTFOLIO_PROJECTS = [
@@ -8,12 +8,12 @@ const PORTFOLIO_PROJECTS = [
     id: "mapping-to-sql-gemma",
     num: "01",
     category: "llm",
-    categoryLabel: "LLMs & Fine-Tuning",
+    categoryLabel: "Fine-tuning",
     role: "Lead AI Engineer / MLOps",
     title: "Automated SQL Generation System",
-    shortDesc: "Fine-tuned Mistral-7B-Instruct-v0.3 with 8-bit QLoRA/PEFT across 900 enterprise mapping pairs, dropping cross-entropy loss from 1.049 to 0.184 to autonomously heal analyst typos and synthesize dialect-exact ANSI SQL within an 8.5 GB GPU budget.",
+    shortDesc: "Turns analyst mapping sheets into dialect-exact SQL with a fine-tuned 7B model that fits in 8.5 GB of VRAM.",
     domain: "LLM Fine-Tuning · PEFT / QLoRA · Enterprise Data Engineering · MLOps",
-    execution: "Production On-Premises AI Model & API Serving Pipeline",
+    execution: "Client delivery — local model serving",
     models: "Mistral-7B-Instruct-v0.3 · LoRA (r=8, α=16) · bitsandbytes 8-bit",
     featured: true,
     liveDemo: "demo-sql-finetuning.html",
@@ -26,7 +26,7 @@ const PORTFOLIO_PROJECTS = [
       "Constrained training & inference VRAM to 8.5 GB for cost-effective deployment on commodity GPUs (NVIDIA T4 / RTX 3090)",
       "Automated foreign key extraction and join alias projection (t1...tN) without cloud metadata leakage"
     ],
-    techStack: ["Mistral-7B-Instruct-v0.3", "PEFT / LoRA", "bitsandbytes (8-bit)", "PyTorch", "HuggingFace SFTTrainer", "Transformers", "Flask / ngrok API", "JSONL Dataset (900 pairs)", "ANSI SQL"],
+    techStack: ["Mistral-7B-Instruct-v0.3", "PEFT / LoRA", "bitsandbytes (8-bit)", "PyTorch", "HuggingFace SFTTrainer", "Transformers", "FastAPI", "JSONL Dataset (900 pairs)", "ANSI SQL"],
     starSummary: {
       situation: "Enterprise migrations require converting messy source-to-target mapping sheets into SQL. Off-the-shelf models repeatedly hallucinated join aliases and failed to handle null-fallback expressions.",
       task: "Fine-tune an open-source, air-gappable foundation model on 900 enterprise mapping pairs to synthesize deterministic ANSI SQL with consistent schema structure and zero cloud data leaks.",
@@ -59,9 +59,9 @@ const PORTFOLIO_PROJECTS = [
         content: `
           <p>Production engineering and verification highlights:</p>
           <ul>
-            <li><strong>Local API Serving:</strong> Packaged lightweight Python Flask API service with local web UI and ngrok tunnels for interactive enterprise evaluation without external cloud dependencies.</li>
+            <li><strong>Local API Serving:</strong> Packaged a FastAPI service with a local web UI so the client could evaluate generations without sending schemas to a multi-tenant cloud API.</li>
             <li><strong>Loss Convergence:</strong> Training cross-entropy loss decreased from 1.049 at step 10 to 0.184 at step 700 (minimum 0.173 at step 500) without general syntax degradation.</li>
-            <li><strong>Dialect & Join Verification:</strong> Validated syntactic validity across client test sets, guaranteeing strict sequential alias projection (t1..tN).</li>
+            <li><strong>Dialect & Join Verification:</strong> Checked syntactic validity across client test sets, including sequential alias projection (t1..tN).</li>
             <li><strong>Interactive Demo:</strong> Inspect training loss curves, compare base vs. fine-tuned SQL generation, and test typo normalization in the <a href="../../demo-sql-finetuning.html" style="color:var(--accent-bright); text-decoration:underline; font-weight:600;">Interactive SQL Fine-Tuning Demo</a>.</li>
           </ul>
         `
@@ -72,13 +72,13 @@ const PORTFOLIO_PROJECTS = [
     id: "enterprise-json-query-enhancer",
     num: "02",
     category: "llm",
-    categoryLabel: "LLMs & Enterprise Systems",
+    categoryLabel: "Data pipelines",
     role: "Full-Stack AI & Data Systems Engineer",
     title: "AI-Powered Query Automation",
-    shortDesc: "Cloud-based data pipeline compiler powered by Google Gemini Flash 2.5, compiling multi-entity mapping workbooks into structured 7-stage Spark ETL DAG manifests and incrementally patching schemas.",
+    shortDesc: "A one-week sprint compiler that turns mapping workbooks into Spark DAG JSON and patches schemas incrementally.",
     domain: "Data Systems Engineering · Spark DAG Generation · Cloud LLMs · Data Lakehouse",
-    execution: "Production Cloud Microservice (Delivered in 6–8 Day Sprint)",
-    models: "Google Gemini Flash 2.5 · AST Validation · Spark DAG Compiler · Flask REST API",
+    execution: "Sprint deliverable (6–8 days)",
+    models: "Google Gemini 2.0 Flash · AST Validation · Spark DAG Compiler · Flask REST API",
     featured: false,
     liveDemo: "demo-etl-generator.html",
     liveDemoTitle: "Interactive ETL DAG Compiler Demo",
@@ -90,7 +90,7 @@ const PORTFOLIO_PROJECTS = [
       "Embedded 10 automated pre-flight checks: validates service availability, sequence dependencies, and path writeability",
       "Integrated structured JSON export and interactive browser testing demo"
     ],
-    techStack: ["Google Gemini Flash 2.5", "Python / Flask REST API", "Pandas", "Apache Spark DAG Manifest", "Incremental Schema Enhancer", "ANSI SQL", "10 Pre-Flight Checks", "JSON Schema Validation"],
+    techStack: ["Google Gemini 2.0 Flash", "Python / Flask REST API", "Pandas", "Apache Spark DAG Manifest", "Incremental Schema Enhancer", "ANSI SQL", "10 Pre-Flight Checks", "JSON Schema Validation"],
     starSummary: {
       situation: "During large enterprise migrations (e.g., merging banks, migrating to Snowflake), business analysts map legacy data fields to target schemas across dozens of messy Excel sheets.",
       task: "Data engineers traditionally spend 2 to 4 weeks manually handwriting thousands of lines of SQL joins, fallback rules, and pipeline DAG configs, causing human syntax errors.",
@@ -102,7 +102,7 @@ const PORTFOLIO_PROJECTS = [
         title: "Platform Overview & Scope",
         icon: "fa-bullseye",
         content: `
-          <p>Enterprise data warehouse migrations require orchestrating multi-stage Spark Directed Acyclic Graphs (DAGs) through structured JSON manifests. Designed and delivered during an intensive 6–8 day forward-deployed sprint, this cloud microservice automates spreadsheet ingestion, schema extraction, and execution manifest synthesis powered by Google Gemini Flash 2.5.</p>
+          <p>Enterprise data warehouse migrations require orchestrating multi-stage Spark Directed Acyclic Graphs (DAGs) through structured JSON manifests. Designed and delivered during an intensive 6–8 day forward-deployed sprint, this compiler automates spreadsheet ingestion, schema extraction, and execution manifest synthesis with Google Gemini 2.0 Flash.</p>
         `
       },
       {
@@ -137,30 +137,30 @@ const PORTFOLIO_PROJECTS = [
     id: "ai-classroom-monitor",
     num: "03",
     category: "cv",
-    categoryLabel: "Computer Vision & Cloud Edge",
+    categoryLabel: "Production ML",
     role: "Full-Stack AI Engineer (Sole Developer)",
     title: "AI Classroom Monitoring System",
-    shortDesc: "Cloud-native video analytics pipeline using AWS Rekognition Video, OpenCV, and MoviePy to perform automated facial recognition, attentiveness scoring, distraction tracking, and server-side video overlay compositing across 4 institutions.",
+    shortDesc: "Rekognition video analytics with attentiveness scoring and server-side overlay compositing for recorded lectures.",
     domain: "Computer Vision · Video Analytics · Cloud Infrastructure · Distributed Systems",
-    execution: "Production Multi-Tenant Video Analytics Platform",
+    execution: "Client delivery — classroom video analytics",
     models: "AWS Rekognition Video · OpenCV · MoviePy · AWS DynamoDB",
     featured: true,
     liveDemo: "demo-classroom-cv.html",
     liveDemoTitle: "Interactive Computer Vision Telemetry Demo",
     liveDemoDesc: "Experience live video telemetry simulation: inspect bounding boxes (faces, laptops, phones, sleeping alerts), scrub through time-aligned events, and test the mathematical attentiveness scoring algorithm in real time.",
     highlights: [
-      "Engineered end-to-end video analytics pipeline deployed across 4 educational institutions",
+      "Engineered an end-to-end video analytics pipeline for recorded lectures: enrollment, analysis, and overlay playback",
       "Integrated AWS Rekognition Video for face search, 8 discrete emotions, and object label detection",
       "Formulated mathematical attentiveness scoring & heuristic sleeping detection (head pose roll/pitch + eye closure)",
       "Built server-side video compositing engine burning color-coded bounding-box overlays via MoviePy & OpenCV",
-      "Architected hybrid DynamoDB + SQLite persistence with S3 pre-signed HTTP Range streaming"
+      "Architected DynamoDB telemetry with SQLite session metadata and S3 pre-signed HTTP Range streaming"
     ],
-    techStack: ["AWS Rekognition Video", "OpenCV / MoviePy", "Django 5", "AWS DynamoDB", "AWS S3 (Pre-Signed URLs)", "SQLite / PostgreSQL", "React / Vite", "REST APIs", "Token Authentication"],
+    techStack: ["AWS Rekognition Video", "OpenCV / MoviePy", "Django 5", "AWS DynamoDB", "AWS S3 (Pre-Signed URLs)", "SQLite", "Preact / Vite", "REST APIs", "Token Authentication"],
     starSummary: {
       situation: "Institutions require objective engagement, attendance, and distraction metrics across recorded lectures, but manual auditing is subjective and takes dozens of human proctor hours.",
       task: "Architect an end-to-end cloud video pipeline to recognize enrolled students, detect phone/sleeping distractions, score attentiveness, and burn video telemetry overlays.",
       action: "Sole developer of a Django 5 system orchestrating AWS Rekognition Video, OpenCV/MoviePy overlay compositing, mathematical scoring algorithms, and hybrid DynamoDB/SQLite persistence.",
-      result: "Deployed across 4 institutions, automating student face search, engagement tracking, and secure video streaming via S3 pre-signed URLs."
+      result: "Delivered student face search, engagement tracking, overlay playback, and secure video streaming via S3 pre-signed URLs."
     },
     sections: [
       {
@@ -190,7 +190,7 @@ const PORTFOLIO_PROJECTS = [
           <p>Full-stack backend architecture and deployment details:</p>
           <ul>
             <li><strong>Server-Side Overlay Compositing:</strong> OpenCV and MoviePy engine burning color-coded bounding boxes (green for enrolled, red for unauthorized/distractions) into H.264 video for instant browser playback.</li>
-            <li><strong>Hybrid Storage Architecture:</strong> AWS DynamoDB for sub-millisecond telemetry search paired with Django relational ORM (PostgreSQL/SQLite) for audit logs and session metadata.</li>
+            <li><strong>Hybrid Storage Architecture:</strong> AWS DynamoDB for telemetry search paired with Django and SQLite for audit logs and session metadata.</li>
             <li><strong>Secure Media Delivery:</strong> S3 pre-signed URLs with dynamic 1-hour expiration and HTTP Range header streaming for buffer-free timeline scrubbing.</li>
             <li><strong>Interactive Demo:</strong> Inspect bounding boxes, scrub time-aligned distraction events, and test scoring formulas in the <a href="../../demo-classroom-cv.html" style="color:var(--accent-bright); text-decoration:underline; font-weight:600;">Interactive Computer Vision Telemetry Demo</a>.</li>
           </ul>
@@ -202,11 +202,11 @@ const PORTFOLIO_PROJECTS = [
     id: "ai-healthcare-scribe",
     num: "04",
     category: "mlops",
-    categoryLabel: "Voice AI & Healthcare Systems",
+    categoryLabel: "LLM applications",
     role: "Full-Stack AI & Systems Engineer (Sole Developer)",
-    title: "Autonomous AI Voice Front Desk & Central Patient Health Record (EHR/HIS) Platform",
-    shortDesc: "Autonomous voice AI front desk and central EHR platform orchestrating patient appointment telephony, doctor consultations, lab diagnostic loops, and FHIR R4 interoperability.",
-    execution: "Architecture & Working Prototype",
+    title: "CareLoop — Voice Front Desk & EHR",
+    shortDesc: "Voice front-desk prototype where the agent talks and deterministic backend tools book, triage, and close the lab loop.",
+    execution: "Architecture & working prototype",
     models: "ElevenLabs Conversational AI · n8n Workflows · FHIR R4 Adapters",
     featured: false,
     highlights: [
@@ -268,12 +268,12 @@ const PORTFOLIO_PROJECTS = [
     id: "ai-quiz-generation-saas",
     num: "05",
     category: "llm",
-    categoryLabel: "Generative AI & Multimodal SaaS",
+    categoryLabel: "LLM applications",
     role: "Full-Stack AI Engineer",
-    title: "Multimodal AI Assessment & Quiz Generation SaaS Platform",
-    shortDesc: "Full-stack AI SaaS transforming unstructured text, multi-page PDFs, and visual diagrams into standardized interactive quizzes across multiple question formats.",
+    title: "Multimodal Quiz Generation SaaS",
+    shortDesc: "Turns text, PDFs, and diagrams into editable quizzes across four question types.",
     domain: "Generative AI · EdTech · Multimodal Document Parsing · Microservices",
-    execution: "Full-Stack SaaS Platform (FastAPI + React)",
+    execution: "Full-stack SaaS prototype",
     models: "OpenAI GPT-4 · OpenAI Vision API",
     featured: false,
     highlights: [
@@ -287,7 +287,7 @@ const PORTFOLIO_PROJECTS = [
       situation: "Educators and corporate trainers spend dozens of hours manually authoring quizzes and assessments from textbooks, PDFs, and hand-drawn lecture whiteboards.",
       task: "Architect an end-to-end full-stack SaaS platform capable of multimodal ingestion (text, PDFs, diagrams) to generate standardized interactive quizzes across 4 question formats.",
       action: "Sole developer of FastAPI + React/TypeScript platform; integrated OpenAI GPT-4 and Vision API; implemented JWT auth with token rotation, Zustand practice state, and PDF/JSON exporters.",
-      result: "Delivered full-stack SaaS with subscription usage tracking, interactive assessment generation across 4 question formats, and containerized Docker Compose deployment."
+      result: "Shipped a working SaaS prototype with weekly usage quotas, four question formats, an interactive editor, and Docker Compose for MySQL."
     },
     sections: [
       {
@@ -330,12 +330,12 @@ const PORTFOLIO_PROJECTS = [
     id: "enterprise-pms-innovation-analytics",
     num: "06",
     category: "llm",
-    categoryLabel: "Enterprise Systems & Analytics",
+    categoryLabel: "Customer integration",
     role: "Full-Stack AI Engineer (Sole Developer)",
-    title: "Enterprise PMS & Strategic Innovation Analytics Platform",
-    shortDesc: "Enterprise project management and innovation system featuring Statistical Process Control (SPC), bilingual English/Arabic CMS, and generative AI strategy workflows.",
+    title: "Enterprise PMS & Innovation Analytics",
+    shortDesc: "Innovation project system with statistical process control, collaboration, and a bilingual CMS.",
     domain: "Enterprise PMS · Innovation Intelligence · Statistical Process Control · Bilingual CMS",
-    execution: "Full-Stack Enterprise Web Application",
+    execution: "Full-stack enterprise web application",
     models: "Google Gemini AI · OpenAI DALL-E 3 · Statistical Process Control",
     featured: false,
     highlights: [
@@ -390,16 +390,16 @@ const PORTFOLIO_PROJECTS = [
     id: "bio-adaptive-music-meditation",
     num: "07",
     category: "cv",
-    categoryLabel: "HealthTech & Trimodal Emotion AI",
+    categoryLabel: "Production ML",
     role: "Full-Stack AI Engineer (Sole Developer)",
-    title: "Bio-Adaptive AI Music & Wellness Platform",
-    shortDesc: "Real-time closed-loop wellness system synthesizing personalized audio soundscapes and imagery driven by trimodal facial, voice, and Arduino biometric telemetry.",
+    title: "Bio-Adaptive AI Music & Wellness",
+    shortDesc: "Closed-loop generative audio and imagery from face, voice, and sensor readings, with a hardware fallback.",
     domain: "HealthTech · Bio-Signal Processing · Trimodal Emotion AI · IoT Closed-Loop",
-    execution: "Wellness & Research Prototype with IoT Hardware Integration",
+    execution: "Wellness research prototype with IoT hardware",
     models: "AWS Rekognition · Hugging Face Audio · Meta MusicGen · Stable Diffusion",
     featured: false,
     highlights: [
-      "Sole full-stack developer architecting sessionless Django wellness backend",
+      "Django backend with session auth for users and session-stored guest preferences",
       "Trimodal emotion fusion combining AWS Rekognition, HF Transformers, and Arduino sensors",
       "Dynamic closed-loop generative wellness: live BPM modulates MusicGen and Stable Diffusion",
       "Zero-config hardware fallback to simulated telemetry and multi-CSV ZIP session export"
@@ -408,7 +408,7 @@ const PORTFOLIO_PROJECTS = [
     starSummary: {
       situation: "Conventional wellness and meditation applications deliver static pre-recorded audio tracks that cannot respond to a user's fluctuating physiological state or autonomic stress.",
       task: "Build a bio-adaptive closed-loop wellness prototype that evaluates multimodal signals in real time and synthesizes personalized generative soundscapes as sole developer.",
-      action: "Engineered sessionless Django backend; fused trimodal emotion inputs (AWS Rekognition facial, HF voice valence, Arduino BPM/GSR); modulated Meta MusicGen and Stable Diffusion dynamically.",
+      action: "Built a Django backend with session login and guest-preference storage; fused facial (Rekognition), voice (Hugging Face), and Arduino BPM/GSR signals; modulated MusicGen and image generation from that state.",
       result: "Achieved real-time closed-loop synthesis with zero-config hardware fallback, 9 accessibility profile parameters, and automated multi-CSV ZIP session telemetry export for research."
     },
     sections: [
@@ -416,7 +416,7 @@ const PORTFOLIO_PROJECTS = [
         title: "Platform Overview & Closed-Loop Concept",
         icon: "fa-spa",
         content: `
-          <p>Traditional meditation applications deliver static, pre-recorded audio tracks that cannot adapt to a user's changing state. As the sole full-stack engineer, I architected a bio-adaptive closed-loop wellness system that evaluates multimodal signals in real time and synthesizes customized acoustic and visual experiences.</p>
+          <p>Traditional meditation applications deliver static, pre-recorded audio tracks that cannot adapt to a user's changing state. As the sole backend engineer, I built a Django wellness API with session login for registered users and session-stored guest preferences, then closed the loop from multimodal signals to generative audio and imagery.</p>
         `
       },
       {
@@ -449,158 +449,86 @@ const PORTFOLIO_PROJECTS = [
   },
   {
     id: "autonomous-social-content-engine",
-    num: "09",
+    num: "08",
     category: "mlops",
-    categoryLabel: "Autonomous Agents & Social MLOps",
+    categoryLabel: "Customer integration",
     role: "Full-Stack AI Engineer",
-    title: "AI Social Media Automation Platform",
-    shortDesc: "End-to-end publishing automation platform powered by PyAutoGen and OpenAI (GPT-4) orchestrating research agents, editorial planning, background queues (Django-Q2), bilingual podcast synthesis, and automated engagement.",
-    domain: "Autonomous Agents · Agentic AI · Background Task Queues · Multimodal Audio · Social MLOps",
-    execution: "Enterprise Automation Platform",
-    models: "PyAutoGen · OpenAI GPT-4 · OpenAI TTS · DALL-E · Django-Q2",
+    title: "LinkedIn Content Operations Platform",
+    shortDesc: "Django app that researches, queues, and publishes bilingual LinkedIn posts, long-form articles, comments, and podcasts.",
+    domain: "Content Operations · LinkedIn API · Background Queues · Bilingual Publishing",
+    execution: "Client delivery — Django publishing operations",
+    models: "OpenAI GPT-4.1 · OpenAI TTS · Image generation · Django-Q2",
     featured: true,
     highlights: [
-      "Architected multi-agent research pipeline (PyAutoGen + GPT-4) querying web & industry portal APIs",
-      "Built 5-day rolling lookahead background queue via Django-Q2 executing scheduled publishing tasks",
-      "Engineered 3-tier commenting engine (Expert Analysis → Research Hook → Conversion CTA) with rate limiting",
-      "Implemented bilingual dual-speaker podcast generation using OpenAI TTS and PyDub audio stitching",
-      "Automated multi-agent research, draft packaging, and scheduled distribution workflows"
+      "Category-based LinkedIn posts in English or Arabic, with generated images, for personal or company pages",
+      "Research articles via OpenAI web search, a consulting-insights search API, and structured section planning with charts",
+      "Django-Q2 weekly automation that pre-builds the next five days of drafts and skips duplicate slots",
+      "Three-step comment chain into the client CMS, plus replies that tag commenters and avoid duplicate replies",
+      "Gmail newsletters with signed unsubscribe links, dual-speaker podcasts, and a post analytics dashboard"
     ],
-    techStack: ["PyAutoGen (Multi-Agent)", "OpenAI GPT-4", "Django 3.2", "Django-Q2 (Task Queue)", "OpenAI TTS", "PyDub Audio", "OAuth 2.0 (LinkedIn)", "Gmail API", "BeautifulSoup4", "Bilingual NLP (EN/AR)"],
+    techStack: ["Django 3.2", "OpenAI Responses API", "Django-Q2", "LinkedIn OAuth 2.0", "OpenAI TTS", "PyDub", "Gmail API", "BeautifulSoup", "Pillow"],
     starSummary: {
-      situation: "Enterprise teams spend extensive weekly hours researching consulting reports, authoring in-depth analyses, designing graphics, and answering comments to maintain professional social authority.",
-      task: "Build an autonomous multi-agent engine capable of market research, advance planning, bilingual (EN/AR) multimodal content synthesis, and comment automation via official APIs.",
-      action: "Engineered Django + PyAutoGen (ResearchV1Generator), Django-Q2 midnight background queues, a 3-tier sequential commenting chain, and dual-speaker OpenAI TTS audio stitching.",
-      result: "Automated draft research and packaging, managed policy-aware publishing with rate limiting, and delivered bilingual multimodal content."
+      situation: "Publishing thought leadership meant researching a topic, writing a post and a long article, recording audio, and answering comments — twice, for English and Arabic.",
+      task: "Build one Django application that drafts that package, queues it, publishes through official APIs, and engages without burst-posting.",
+      action: "Implemented a research generator on OpenAI web search and structured outputs, a five-day Django-Q2 lookahead, LinkedIn OAuth, a three-step comment and reply pipeline, and dual-speaker text-to-speech.",
+      result: "Operators review pre-generated drafts, publish to personal or company pages, and keep comments, newsletters, and podcasts on the same record. Rate limits and token checks sit in the queue, not in a promise of zero policy risk."
     },
     sections: [
       {
-        title: "A. Project Overview & The Executive Thought-Leadership Bottleneck",
-        icon: "fa-bullseye",
+        title: "Product Surface",
+        icon: "fa-layer-group",
         content: `
-          <p>For modern enterprise brands, advisory firms, and industry leaders, maintaining an authoritative presence on professional social networks is a primary driver of inbound partnership pipeline and industry credibility. However, producing high-impact thought leadership requires significant manual effort: reading extensive management consulting reports, authoring in-depth analyses with empirical data visualizations, creating custom graphics, recording audio digests, and actively engaging in discussions.</p>
-          <p>The objective was to architect an enterprise-grade, autonomous multi-agent publishing platform that conducts market research, plans an editorial calendar in advance, generates bilingual (English & Arabic) multimodal assets, and automates community engagement through official APIs with policy-aware rate limiting, duplicate prevention, and scheduled publishing.</p>
-        `
-      },
-      {
-        title: "B. My Engineering Contributions & Verified Scope",
-        icon: "fa-user-check",
-        content: `
-          <p>My verified technical responsibilities and implemented platform subsystems:</p>
+          <p>The product is a Django operations console for one publishing team, not a generic social network bot. The surfaces that shipped:</p>
           <ul>
-            <li><strong>Cognitive Agent Architecture (PyAutoGen):</strong> Implemented the pluggable <code>ResearchV1Generator</code> pipeline with specialized autonomous agents: Research, Planning, Section Drafting, Creative Media, and Algorithmic Growth.</li>
-            <li><strong>Asynchronous Scheduling Engine:</strong> Built the 5-day rolling lookahead background queue via Django-Q2 running nightly cron jobs to pre-generate posts, imagery, and account targeting.</li>
-            <li><strong>Algorithmic Growth & 3-Tier Comment Chain:</strong> Authored the sequential commenting engine (Expert Analysis &rarr; Research Hook &rarr; CTA) and webhook-based comment auto-reply bot with reverse-engineered URN mention formatting.</li>
-            <li><strong>Multimodal Audio Studio:</strong> Engineered the dual-speaker podcast synthesis pipeline using OpenAI TTS and PyDub, generating synchronized two-host dialogues in English and Arabic.</li>
-            <li><strong>Security & API Integration:</strong> Managed OAuth 2.0 token refreshes, rate-limiting jitter algorithms to prevent spam flags, and Gmail API newsletter distribution with cryptographically signed unsubscribe tokens.</li>
+            <li><strong>Posts:</strong> Category and subcategory prompts, OpenAI draft text, generated images, English or Arabic, and a choice of personal or company LinkedIn page.</li>
+            <li><strong>Articles:</strong> A pluggable research generator that plans sections, charts, and diagrams, then stores bilingual article fields on the same record as the post.</li>
+            <li><strong>Schedule:</strong> One-off scheduled prompts and weekly rules. A background worker pre-generates the next five days.</li>
+            <li><strong>Engagement:</strong> Three sequential comments after publish, plus a reply view that answers comments on posts already sent.</li>
+            <li><strong>Distribution:</strong> Gmail newsletter lists with signed unsubscribe links, dual-speaker podcast audio, and an analytics dashboard for published posts.</li>
           </ul>
         `
       },
       {
-        title: "C. System Architecture & Cognitive Multi-Agent Flow",
-        icon: "fa-diagram-project",
+        title: "Research Pipeline",
+        icon: "fa-magnifying-glass",
         content: `
-          <div style="background:#05080f; border:1px solid #1e293b; border-radius:8px; padding:1.25rem; margin:1.25rem 0;">
-            <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.06em; color:#93c5fd; font-weight:700; margin-bottom:1rem; display:flex; align-items:center; gap:0.5rem;">
-              <i class="fa-solid fa-robot"></i> Multi-Agent Orchestration & Distribution Architecture
-            </div>
-            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(170px, 1fr)); gap:0.75rem; text-align:center;">
-              <div style="background:#0f172a; border:1px solid #334155; border-radius:6px; padding:0.85rem 0.5rem;">
-                <div style="font-size:0.72rem; color:#94a3b8; font-family:monospace; margin-bottom:0.25rem;">[1. RESEARCH]</div>
-                <div style="font-size:0.82rem; font-weight:600; color:#fff;">PyAutoGen Agent</div>
-                <div style="font-size:0.7rem; color:#64748b; margin-top:0.25rem;">Web & McKinsey API</div>
-              </div>
-              <div style="background:#0f172a; border:1px solid #334155; border-radius:6px; padding:0.85rem 0.5rem;">
-                <div style="font-size:0.72rem; color:#94a3b8; font-family:monospace; margin-bottom:0.25rem;">[2. PLANNING]</div>
-                <div style="font-size:0.82rem; font-weight:600; color:#38bdf8;">AIDA Strategy</div>
-                <div style="font-size:0.7rem; color:#64748b; margin-top:0.25rem;">Charts, diagrams, sections</div>
-              </div>
-              <div style="background:rgba(59,130,246,0.12); border:1px solid rgba(59,130,246,0.4); border-radius:6px; padding:0.85rem 0.5rem;">
-                <div style="font-size:0.72rem; color:#60a5fa; font-family:monospace; margin-bottom:0.25rem;">[3. SCHEDULER]</div>
-                <div style="font-size:0.82rem; font-weight:700; color:#fff;">Django-Q2 Queue</div>
-                <div style="font-size:0.7rem; color:#93c5fd; margin-top:0.25rem;">5-day rolling midnight cron</div>
-              </div>
-              <div style="background:#0f172a; border:1px solid #334155; border-radius:6px; padding:0.85rem 0.5rem;">
-                <div style="font-size:0.72rem; color:#94a3b8; font-family:monospace; margin-bottom:0.25rem;">[4. ENGAGEMENT]</div>
-                <div style="font-size:0.82rem; font-weight:600; color:#34d399;">3-Tier Growth</div>
-                <div style="font-size:0.7rem; color:#64748b; margin-top:0.25rem;">Expert &rarr; Hook &rarr; CTA</div>
-              </div>
-            </div>
-          </div>
-          <p>The platform coordinates discrete cognitive agents through a unified pipeline. The Research Agent interrogates external portal APIs, passes findings to the AIDA Strategic Planner, and orchestrates creative synthesis (DALL-E image prompt, ApexCharts, dual-speaker TTS). Posts enter a 5-day rolling approval queue executed by Django-Q2, followed by automated 3-tier comment deployment and webhook reply listeners.</p>
-        `
-      },
-      {
-        title: "D. Technical Implementation: Multi-Agent Collaboration & Growth Mechanics",
-        icon: "fa-network-wired",
-        content: `
-          <p>The system leverages specialized engineering patterns across orchestration and distribution:</p>
+          <p>Long-form articles use <code>ResearchV1Generator</code>. It is an OpenAI Responses pipeline with structured outputs, not a five-agent theatre.</p>
           <ul>
-            <li><strong>PyAutoGen Cognitive Agent Loop:</strong> Ingests high-level topic briefs and executes structured tool calls. The Research Agent queries search APIs and scrapes strategy portals via BeautifulSoup to extract concrete statistical metrics (e.g. <em>"68% CAGR in agentic workloads"</em>). The Planning Agent enforces the AIDA framework: Context, Strategic Alignment, Future Outlook, Risk Analysis, and Actionable Takeaways.</li>
-            <li><strong>5-Day Rolling Lookahead Background Queue:</strong> Managed via Django-Q2 background workers running daily at midnight. The scheduler scans active weekly automation rules, looks ahead across the next 5 days, and pre-generates complete draft packages (post text, image banner, target account assignment) for one-click approval.</li>
-            <li><strong>Strategic 3-Tier Commenting Sequence:</strong> Professional feed algorithms reward early conversational depth. Immediately upon post publication, the system executes an automated 3-tier comment chain:
-              <ul>
-                <li><em>Comment 1 (Expert Deep-Dive):</em> Expands on technical implications with concrete architecture recommendations.</li>
-                <li><em>Comment 2 (Research Hook):</em> Transitions naturally into hyperlinked reference publications and whitepapers.</li>
-                <li><em>Comment 3 (High-Conversion CTA):</em> Encourages audience interaction and solution discovery.</li>
-              </ul>
-            </li>
-            <li><strong>Dual-Speaker Podcast Generation:</strong> Takes the finalized article and converts it into a scripted two-host dialogue. Calls OpenAI TTS to synthesize alternating male and female voices, stitched together using PyDub into downloadable broadcast-ready MP3s.</li>
+            <li><strong>Web search:</strong> A research call with the web-search tool gathers notes and chart-ready figures for the topic.</li>
+            <li><strong>Consulting-insights search:</strong> A search-term model queries an external insights index, then BeautifulSoup pulls article text for the planner.</li>
+            <li><strong>Plan and write:</strong> Structured parsing produces a title and sections (including whether a chart or diagram is needed), then section, chart, and Mermaid calls fill the article. English and Arabic are both stored.</li>
+            <li><strong>Where AutoGen fits:</strong> Some post-generation views use an AutoGen assistant as an optional helper. The research path itself is the Responses API.</li>
           </ul>
         `
       },
       {
-        title: "E. Important Engineering Decisions & Trade-offs",
+        title: "Queue and LinkedIn Constraints",
+        icon: "fa-clock",
+        content: `
+          <p>Scheduling is Django-Q2 against the application database, so the app does not need a separate Redis broker.</p>
+          <ul>
+            <li><strong>Five-day lookahead:</strong> A daily midnight job walks today plus four days, matches weekday rules, picks a subcategory, and generates text and an image. If a prompt already exists for that time and topic, it is skipped.</li>
+            <li><strong>OAuth:</strong> Personal and company pages use LinkedIn OAuth. Access tokens last about 60 days; a health check warns operators before expiry and refreshes when a refresh token is available.</li>
+            <li><strong>Replies:</strong> Mentioning someone in a reply requires a <code>urn:li:person</code> tag. The reply job records which comments were already answered and waits with jitter between calls so the account does not burst-reply.</li>
+            <li><strong>Comments:</strong> After a successful publish, three comments go out in order: a deeper point from the post, a hook into a related article on the client CMS, and a call to action. The CMS is selected by the model from the client's blog API. The public write-up does not name that product.</li>
+          </ul>
+        `
+      },
+      {
+        title: "Trade-offs",
         icon: "fa-scale-balanced",
         content: `
-          <p>Key architectural evaluations made during platform development:</p>
+          <p>Choices that kept the deployment small:</p>
           <ul>
-            <li><strong>PyAutoGen Multi-Agent Framework vs. Linear Chains:</strong> Simple linear prompts (e.g. standard LangChain chains) produce generic, repetitive social posts. PyAutoGen enabled an adversarial critique-and-refine loop between the Research Agent and the AIDA Planner, resulting in nuanced executive depth.</li>
-            <li><strong>Django-Q2 Task Queue vs. Celery & Redis:</strong> Deploying a separate Redis or RabbitMQ cluster introduces substantial operational maintenance and memory overhead. Django-Q2 runs directly against the relational database (SQLite/PostgreSQL), providing transactional reliability, automatic retry queues, and simpler single-container deployments without external broker dependencies.</li>
-            <li><strong>OpenAI TTS vs. ElevenLabs:</strong> ElevenLabs delivers superior emotional intonation but at 10x the per-character cost. OpenAI TTS provided high naturalness, ultra-low latency, and predictable unit economics for daily automated podcasts.</li>
-            <li><strong>Rate-Limiting Jitter vs. High-Velocity Automation:</strong> LinkedIn algorithms quickly flag accounts publishing identical burst replies. Implemented randomized exponential backoff and 45–120 second random jitter delays between automated comments and replies.</li>
-          </ul>
-        `
-      },
-      {
-        title: "F. Reliability, Rate Limiting & Integration Challenges",
-        icon: "fa-shield-halved",
-        content: `
-          <p>Navigating platform policies and multi-modal synchronization requirements:</p>
-          <ul>
-            <li><strong>LinkedIn URN Mention Formatting:</strong> Replying to user comments requires embedding specific <code>urn:li:person:{id}</code> tags in the comment payload. Implemented exact URN extraction patterns to ensure replies seamlessly tag commenters without breaking text formatting.</li>
-            <li><strong>Silent OAuth 2.0 Token Refreshes:</strong> LinkedIn user tokens expire after 60 days. Built background token health checks that alert administrators 7 days prior to expiry while executing refresh-token exchanges silently to avoid pipeline disruption.</li>
-            <li><strong>Bilingual Arabic Formatting:</strong> Supporting Modern Standard Arabic (العربية) alongside English required preserving right-to-left (RTL) punctuation and technical terminology without corrupting markdown code fences.</li>
-          </ul>
-        `
-      },
-      {
-        title: "G. Results, Evaluation & Delivery",
-        icon: "fa-chart-line",
-        content: `
-          <p>The platform streamlined executive thought-leadership operations into an automated engine:</p>
-          <ul>
-            <li><strong>Automated Research & Draft Packaging:</strong> Coordinated research, drafting, and scheduling into pre-generated packages for one-click review and approval.</li>
-            <li><strong>Reliable Publishing & Rate Limiting:</strong> Enforced exponential backoff, jitter delays, and token health checks to ensure reliable API interactions.</li>
-            <li><strong>Multimodal & Bilingual Delivery:</strong> Generated paired executive posts, visual banners, and dual-speaker podcast digests in English and Arabic.</li>
-            <li><strong>Live Client Delivery:</strong> Deployed as a centralized marketing operations platform serving executive profiles and company pages.</li>
-          </ul>
-        `
-      },
-      {
-        title: "H. Limitations, Future Roadmap & Live Demo Connection",
-        icon: "fa-forward",
-        content: `
-          <p>Platform constraints and planned architectural improvements:</p>
-          <ul>
-            <li><strong>Video Reel Generation:</strong> Future integration will synthesize short 60-second video summaries using avatar synthesis (e.g. HeyGen / Runway) from podcast transcripts.</li>
-            <li><strong>Cross-Platform Syndication:</strong> Expanding publishing adapters beyond LinkedIn to X (Twitter) threads, Substack newsletters, and Medium publications.</li>
-            <li><strong>Interactive Demo Connection:</strong> Explore the platform in the <a href="../../demo-agent-orchestration.html" style="color:#60a5fa; text-decoration:underline; font-weight:600;">Interactive Multi-Agent Orchestrator Demo</a>, where you can inspect the 5 simulated agents, the 3-tier comment chain, and the podcast player.</li>
+            <li><strong>Django-Q2 instead of Celery:</strong> The queue runs on the relational database. That avoids operating Redis for a single publishing app, at the cost of less isolation than a dedicated broker.</li>
+            <li><strong>OpenAI TTS instead of a specialist voice vendor:</strong> Dual-speaker English and Arabic podcasts are stitched with PyDub from alternating TTS clips. The voices are consistent and priced per character; they are not a studio recording.</li>
+            <li><strong>Approval before publish:</strong> Weekly automation prepares drafts. A person still approves what goes to LinkedIn. The system does not claim unattended posting is risk-free.</li>
           </ul>
         `
       }
     ]
   }
+
 ];
 
 // Helper functions

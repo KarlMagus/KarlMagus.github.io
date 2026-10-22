@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Live Demo: AI Classroom Computer Vision & Telemetry | Ishraq Ahmad</title>
+  <title>Simulated Demo: Classroom Computer Vision | Ishraq Ahmad</title>
   <meta name="description"
     content="Browser-only classroom video analytics simulation using synthetic participants and illustrative activity telemetry." />
   <link rel="canonical" href="https://karlmagus.github.io/demo-classroom-cv.html" />
@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap"
     rel="stylesheet" />
 
   <!-- Font Awesome -->
@@ -30,22 +30,20 @@
 
   <style>
     :root {
-      --bg-page: #090d14;
-      --bg-surface: #0f172a;
-      --bg-card: #0d131f;
-      --bg-elevated: #162032;
-      --border-subtle: #1e293b;
-      --border-accent: rgba(59, 130, 246, 0.35);
-      --accent-bright: #3b82f6;
-      --accent-glow: rgba(59, 130, 246, 0.2);
-      --accent-emerald: #10b981;
-      --accent-rose: #f43f5e;
-      --accent-amber: #f59e0b;
-      --text-main: #f8fafc;
-      --text-secondary: #94a3b8;
-      --text-muted: #64748b;
-      --font-display: 'Geist', sans-serif;
-      --font-body: 'Inter', sans-serif;
+      --bg-page: #141210;
+      --bg-surface: #1c1916;
+      --bg-card: #1c1916;
+      --bg-elevated: #24201c;
+      --border-subtle: #2c2824;
+      --border-accent: rgba(196, 165, 116, 0.45);
+      --accent-bright: #c4a574;
+      --accent-glow: rgba(196, 165, 116, 0.16);
+      --accent-emerald: #c4a574;
+      --accent-rose: #c47a6a;
+      --accent-amber: #c4a574;
+      --text-main: #e7e2d9;
+      --text-secondary: #b7b0a4;
+      --text-muted: #8a8378;
       --font-code: 'JetBrains Mono', monospace;
       --radius-sm: 6px;
       --radius-md: 10px;
@@ -65,8 +63,7 @@
     .demo-header-section {
       padding: 3rem 0 2rem;
       border-bottom: 1px solid var(--border-subtle);
-      background: radial-gradient(circle at top right, rgba(16, 185, 129, 0.08) 0%, transparent 60%),
-        radial-gradient(circle at top left, rgba(59, 130, 246, 0.08) 0%, transparent 60%);
+      background: none;
     }
 
     .status-badge-cv {
@@ -74,12 +71,12 @@
       align-items: center;
       gap: 0.5rem;
       padding: 0.35rem 0.85rem;
-      background: rgba(16, 185, 129, 0.12);
-      border: 1px solid rgba(16, 185, 129, 0.35);
+      background: var(--accent-subtle);
+      border: 1px solid var(--accent);
       border-radius: 9999px;
       font-size: 0.78rem;
       font-weight: 600;
-      color: #34d399;
+      color: var(--accent-text);
       text-transform: uppercase;
       letter-spacing: 0.05em;
       margin-bottom: 1rem;
@@ -89,8 +86,8 @@
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background: #10b981;
-      box-shadow: 0 0 10px #10b981;
+      background: var(--accent);
+      box-shadow: none;
       animation: pulseGreen 2s infinite ease-in-out;
     }
 
@@ -209,7 +206,7 @@
       position: relative;
       width: 100%;
       aspect-ratio: 16 / 9;
-      background: #020617;
+      background: var(--bg-primary);
       border-radius: var(--radius-md);
       overflow: hidden;
       border: 1px solid #1e293b;
@@ -292,7 +289,7 @@
     }
 
     .jump-btn:hover {
-      background: rgba(59, 130, 246, 0.15);
+      background: var(--accent-subtle);
       border-color: var(--accent-bright);
       color: #fff;
     }
@@ -360,13 +357,13 @@
       font-family: var(--font-code);
       font-size: 1.35rem;
       font-weight: 700;
-      color: #34d399;
+      color: var(--accent-text);
     }
 
     .gauge-progress-bg {
       width: 100%;
       height: 10px;
-      background: #1e293b;
+      background: var(--border-subtle);
       border-radius: 9999px;
       overflow: hidden;
       margin-bottom: 0.75rem;
@@ -374,7 +371,7 @@
 
     .gauge-progress-fill {
       height: 100%;
-      background: linear-gradient(90deg, #3b82f6, #10b981);
+      background: #c4a574;
       width: 82%;
       transition: width 0.3s ease;
     }
@@ -382,7 +379,7 @@
     .formula-pill {
       font-family: var(--font-code);
       font-size: 0.72rem;
-      background: #020617;
+      background: var(--bg-primary);
       border: 1px solid #1e293b;
       border-radius: 4px;
       padding: 0.45rem 0.65rem;
@@ -399,18 +396,34 @@
 
     .roster-table th {
       text-align: left;
-      padding: 0.5rem 0.75rem;
+      padding: 0.45rem 0.4rem;
       border-bottom: 1px solid var(--border-subtle);
       color: var(--text-muted);
       font-size: 0.7rem;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
     }
 
     .roster-table td {
-      padding: 0.65rem 0.75rem;
+      padding: 0.55rem 0.4rem;
       border-bottom: 1px solid rgba(30, 41, 59, 0.5);
       color: var(--text-secondary);
+      white-space: nowrap;
+      vertical-align: middle;
+    }
+
+    .roster-name {
+      font-weight: 600;
+      color: #fff;
+      white-space: nowrap;
+    }
+
+    .roster-id {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      font-family: var(--font-code);
+      white-space: nowrap;
     }
 
     .badge-status {
@@ -418,12 +431,13 @@
       font-weight: 700;
       padding: 0.15rem 0.5rem;
       border-radius: 9999px;
+      white-space: nowrap;
     }
 
     .status-present {
-      background: rgba(16, 185, 129, 0.15);
-      color: #34d399;
-      border: 1px solid rgba(16, 185, 129, 0.3);
+      background: rgba(196, 165, 116, 0.12);
+      color: #c4a574;
+      border: 1px solid rgba(196, 165, 116, 0.4);
     }
 
     .status-alert {
@@ -440,13 +454,13 @@
 
     /* Code View Box */
     .code-box-mini {
-      background: #020617;
+      background: var(--bg-primary);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-sm);
       padding: 0.85rem;
       font-family: var(--font-code);
       font-size: 0.76rem;
-      color: #38bdf8;
+      color: var(--text-secondary);
       overflow-x: auto;
       max-height: 220px;
     }
@@ -471,7 +485,7 @@
         <!-- Demos Dropdown -->
         <div class="demos-dropdown" id="demosDropdown">
           <button class="demos-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
-            <i class="fa-solid fa-play" style="font-size: 0.7rem; color: #34d399;"></i>
+            <i class="fa-solid fa-play" style="font-size: 0.7rem; color: var(--accent-text);"></i>
             <span>Demos</span>
             <i class="fa-solid fa-chevron-down dd-chevron"></i>
           </button>
@@ -480,17 +494,17 @@
             <a href="demo-sql-finetuning.html" class="dd-item" role="menuitem">
               <span class="dd-item-icon live"><i class="fa-solid fa-brain"></i></span>
               <span class="dd-item-text"><span class="dd-item-title">01 · NL-to-SQL Fine-Tuning</span></span>
-              <span class="dd-item-badge dd-badge-live">Live</span>
+              <span class="dd-item-badge dd-badge-live">Simulated</span>
             </a>
             <a href="demo-etl-generator.html" class="dd-item" role="menuitem">
               <span class="dd-item-icon live"><i class="fa-solid fa-bolt"></i></span>
               <span class="dd-item-text"><span class="dd-item-title">03 · Schema & ETL Generator</span></span>
-              <span class="dd-item-badge dd-badge-live">Live</span>
+              <span class="dd-item-badge dd-badge-live">Simulated</span>
             </a>
             <a href="demo-classroom-cv.html" class="dd-item dd-active" role="menuitem">
               <span class="dd-item-icon live"><i class="fa-solid fa-video"></i></span>
               <span class="dd-item-text"><span class="dd-item-title">04 · Classroom CV Analytics</span></span>
-              <span class="dd-item-badge dd-badge-live">Live</span>
+              <span class="dd-item-badge dd-badge-live">Simulated</span>
             </a>
             <div class="dd-divider"></div>
             <div class="dd-section-label">Coming Soon</div>
@@ -565,7 +579,7 @@
                 <i class="fa-solid fa-video" style="color:var(--accent-bright);"></i>
                 Sample Video Analytics Canvas (Simulated Overlays)
               </h2>
-              <span style="font-size:0.75rem; font-family:var(--font-code); color:#34d399;">
+              <span style="font-size:0.75rem; font-family:var(--font-code); color:var(--accent-text);">
                 <i class="fa-solid fa-circle" style="font-size:0.5rem;"></i> SYNTHETIC SAMPLE STREAM
               </span>
             </div>
@@ -590,7 +604,7 @@
               <span style="font-size:0.75rem; color:var(--text-muted); align-self:center; font-weight:600;">TIMELINE
                 EVENTS:</span>
               <button class="jump-btn" onclick="seekTo(4)">
-                <i class="fa-solid fa-user-check" style="color:#10b981;"></i> 00:04 Baseline Attendance
+                <i class="fa-solid fa-user-check" style="color:var(--accent);"></i> 00:04 Baseline Attendance
               </button>
               <button class="jump-btn" onclick="seekTo(16)">
                 <i class="fa-solid fa-mobile-screen" style="color:#f43f5e;"></i> 00:16 Phone Distraction
@@ -599,7 +613,7 @@
                 <i class="fa-solid fa-bed" style="color:#f59e0b;"></i> 00:28 Fatigue / Sleep Detection
               </button>
               <button class="jump-btn" onclick="seekTo(38)">
-                <i class="fa-solid fa-hand" style="color:#10b981;"></i> 00:38 Hand Raised Gesture
+                <i class="fa-solid fa-hand" style="color:var(--accent);"></i> 00:38 Hand Raised Gesture
               </button>
             </div>
           </div>
@@ -610,7 +624,7 @@
               style="font-size:0.95rem; font-weight:600; color:#fff; margin:0 0 1rem; display:flex; align-items:center; gap:0.5rem;">
               <i class="fa-solid fa-code" style="color:var(--accent-bright);"></i>
               Synthetic Rekognition-Style Sample Payload (Demo ID: <span id="jobIdLabel"
-                style="font-family:var(--font-code); color:#38bdf8;">demo_sample_01</span>)
+                style="font-family:var(--font-code); color:var(--text-secondary);">demo_sample_01</span>)
             </h3>
             <pre class="code-box-mini" id="rekognitionJsonBox">Loading telemetry payload...</pre>
             <div style="display:flex; justify-content:flex-end; gap:0.75rem; margin-top:0.75rem;">
@@ -639,7 +653,7 @@
               <strong>Illustrative Demo Formula (Not Validated):</strong><br />
               Example score = [(Sample Signal &times; 0.6) + (Sample Gaze &times; 0.4) - (Sample Activity &times; 0.5)]
               &times; 100<br />
-              <span id="formulaValues" style="color:#38bdf8;">Current: [(0.90 &times; 0.6) + (0.95 &times; 0.4) - (0.15
+              <span id="formulaValues" style="color:#c4a574;">Current: [(0.90 &times; 0.6) + (0.95 &times; 0.4) - (0.15
                 &times; 0.5)] &times; 100 = 84.5</span>
             </div>
           </div>
@@ -648,7 +662,7 @@
           <div class="metric-card-group" style="margin-bottom:1.5rem;">
             <div class="metric-stat-box">
               <div class="stat-label-tiny">Present</div>
-              <div class="stat-val-big" style="color:#34d399;" id="presentCount">4</div>
+              <div class="stat-val-big" style="color:var(--accent-text);" id="presentCount">4</div>
             </div>
             <div class="metric-stat-box">
               <div class="stat-label-tiny">Distracted</div>
@@ -676,9 +690,9 @@
             <table class="roster-table">
               <thead>
                 <tr>
-                  <th>Demo Participant</th>
-                  <th>Sample Signal</th>
-                  <th>Illustrative Score</th>
+                  <th>Participant</th>
+                  <th>Signal</th>
+                  <th>Score</th>
                   <th>Status</th>
                 </tr>
               </thead>
@@ -708,10 +722,10 @@
     // Synthetic demonstration data; no AWS service or real participant data is used.
     // -------------------------------------------------------------
     const SESSION_STUDENTS = [
-      { id: "DEMO_01", name: "Sample Participant 01", x: 180, y: 160, w: 140, h: 180, baseEmotion: "Calm", tool: "Notebook" },
-      { id: "DEMO_02", name: "Sample Participant 02", x: 410, y: 150, w: 140, h: 180, baseEmotion: "Focused", tool: "Laptop" },
-      { id: "DEMO_03", name: "Sample Participant 03", x: 640, y: 160, w: 140, h: 180, baseEmotion: "Neutral", tool: "Notebook" },
-      { id: "DEMO_04", name: "Sample Participant 04", x: 840, y: 170, w: 130, h: 170, baseEmotion: "Focused", tool: "Pen" }
+      { id: "DEMO_01", name: "Sample Participant 01", x: 56, y: 168, w: 150, h: 175, baseEmotion: "Calm", tool: "Notebook" },
+      { id: "DEMO_02", name: "Sample Participant 02", x: 286, y: 158, w: 150, h: 175, baseEmotion: "Focused", tool: "Laptop" },
+      { id: "DEMO_03", name: "Sample Participant 03", x: 516, y: 168, w: 150, h: 175, baseEmotion: "Neutral", tool: "Notebook" },
+      { id: "DEMO_04", name: "Sample Participant 04", x: 746, y: 172, w: 150, h: 175, baseEmotion: "Focused", tool: "Pen" }
     ];
 
     let currentTime = 0;
@@ -813,14 +827,29 @@
       const isSleepingActive = time >= 26 && time <= 35;
       const isHandRaisedActive = time >= 36 && time <= 43;
 
+      function fillClippedText(text, rectX, rectY, rectW, rectH, font, color) {
+        ctx.save();
+        ctx.beginPath();
+        ctx.rect(rectX, rectY, rectW, rectH);
+        ctx.clip();
+        ctx.font = font;
+        ctx.fillStyle = color;
+        const pad = 6;
+        const measured = ctx.measureText(text).width;
+        const textX = measured > rectW - pad * 2
+          ? rectX + pad
+          : rectX + Math.max(pad, (rectW - measured) / 2);
+        ctx.fillText(text, textX, rectY + rectH - 6);
+        ctx.restore();
+      }
+
       // 2. Draw Students & Bounding Boxes
       SESSION_STUDENTS.forEach((stu, idx) => {
-        let boxColor = '#10b981'; // Green default (Focused)
-        let alertLabel = `DEMO: ${stu.name}`;
-        let subLabel = "SAMPLE SIGNAL (95.4%)";
+        let boxColor = '#10b981';
+        let subLabel = "SIGNAL 95%";
         let emotionColor = "#34d399";
+        const demoLabel = `DEMO ${String(idx + 1).padStart(2, "0")}`;
 
-        // Student Silhouette Avatar
         ctx.fillStyle = '#334155';
         ctx.beginPath();
         ctx.arc(stu.x + stu.w / 2, stu.y + 45, 38, 0, Math.PI * 2);
@@ -828,82 +857,72 @@
 
         ctx.fillStyle = '#1e293b';
         ctx.beginPath();
-        ctx.ellipse(stu.x + stu.w / 2, stu.y + 130, 55, 45, 0, 0, Math.PI * 2);
+        ctx.ellipse(stu.x + stu.w / 2, stu.y + 125, 50, 40, 0, 0, Math.PI * 2);
         ctx.fill();
 
-        // Scenario 1: sample phone-activity event on demo participant 4.
         if (idx === 3 && isPhoneActive) {
-          boxColor = '#f43f5e'; // Red
-          alertLabel = `ID: ${stu.id} • DISTRACTED`;
-          subLabel = "UNFOCUSED • PHONE DETECTED";
+          boxColor = '#f43f5e';
+          subLabel = "PHONE";
           emotionColor = "#fb7185";
 
-          // Phone Object Box
+          const phoneX = stu.x + 12;
+          const phoneY = stu.y + 108;
+          const phoneW = 56;
+          const phoneH = 48;
           ctx.strokeStyle = '#f43f5e';
           ctx.lineWidth = 2;
-          ctx.strokeRect(stu.x + 10, stu.y + 110, 35, 50);
+          ctx.strokeRect(phoneX, phoneY, phoneW, phoneH);
           ctx.fillStyle = 'rgba(244, 63, 94, 0.2)';
-          ctx.fillRect(stu.x + 10, stu.y + 110, 35, 50);
-          ctx.fillStyle = '#f43f5e';
-          ctx.font = '10px "JetBrains Mono"';
-          ctx.fillText("PHONE (91%)", stu.x + 10, stu.y + 105);
+          ctx.fillRect(phoneX, phoneY, phoneW, phoneH);
+          fillClippedText("PHONE", phoneX, phoneY, phoneW, 16, '10px "JetBrains Mono"', '#f43f5e');
         }
 
-        // Scenario 2: sample low-activity event on demo participant 3.
         if (idx === 2 && isSleepingActive) {
-          boxColor = '#f59e0b'; // Amber / Red Alert
-          alertLabel = `ID: ${stu.id} • FATIGUE / SLEEP`;
-          subLabel = "EYES CLOSED (88%) • ROLL 48°";
+          boxColor = '#f59e0b';
+          subLabel = "SLEEP";
           emotionColor = "#fbbf24";
         }
 
-        // Scenario 3: sample hand-raise event on demo participant 2.
         if (idx === 1 && isHandRaisedActive) {
           boxColor = '#10b981';
-          alertLabel = `ID: ${stu.id} • ${stu.name}`;
-          subLabel = "HAND RAISED • ENGAGED";
+          subLabel = "HAND";
 
-          // Hand Box above face
+          const handW = 56;
+          const handH = 40;
+          const handX = stu.x + stu.w - handW - 8;
+          const handY = stu.y + 8;
           ctx.strokeStyle = '#10b981';
           ctx.lineWidth = 2;
-          ctx.strokeRect(stu.x + stu.w - 20, stu.y - 45, 32, 45);
+          ctx.strokeRect(handX, handY, handW, handH);
           ctx.fillStyle = 'rgba(16, 185, 129, 0.2)';
-          ctx.fillRect(stu.x + stu.w - 20, stu.y - 45, 32, 45);
-          ctx.fillStyle = '#10b981';
-          ctx.font = '10px "JetBrains Mono"';
-          ctx.fillText("HAND RAISED", stu.x + stu.w - 35, stu.y - 50);
+          ctx.fillRect(handX, handY, handW, handH);
+          fillClippedText("HAND", handX, handY, handW, 16, '10px "JetBrains Mono"', '#10b981');
         }
 
-        // Draw a sample laptop object near demo participant 2.
         if (idx === 1) {
+          const laptopX = stu.x + 8;
+          const laptopY = stu.y + 128;
+          const laptopW = 72;
+          const laptopH = 36;
           ctx.strokeStyle = '#10b981';
           ctx.lineWidth = 1.5;
-          ctx.strokeRect(stu.x - 10, stu.y + 140, 80, 40);
+          ctx.strokeRect(laptopX, laptopY, laptopW, laptopH);
           ctx.fillStyle = 'rgba(16, 185, 129, 0.1)';
-          ctx.fillRect(stu.x - 10, stu.y + 140, 80, 40);
-          ctx.fillStyle = '#34d399';
-          ctx.font = '9px "JetBrains Mono"';
-          ctx.fillText("LAPTOP (94%)", stu.x - 10, stu.y + 135);
+          ctx.fillRect(laptopX, laptopY, laptopW, laptopH);
+          fillClippedText("LAPTOP", laptopX, laptopY, laptopW, 16, '9px "JetBrains Mono"', '#34d399');
         }
 
-        // Draw Student Bounding Box (Composited Overlay)
         ctx.strokeStyle = boxColor;
         ctx.lineWidth = 2.5;
         ctx.strokeRect(stu.x, stu.y, stu.w, stu.h);
 
-        // Header Pill
         ctx.fillStyle = boxColor;
         ctx.fillRect(stu.x, stu.y - 24, stu.w, 24);
-        ctx.fillStyle = '#000';
-        ctx.font = 'bold 11px "Geist", sans-serif';
-        ctx.fillText(alertLabel, stu.x + 6, stu.y - 8);
+        fillClippedText(demoLabel, stu.x, stu.y - 24, stu.w, 24, 'bold 11px "Geist", sans-serif', '#000');
 
-        // Subtitle Pill
         ctx.fillStyle = 'rgba(15, 23, 42, 0.85)';
         ctx.fillRect(stu.x, stu.y + stu.h, stu.w, 20);
-        ctx.fillStyle = emotionColor;
-        ctx.font = '10px "JetBrains Mono"';
-        ctx.fillText(subLabel, stu.x + 6, stu.y + stu.h + 14);
+        fillClippedText(subLabel, stu.x, stu.y + stu.h, stu.w, 20, '10px "JetBrains Mono"', emotionColor);
       });
 
       // Frame Timestamp Overlay in Top-Right
@@ -974,25 +993,26 @@
         if (idx === 3 && isPhoneActive) {
           emotion = "Distracted";
           stuScore = "42.0";
-          statusBadge = `<span class="badge-status status-alert">PHONE DETECTED</span>`;
+          statusBadge = `<span class="badge-status status-alert">PHONE</span>`;
         } else if (idx === 2 && isSleepingActive) {
           emotion = "Sleeping";
           stuScore = "38.5";
-          statusBadge = `<span class="badge-status status-alert">FATIGUE / SLEEP</span>`;
+          statusBadge = `<span class="badge-status status-alert">SLEEP</span>`;
         } else if (idx === 1 && isHandRaisedActive) {
           emotion = "Hand Raised";
           stuScore = "98.0";
-          statusBadge = `<span class="badge-status status-present">ACTIVE PARTICIPANT</span>`;
+          statusBadge = `<span class="badge-status status-present">RAISED</span>`;
         }
 
+        const participantLabel = `Participant ${String(idx + 1).padStart(2, "0")}`;
         return `
           <tr>
             <td>
-              <div style="font-weight:600; color:#fff;">${stu.name}</div>
-              <div style="font-size:0.7rem; color:var(--text-muted); font-family:var(--font-code);">${stu.id}</div>
+              <div class="roster-name">${participantLabel}</div>
+              <div class="roster-id">${stu.id}</div>
             </td>
             <td>${emotion}</td>
-            <td style="font-family:var(--font-code); font-weight:600; color:#38bdf8;">${stuScore}%</td>
+            <td style="font-family:var(--font-code); font-weight:600; color:#c4a574;">${stuScore}%</td>
             <td>${statusBadge}</td>
           </tr>
         `;
