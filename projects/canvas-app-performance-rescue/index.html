@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Operations App Speed &amp; Scale Rescue | Ishraq Ahmad</title>
+  <meta name="description" content="Audited and refactored an abandoned third-party inventory/operations Canvas App—eliminating delegation warnings, N+1 gallery lookups, and full-list client filtering to cut screen load time from ~9 seconds to ~3 seconds and restore staff adoption." />
+  <link rel="canonical" href="https://karlmagus.github.io/projects/canvas-app-performance-rescue/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Operations App Speed &amp; Scale Rescue | Ishraq Ahmad" />
+  <meta property="og:description" content="Audited and refactored an abandoned third-party inventory/operations Canvas App—eliminating delegation warnings, N+1 gallery lookups, and full-list client filtering to cut screen load time from ~9 seconds to ~3 seconds and restore staff adoption." />
+  <meta property="og:url" content="https://karlmagus.github.io/projects/canvas-app-performance-rescue/" />
+  <meta name="twitter:card" content="summary" />
+  <script defer src="../../js/analytics.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="../../style.css?v=20261116" />
+  <link rel="stylesheet" href="../../project-detail.css?v=20261116" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":"Operations App Speed & Scale Rescue","description":"Audited and refactored an abandoned third-party inventory/operations Canvas App—eliminating delegation warnings, N+1 gallery lookups, and full-list client filtering to cut screen load time from ~9 seconds to ~3 seconds and restore staff adoption.","url":"https://karlmagus.github.io/projects/canvas-app-performance-rescue/","creator":{"@type":"Person","name":"Ishraq Ahmad","url":"https://karlmagus.github.io/"},"keywords":"Power Apps (Canvas), Power Fx, SharePoint Delegation, ClearCollect"}</script>
+</head>
+<body class="project-detail-body">
+  <div class="tech-grid-bg" aria-hidden="true"></div>
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="../../index.html" class="logo"><span class="logo-text">Ishraq Ahmad</span></a>
+      <nav class="nav-links">
+        <a href="../../index.html#hero" class="nav-link">Home</a>
+        <a href="../../index.html#projects" class="nav-link active">Projects</a>
+        <a href="../../index.html#about" class="nav-link">About</a>
+        <a href="../../index.html#contact" class="nav-link">Contact</a>
+      </nav>
+      <div class="nav-cta">
+        <a href="../../index.html#projects" class="btn btn-sm btn-secondary"><i class="fa-solid fa-arrow-left"></i><span>All Projects</span></a>
+      </div>
+    </div>
+  </header>
+  <main class="project-detail-main">
+    <div class="container">
+      <nav class="detail-breadcrumb" aria-label="Breadcrumb">
+        <a href="../../index.html#projects"><i class="fa-solid fa-chevron-left"></i> Portfolio</a>
+        <span class="breadcrumb-separator">/</span>
+        <span class="breadcrumb-current">Power Platform</span>
+      </nav>
+      <header class="detail-hero">
+        <div class="detail-badges">
+          <span class="detail-tag">Project 11</span>
+          <span class="detail-tag">Power Platform</span>
+          <span class="detail-role">Power Platform Business Automation Specialist</span>
+        </div>
+        <h1 class="detail-title">Operations App Speed &amp; Scale Rescue</h1>
+        <p class="detail-subtitle">Audited and refactored an abandoned third-party inventory/operations Canvas App—eliminating delegation warnings, N+1 gallery lookups, and full-list client filtering to cut screen load time from ~9 seconds to ~3 seconds and restore staff adoption.</p>
+        
+        <div class="detail-meta-bar">
+          <div class="meta-col"><span class="meta-label">Focus</span><span class="meta-val">Delegation warning elimination, server-side Filter() before Search(), ClearCollect lookup caching, and UX reliability.</span></div>
+          <div class="meta-col"><span class="meta-label">Core Technologies</span><span class="meta-val">Power Apps (Canvas) · Power Fx · SharePoint Delegation · ClearCollect</span></div>
+          <div class="meta-col"><span class="meta-label">Project Type</span><span class="meta-val">Power Platform</span></div>
+        </div>
+      </header>
+      <div class="detail-content-layout">
+        <div class="detail-body-col">
+          
+    <div class="live-demo-banner">
+      <div class="live-demo-copy">
+        <div class="live-demo-kicker">
+          <span class="live-demo-dot"></span>
+          <span>Interactive Browser Demo · Simulated</span>
+        </div>
+        <h3>Interactive Canvas App Before/After Rescue Simulator</h3>
+        <p>Toggle Before vs. After refactoring to inspect the exact Power Fx formula changes that eliminated delegation warnings and cut load time from ~9s to ~3s.</p>
+      </div>
+      <a href="../../demo-power-platform.html#rescue" class="btn btn-primary">
+        <i class="fa-solid fa-play"></i>
+        <span>Launch Interactive Demo</span>
+      </a>
+    </div>
+  
+          
+    <div class="detail-star-card" style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 1.5rem; margin-bottom: 2rem;">
+      <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-text); font-weight: 700; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem;">
+        <i class="fa-solid fa-compass"></i>
+        <span>Summary</span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;">
+        <div style="background: var(--bg-primary); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 1rem;">
+          <div style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">
+            <i class="fa-solid fa-building" style="color: var(--accent-bright);"></i> Situation
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin: 0;">A client had inherited a third-party inventory/operations Canvas App that took ~9 seconds to load, missed older records behind silent delegation limits, and frustrated staff enough that they abandoned it for spreadsheets.</p>
+        </div>
+        <div style="background: var(--bg-primary); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 1rem;">
+          <div style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">
+            <i class="fa-solid fa-list-check" style="color: var(--accent-bright);"></i> Task
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin: 0;">Diagnose the root causes behind slow rendering and missing records, eliminate delegation issues, and restore a fast, reliable user experience without rebuilding from scratch unless necessary.</p>
+        </div>
+        <div style="background: var(--bg-primary); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 1rem;">
+          <div style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">
+            <i class="fa-solid fa-brain" style="color: var(--accent-bright);"></i> Action
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin: 0;">Replaced full-list client filtering with delegable server-side Filter() on indexed SharePoint columns before local Search(), cached small static lookup lists once via Concurrent(ClearCollect(...)) instead of N+1 per-row LookUp() calls, removed redundant OnVisible reloads, reduced control bloat, and added explicit loading/error states.</p>
+        </div>
+        <div style="background: var(--bg-primary); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 1rem;">
+          <div style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">
+            <i class="fa-solid fa-chart-line" style="color: var(--accent-bright);"></i> Result
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin: 0;">Dropped screen load time from ~9s to ~3s (~67% faster), reduced delegation warnings to zero, stopped silent row truncation, and brought daily staff adoption back into the app.</p>
+        </div>
+      </div>
+    </div>
+  
+          
+        <section class="detail-section">
+          <h2 class="detail-section-title">
+            <i class="fa-solid fa-magnifying-glass-chart"></i>
+            <span>Root-Cause Audit of the Abandoned App</span>
+          </h2>
+          <div class="detail-prose">
+            
+          <p>The legacy app failed users not because SharePoint could not handle the data, but because every screen load forced client memory to pull and recalculate too much at once:</p>
+          <ul>
+            <li><strong>Ignored Delegation Warnings:</strong> Non-delegable <code>Search(AddColumns(...))</code> formulas silently capped SharePoint results at 500 rows and hid older inventory items.</li>
+            <li><strong>N+1 Per-Row Network Calls:</strong> Each rendered gallery card fired repeated <code>LookUp()</code> queries against <code>Departments</code> and <code>Employees</code>.</li>
+            <li><strong>Bloated OnVisible &amp; Controls:</strong> Navigation triggered redundant data refreshes and rendered secondary admin tables upfront without loading indicators.</li>
+          </ul>
+        
+          </div>
+        </section>
+      
+        <section class="detail-section">
+          <h2 class="detail-section-title">
+            <i class="fa-solid fa-bolt"></i>
+            <span>Delegation-Safe Power Fx & Caching Refactor</span>
+          </h2>
+          <div class="detail-prose">
+            
+          <p>Targeted Power Fx changes delivered immediate speed and data completeness gains:</p>
+          <ul>
+            <li><strong>Server-Side Filter() First:</strong> Wrapped indexed equality/date filters (<code>Status</code>, <code>Created</code>) inside a <code>With()</code> block pushed to SharePoint before running text search on the small returned slice.</li>
+            <li><strong>One-Time Lookup Caching:</strong> Loaded static reference tables once at startup using <code>Concurrent(ClearCollect(...))</code> so gallery labels resolve from RAM in under a millisecond.</li>
+            <li><strong>Lean Screens &amp; Explicit States:</strong> Trimmed control count, deferred secondary panels until selected, and added clean loading spinners plus user-friendly error banners.</li>
+          </ul>
+        
+          </div>
+        </section>
+      
+        <section class="detail-section">
+          <h2 class="detail-section-title">
+            <i class="fa-solid fa-gauge-high"></i>
+            <span>Verified Impact & Before/After Code Simulator</span>
+          </h2>
+          <div class="detail-prose">
+            
+          <p>Deployed cleanly through <code>Dev &rarr; Test &rarr; Prod</code> Managed Solutions with column-change safety checks:</p>
+          <ul>
+            <li><strong>Outcome:</strong> Screen load dropped from <code>~9 seconds</code> to <code>~3 seconds</code> with <code>0</code> delegation warnings, restoring trust and day-to-day usage across operations staff.</li>
+            <li><strong>Interactive Demo:</strong> Compare the exact Before vs. After Power Fx code and KPI breakdown in the <a href="../../demo-power-platform.html#rescue" style="color:var(--accent-bright); text-decoration:underline; font-weight:600;">Canvas App Rescue Simulator</a>.</li>
+          </ul>
+        
+          </div>
+        </section>
+      
+        </div>
+        <aside class="detail-sidebar-col">
+          <div class="sidebar-card">
+            <h2 class="sidebar-heading"><i class="fa-solid fa-layer-group"></i> Architecture Stack</h2>
+            <div class="sidebar-tags"><span class="sidebar-tag">Microsoft Power Apps (Canvas)</span><span class="sidebar-tag">Power Fx</span><span class="sidebar-tag">SharePoint Delegation &amp; Indexing</span><span class="sidebar-tag">Concurrent() / ClearCollect()</span><span class="sidebar-tag">Gallery Optimization</span><span class="sidebar-tag">Managed Solutions ALM</span></div>
+            <div class="sidebar-divider"></div>
+            <h2 class="sidebar-heading"><i class="fa-solid fa-chart-line"></i> Engineering Highlights</h2>
+            <ul class="sidebar-highlights-list"><li>Cut initial screen load time by ~67%—from ~9 seconds down to ~3 seconds</li><li>Resolved ignored Power Apps delegation warnings that silently truncated records past 500/2,000 rows</li><li>Replaced non-delegable Search(AddColumns(...)) patterns with server-side Filter() on indexed SharePoint columns first</li><li>Eliminated N+1 per-row LookUp() network calls inside gallery cards using one-time Concurrent(ClearCollect(...)) caching</li><li>Trimmed home screen control count, deferred secondary panels, and added explicit loading spinners and error states</li></ul>
+            <div class="sidebar-divider"></div>
+            
+            
+    <a href="../../demo-power-platform.html#rescue" class="btn btn-primary btn-block" style="margin-bottom: 0.75rem;">
+      <i class="fa-solid fa-play"></i>
+      <span>Open Interactive Demo</span>
+    </a>
+  
+            <a href="../../index.html#contact" class="btn btn-secondary btn-block"><span>Discuss Similar Work</span></a>
+          </div>
+        </aside>
+      </div>
+      <nav class="detail-footer-nav" aria-label="Project navigation">
+        <a href="../dataverse-hr-onboarding-tracker/" class="nav-project-btn"><i class="fa-solid fa-arrow-left"></i><span><span class="nav-hint">Previous Project</span><span class="nav-name">Employee Onboarding Tracker</span></span></a>
+        <a href="../../index.html#projects" class="nav-all-btn"><i class="fa-solid fa-grid-2"></i><span>View All 12 Projects</span></a>
+        <a href="../copilot-studio-hr-it-policy-bot/" class="nav-project-btn"><span><span class="nav-hint">Next Project</span><span class="nav-name">HR &amp; IT Service Desk Policy Bot</span></span><i class="fa-solid fa-arrow-right"></i></a>
+      </nav>
+    </div>
+  </main>
+  <footer class="site-footer"><div class="container footer-bottom"><p>&copy; 2026 Ishraq Ahmad. All rights reserved.</p></div></footer>
+</body>
+</html>

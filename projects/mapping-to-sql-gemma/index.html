@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Automated SQL Generation System | Ishraq Ahmad</title>
-  <meta name="description" content="A local-first language-model workflow that turns spreadsheet mapping rules into structured SQL and JSON, with fine-tuning, input normalization, and validation." />
+  <title>Automated SQL Generation Tool | Ishraq Ahmad</title>
+  <meta name="description" content="Eliminates days of manual query writing during banking data migrations by letting analysts upload Excel mapping sheets to generate ANSI SQL locally on a single GPU with full on-premise privacy." />
   <link rel="canonical" href="https://karlmagus.github.io/projects/mapping-to-sql-gemma/" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="Automated SQL Generation System | Ishraq Ahmad" />
-  <meta property="og:description" content="A local-first language-model workflow that turns spreadsheet mapping rules into structured SQL and JSON, with fine-tuning, input normalization, and validation." />
+  <meta property="og:title" content="Automated SQL Generation Tool | Ishraq Ahmad" />
+  <meta property="og:description" content="Eliminates days of manual query writing during banking data migrations by letting analysts upload Excel mapping sheets to generate ANSI SQL locally on a single GPU with full on-premise privacy." />
   <meta property="og:url" content="https://karlmagus.github.io/projects/mapping-to-sql-gemma/" />
   <meta name="twitter:card" content="summary" />
   <script defer src="../../js/analytics.js"></script>
@@ -16,9 +16,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="../../style.css" />
-  <link rel="stylesheet" href="../../project-detail.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":"Automated SQL Generation System","description":"A local-first language-model workflow that turns spreadsheet mapping rules into structured SQL and JSON, with fine-tuning, input normalization, and validation.","url":"https://karlmagus.github.io/projects/mapping-to-sql-gemma/","creator":{"@type":"Person","name":"Ishraq Ahmad","url":"https://karlmagus.github.io/"},"keywords":"Mistral, QLoRA, PyTorch, Python API, ANSI SQL"}</script>
+  <link rel="stylesheet" href="../../style.css?v=20261116" />
+  <link rel="stylesheet" href="../../project-detail.css?v=20261116" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":"Automated SQL Generation Tool","description":"Eliminates days of manual query writing during banking data migrations by letting analysts upload Excel mapping sheets to generate ANSI SQL locally on a single GPU with full on-premise privacy.","url":"https://karlmagus.github.io/projects/mapping-to-sql-gemma/","creator":{"@type":"Person","name":"Ishraq Ahmad","url":"https://karlmagus.github.io/"},"keywords":"Mistral-7B, 8-bit LoRA, PyTorch, FastAPI, ANSI SQL"}</script>
 </head>
 <body class="project-detail-body">
   <div class="tech-grid-bg" aria-hidden="true"></div>
@@ -49,11 +49,12 @@
           <span class="detail-tag">Fine-tuning</span>
           <span class="detail-role">Lead AI Engineer / MLOps</span>
         </div>
-        <h1 class="detail-title">Automated SQL Generation System</h1>
-        <p class="detail-subtitle">A local-first language-model workflow that turns spreadsheet mapping rules into structured SQL and JSON, with fine-tuning, input normalization, and validation.</p>
+        <h1 class="detail-title">Automated SQL Generation Tool</h1>
+        <p class="detail-subtitle">Eliminates days of manual query writing during banking data migrations by letting analysts upload Excel mapping sheets to generate ANSI SQL locally on a single GPU with full on-premise privacy.</p>
+        
         <div class="detail-meta-bar">
-          <div class="meta-col"><span class="meta-label">Focus</span><span class="meta-val">Model adaptation, preprocessing, structured generation, and local API serving.</span></div>
-          <div class="meta-col"><span class="meta-label">Core Technologies</span><span class="meta-val">Mistral · QLoRA · PyTorch · Python API</span></div>
+          <div class="meta-col"><span class="meta-label">Focus</span><span class="meta-val">Self-serve mapping-to-SQL workflow, pre-inference schema &amp; rule normalization, on-premise 8-bit LoRA serving, and live handover.</span></div>
+          <div class="meta-col"><span class="meta-label">Core Technologies</span><span class="meta-val">Mistral-7B · 8-bit LoRA · PyTorch · FastAPI</span></div>
           <div class="meta-col"><span class="meta-label">Project Type</span><span class="meta-val">Fine-tuning</span></div>
         </div>
       </header>
@@ -67,7 +68,7 @@
           <span>Interactive Browser Demo · Simulated</span>
         </div>
         <h3>Interactive Model Evaluation &amp; Fine-Tuning Inspector</h3>
-        <p>Inspect step-by-step training loss curves (1.049 → 0.184), compare base vs fine-tuned sample SQL generation, and test typo-normalization in an interactive browser simulation.</p>
+        <p>Inspect step-by-step training loss curves (1.049 → 0.184), compare base vs. fine-tuned sample SQL generation, and test pre-inference schema and mapping rule normalization in an interactive browser simulation.</p>
       </div>
       <a href="../../demo-sql-finetuning.html" class="btn btn-primary">
         <i class="fa-solid fa-play"></i>
@@ -86,25 +87,25 @@
           <div style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">
             <i class="fa-solid fa-building" style="color: var(--accent-bright);"></i> Situation
           </div>
-          <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin: 0;">Enterprise migrations require converting messy source-to-target mapping sheets into SQL. Off-the-shelf models repeatedly hallucinated join aliases and failed to handle null-fallback expressions.</p>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin: 0;">Banking and enterprise migration teams spent days manually coding multi-table SQL queries from messy analyst Excel mapping sheets, while strict privacy rules banned sending schemas to external cloud APIs.</p>
         </div>
         <div style="background: var(--bg-primary); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 1rem;">
           <div style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">
             <i class="fa-solid fa-list-check" style="color: var(--accent-bright);"></i> Task
           </div>
-          <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin: 0;">Fine-tune an open-source, air-gappable foundation model on 900 enterprise mapping pairs to synthesize deterministic ANSI SQL with consistent schema structure and zero cloud data leaks.</p>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin: 0;">Build an on-premise tool that lets analysts upload mapping sheets and generate valid ANSI SQL inside JSON on existing single-GPU hardware without external cloud calls.</p>
         </div>
         <div style="background: var(--bg-primary); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 1rem;">
           <div style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">
             <i class="fa-solid fa-brain" style="color: var(--accent-bright);"></i> Action
           </div>
-          <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin: 0;">Evaluated Google Gemma 2B baseline before adapting Mistral-7B-Instruct-v0.3 with 8-bit quantized LoRA (r=8, alpha=16); built an automated typo-healing preprocessor; served via Python API.</p>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin: 0;">Benchmarked Google Gemma 2B on 50 samples, upgraded to Mistral-7B-Instruct-v0.3 on 900 pairs with 8-bit quantized LoRA (r=8, alpha=16) under 8.5 GB VRAM, added pre-inference mapping rule normalization and join-key inference, and deployed an on-premise self-service web portal.</p>
         </div>
         <div style="background: var(--bg-primary); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 1rem;">
           <div style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">
             <i class="fa-solid fa-chart-line" style="color: var(--accent-bright);"></i> Result
           </div>
-          <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin: 0;">Training loss dropped from 1.049 to 0.184 over 700 steps (minimum 0.173 at step 500); verified syntactically valid ANSI SQL across client test datasets; delivered valuation report with sign-off.</p>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin: 0;">Replaced slow manual query writing with a local self-serve upload workflow, dropped training loss from 1.049 to 0.184 (min 0.173 at step 500), and handed over model weights and setup documentation via live walkthrough.</p>
         </div>
       </div>
     </div>
@@ -113,11 +114,11 @@
         <section class="detail-section">
           <h2 class="detail-section-title">
             <i class="fa-solid fa-bullseye"></i>
-            <span>System Overview & Privacy-Constrained Scope</span>
+            <span>Business Workflow & On-Premise Need</span>
           </h2>
           <div class="detail-prose">
             
-          <p>Enterprise data warehouse modernizations require converting business analyst mapping workbooks into production SQL queries. Because financial and regulatory policies strictly prohibit sending proprietary banking schemas to multi-tenant cloud APIs, the objective was building a self-contained, air-gappable neural compiler running on modest commodity GPUs (8.5 GB VRAM budget) for deterministic ANSI SQL synthesis.</p>
+          <p>During banking data warehouse migrations, business analysts document source-to-target rules in Excel and CSV spreadsheets, leaving data engineers with days of repetitive SQL translation. Because strict financial privacy policies prohibited sending proprietary table schemas to cloud LLM APIs, the client needed a self-serve application running completely inside their own environment on modest GPU hardware (8.5 GB VRAM).</p>
         
           </div>
         </section>
@@ -125,15 +126,15 @@
         <section class="detail-section">
           <h2 class="detail-section-title">
             <i class="fa-solid fa-brain"></i>
-            <span>Quantized LoRA Adaptation & Preprocessing</span>
+            <span>Iterative Model Adaptation & Pre-Inference Normalization</span>
           </h2>
           <div class="detail-prose">
             
-          <p>Base foundation models failed to resolve complex joins or suffered prompt truncation. The fine-tuning and preprocessing pipeline was engineered with:</p>
+          <p>After benchmarking Google Gemma 2B on 50 initial samples showed struggles with long multi-table joins, the system was upgraded and delivered using:</p>
           <ul>
-            <li><strong>8-Bit Quantized LoRA:</strong> Adapted Mistral-7B-Instruct-v0.3 using bitsandbytes and Hugging Face SFTTrainer (rank r=8, alpha=16) targeting attention projections (q_proj, k_proj, v_proj, o_proj) within 8.5 GB peak VRAM.</li>
-            <li><strong>Dataset Curation:</strong> Built 900 verified enterprise mapping-to-SQL JSONL pairs enforcing explicit table-column relationship prompts.</li>
-            <li><strong>Heuristic Typo Resilience:</strong> Pre-tokenization normalization algorithm resolving common analyst misspellings (e.g. COLEASE to COALESCE, LOWWER to LOWER) and inferring required foreign keys from join conditions.</li>
+            <li><strong>8-Bit Quantized LoRA Adaptation:</strong> Fine-tuned Mistral-7B-Instruct-v0.3 on 900 JSONL mapping-to-SQL pairs (rank r=8, alpha=16 on attention projections) via Hugging Face SFTTrainer within an 8.5 GB peak VRAM budget (T4 / RTX 3090).</li>
+            <li><strong>Pre-Inference Mapping &amp; Join Normalization:</strong> Standardizes informal analyst transformation shorthand into canonical SQL expressions and automatically infers missing foreign-key join relationships from table schemas before inference.</li>
+            <li><strong>Dialect-Safe JSON Output:</strong> Generates structured JSON wrapping ANSI SQL with INNER, LEFT, and FULL/RIGHT OUTER joins, COALESCE null-fallback logic, and deterministic table aliasing.</li>
           </ul>
         
           </div>
@@ -142,16 +143,16 @@
         <section class="detail-section">
           <h2 class="detail-section-title">
             <i class="fa-solid fa-server"></i>
-            <span>System Architecture, Evaluation & Demo</span>
+            <span>Self-Serve Delivery, Handover & Demo</span>
           </h2>
           <div class="detail-prose">
             
-          <p>Production engineering and verification highlights:</p>
+          <p>Deployment and client enablement highlights:</p>
           <ul>
-            <li><strong>Local API Serving:</strong> Packaged a FastAPI service with a local web UI so the client could evaluate generations without sending schemas to a multi-tenant cloud API.</li>
-            <li><strong>Loss Convergence:</strong> Training cross-entropy loss decreased from 1.049 at step 10 to 0.184 at step 700 (minimum 0.173 at step 500) without general syntax degradation.</li>
-            <li><strong>Dialect & Join Verification:</strong> Checked syntactic validity across client test sets, including sequential alias projection (t1..tN).</li>
-            <li><strong>Interactive Demo:</strong> Inspect training loss curves, compare base vs. fine-tuned SQL generation, and test typo normalization in the <a href="../../demo-sql-finetuning.html" style="color:var(--accent-bright); text-decoration:underline; font-weight:600;">Interactive SQL Fine-Tuning Demo</a>.</li>
+            <li><strong>On-Premise Self-Service Web Portal:</strong> Delivered a browser-based FastAPI upload portal where analysts drop in Excel/CSV mapping workbooks, inspect generated SQL and JSON manifests, and export production queries with zero external cloud exposure.</li>
+            <li><strong>Verified Convergence:</strong> Cross-entropy loss decreased from 1.049 (step 10) to 0.184 (step 700), with a minimum of 0.173 at step 500.</li>
+            <li><strong>Live Handover:</strong> Ran a live walkthrough demonstrating upload-to-SQL workflows and delivered weights, source repository, and setup runbooks to the client team.</li>
+            <li><strong>Interactive Demo:</strong> Inspect loss curves, sample SQL outputs, and pre-inference rule normalization in the <a href="../../demo-sql-finetuning.html" style="color:var(--accent-bright); text-decoration:underline; font-weight:600;">Interactive SQL Fine-Tuning Demo</a>.</li>
           </ul>
         
           </div>
@@ -161,15 +162,16 @@
         <aside class="detail-sidebar-col">
           <div class="sidebar-card">
             <h2 class="sidebar-heading"><i class="fa-solid fa-layer-group"></i> Architecture Stack</h2>
-            <div class="sidebar-tags"><span class="sidebar-tag">Mistral-7B-Instruct-v0.3</span><span class="sidebar-tag">PEFT / LoRA</span><span class="sidebar-tag">bitsandbytes (8-bit)</span><span class="sidebar-tag">PyTorch</span><span class="sidebar-tag">HuggingFace SFTTrainer</span><span class="sidebar-tag">Transformers</span><span class="sidebar-tag">FastAPI</span><span class="sidebar-tag">JSONL Dataset (900 pairs)</span><span class="sidebar-tag">ANSI SQL</span></div>
+            <div class="sidebar-tags"><span class="sidebar-tag">Mistral-7B-Instruct-v0.3</span><span class="sidebar-tag">PEFT / 8-bit LoRA</span><span class="sidebar-tag">bitsandbytes (8-bit)</span><span class="sidebar-tag">PyTorch</span><span class="sidebar-tag">HuggingFace SFTTrainer</span><span class="sidebar-tag">FastAPI</span><span class="sidebar-tag">Uvicorn</span><span class="sidebar-tag">Jinja2</span><span class="sidebar-tag">ANSI SQL</span></div>
             <div class="sidebar-divider"></div>
             <h2 class="sidebar-heading"><i class="fa-solid fa-chart-line"></i> Engineering Highlights</h2>
-            <ul class="sidebar-highlights-list"><li>Fine-tuned Mistral-7B-Instruct-v0.3 on 900 curated JSONL enterprise pairs with 8-bit QLoRA (r=8, alpha=16)</li><li>Reduced cross-entropy training loss from 1.049 (step 10) to 0.184 (step 700), with a minimum of 0.173 (step 500)</li><li>Engineered autonomous typo-healing: semantically resolves misspellings like &#39;COLEASE&#39; to &#39;COALESCE&#39;</li><li>Constrained training &amp; inference VRAM to 8.5 GB for cost-effective deployment on commodity GPUs (NVIDIA T4 / RTX 3090)</li><li>Automated foreign key extraction and join alias projection (t1...tN) without cloud metadata leakage</li></ul>
+            <ul class="sidebar-highlights-list"><li>Self-serve FastAPI + web UI workflow: analysts upload Excel/CSV mapping sheets and export valid JSON/SQL locally</li><li>Fine-tuned Mistral-7B-Instruct-v0.3 on 900 JSONL pairs using 8-bit quantized LoRA (r=8, alpha=16)</li><li>Fits inside an 8.5 GB peak VRAM budget so banking schemas run on a single local GPU with $0 cloud API fees</li><li>Pre-inference rule normalizer standardizes informal analyst mapping shorthand and resolves implicit foreign-key join paths before model generation</li><li>Live walkthrough, weights, and setup guide handed over so the client team operates and maintains it independently</li></ul>
             <div class="sidebar-divider"></div>
             
-    <a href="../../demo-sql-finetuning.html" class="btn btn-primary btn-block">
+            
+    <a href="../../demo-sql-finetuning.html" class="btn btn-primary btn-block" style="margin-bottom: 0.75rem;">
+      <i class="fa-solid fa-play"></i>
       <span>Open Interactive Demo</span>
-      <i class="fa-solid fa-arrow-up-right-from-square"></i>
     </a>
   
             <a href="../../index.html#contact" class="btn btn-secondary btn-block"><span>Discuss Similar Work</span></a>
@@ -177,9 +179,9 @@
         </aside>
       </div>
       <nav class="detail-footer-nav" aria-label="Project navigation">
-        <a href="../autonomous-social-content-engine/" class="nav-project-btn"><i class="fa-solid fa-arrow-left"></i><span><span class="nav-hint">Previous Project</span><span class="nav-name">LinkedIn Content Operations Platform</span></span></a>
-        <a href="../../index.html#projects" class="nav-all-btn"><i class="fa-solid fa-grid-2"></i><span>View All Projects</span></a>
-        <a href="../enterprise-json-query-enhancer/" class="nav-project-btn"><span><span class="nav-hint">Next Project</span><span class="nav-name">AI-Powered Query Automation</span></span><i class="fa-solid fa-arrow-right"></i></a>
+        <a href="../copilot-studio-hr-it-policy-bot/" class="nav-project-btn"><i class="fa-solid fa-arrow-left"></i><span><span class="nav-hint">Previous Project</span><span class="nav-name">HR &amp; IT Service Desk Policy Bot</span></span></a>
+        <a href="../../index.html#projects" class="nav-all-btn"><i class="fa-solid fa-grid-2"></i><span>View All 12 Projects</span></a>
+        <a href="../enterprise-json-query-enhancer/" class="nav-project-btn"><span><span class="nav-hint">Next Project</span><span class="nav-name">Automated Data Pipeline Builder</span></span><i class="fa-solid fa-arrow-right"></i></a>
       </nav>
     </div>
   </main>
