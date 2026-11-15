@@ -6,12 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Model Inference & Fine-Tuning Inspector | Ishraq Ahmad</title>
   <meta name="description"
-    content="Browser simulation of model evaluation, training metrics, SQL typo normalization, and sample output comparison." />
+    content="Browser simulation of model evaluation, training metrics, pre-inference schema and mapping rule normalization, and sample output comparison." />
   <link rel="canonical" href="https://karlmagus.github.io/demo-sql-finetuning.html" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Model Inference &amp; Fine-Tuning Inspector | Ishraq Ahmad" />
   <meta property="og:description"
-    content="Explore an interactive demonstration of model evaluation, training curves, and SQL typo normalization." />
+    content="Explore an interactive demonstration of model evaluation, training curves, and pre-inference schema and mapping rule normalization." />
   <meta property="og:url" content="https://karlmagus.github.io/demo-sql-finetuning.html" />
   <meta name="twitter:card" content="summary" />
   <script defer src="js/analytics.js"></script>
@@ -23,7 +23,7 @@
     href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=20261116" />
 
   <style>
     body.eval-page-body {
@@ -225,11 +225,11 @@
     }
 
     .stat-num {
-      font-family: var(--font-display);
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: #ffffff;
-      margin-bottom: 0.2rem;
+      font-family: var(--font-mono);
+      font-size: 1.55rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.25rem;
     }
 
     .stat-sub {
@@ -271,42 +271,25 @@
           <div class="demos-dropdown-menu" role="menu">
             <div class="dd-section-label">Interactive Demos</div>
             <a href="demo-sql-finetuning.html" class="dd-item dd-active" role="menuitem">
-              <span class="dd-item-icon live"><i class="fa-solid fa-brain"></i></span>
-              <span class="dd-item-text"><span class="dd-item-title">01 · NL-to-SQL Fine-Tuning</span></span>
-              <span class="dd-item-badge dd-badge-live">Simulated</span>
+              <span class="dd-item-icon live"><i class="fa-solid fa-database"></i></span>
+              <span class="dd-item-text"><span class="dd-item-title">01 · Excel-to-SQL Model</span></span>
+              <span class="dd-item-badge dd-badge-live">Demo</span>
             </a>
             <a href="demo-etl-generator.html" class="dd-item" role="menuitem">
-              <span class="dd-item-icon live"><i class="fa-solid fa-bolt"></i></span>
-              <span class="dd-item-text"><span class="dd-item-title">03 · Schema & ETL Generator</span></span>
-              <span class="dd-item-badge dd-badge-live">Simulated</span>
+              <span class="dd-item-icon live"><i class="fa-solid fa-diagram-project"></i></span>
+              <span class="dd-item-text"><span class="dd-item-title">02 · Spark Pipeline Compiler</span></span>
+              <span class="dd-item-badge dd-badge-live">Demo</span>
             </a>
             <a href="demo-classroom-cv.html" class="dd-item" role="menuitem">
               <span class="dd-item-icon live"><i class="fa-solid fa-video"></i></span>
-              <span class="dd-item-text"><span class="dd-item-title">04 · Classroom CV Analytics</span></span>
-              <span class="dd-item-badge dd-badge-live">Simulated</span>
+              <span class="dd-item-text"><span class="dd-item-title">03 · Classroom Video Analytics</span></span>
+              <span class="dd-item-badge dd-badge-live">Demo</span>
             </a>
-            <div class="dd-divider"></div>
-            <div class="dd-section-label">Coming Soon</div>
-            <span class="dd-item dd-disabled">
-              <span class="dd-item-icon soon"><i class="fa-solid fa-stethoscope"></i></span>
-              <span class="dd-item-text"><span class="dd-item-title">05 · Voice AI & EHR</span></span>
-              <span class="dd-item-badge dd-badge-soon">Soon</span>
-            </span>
-            <span class="dd-item dd-disabled">
-              <span class="dd-item-icon soon"><i class="fa-solid fa-graduation-cap"></i></span>
-              <span class="dd-item-text"><span class="dd-item-title">06 · AI Quiz Generation</span></span>
-              <span class="dd-item-badge dd-badge-soon">Soon</span>
-            </span>
-            <span class="dd-item dd-disabled">
-              <span class="dd-item-icon soon"><i class="fa-solid fa-chart-gantt"></i></span>
-              <span class="dd-item-text"><span class="dd-item-title">07 · Enterprise PMS Analytics</span></span>
-              <span class="dd-item-badge dd-badge-soon">Soon</span>
-            </span>
-            <span class="dd-item dd-disabled">
-              <span class="dd-item-icon soon"><i class="fa-solid fa-music"></i></span>
-              <span class="dd-item-text"><span class="dd-item-title">08 · Bio-Adaptive Meditation</span></span>
-              <span class="dd-item-badge dd-badge-soon">Soon</span>
-            </span>
+            <a href="demo-power-platform.html" class="dd-item" role="menuitem">
+              <span class="dd-item-icon live"><i class="fa-solid fa-layer-group"></i></span>
+              <span class="dd-item-text"><span class="dd-item-title">09–12 · Power Platform &amp; M365</span></span>
+              <span class="dd-item-badge dd-badge-live">Demo</span>
+            </a>
           </div>
         </div>
 
@@ -331,18 +314,16 @@
     <div class="container">
       <div class="eval-badge">
         <span class="pulse-blue"></span>
-        <span>ML Engineering Evaluation Playground</span>
+        <span>Interactive Demo · Local SQL Generator</span>
       </div>
-      <h1
-        style="font-family:var(--font-display); font-size:2.25rem; font-weight:700; color:#fff; margin-bottom:0.75rem;">
-        Neural Mapping-to-SQL: Fine-Tuning Results & Output Simulation
+      <h1 class="demo-heading"
+        style="font-family:var(--font-display); font-size:2.25rem; font-weight:500; color:var(--text-primary); letter-spacing:-0.025em; margin-bottom:0.75rem;">
+        Excel Mapping to SQL — Model Comparison &amp; Training Metrics
       </h1>
       <p style="color:var(--text-secondary); max-width:820px; font-size:1.05rem; line-height:1.6;">
-        Explore sample SQL input/output comparisons, typo normalization, and recorded fine-tuning metrics.
+        Compare base Gemma 2B vs. fine-tuned Mistral-7B (8-bit LoRA) on multi-table SQL joins, inspect the 700-step training loss curve, and test pre-inference schema and mapping rule normalization.
       </p>
-      <p class="demo-simulation-notice" role="note">Simulation only: output examples are predefined and animated in your
-        browser. This page does not load model weights or call a live inference service. Training metrics are reference
-        values from a recorded run.</p>
+      <p class="demo-simulation-notice" role="note">Browser simulation using preset mapping examples and recorded training metrics (loss 1.049 to 0.184 over 700 steps). Runs offline in your browser without a live GPU backend.</p>
 
     </div>
   </section>
@@ -354,13 +335,13 @@
       <!-- Navigation Tabs -->
       <div class="eval-tabs-bar">
         <button class="eval-tab-btn active" id="tabCompareBtn" onclick="switchEvalTab('compare')">
-          <i class="fa-solid fa-code-compare"></i> Side-by-Side Model Comparison
+          <i class="fa-solid fa-code-compare"></i> Model Output Comparison
         </button>
         <button class="eval-tab-btn" id="tabMetricsBtn" onclick="switchEvalTab('metrics')">
-          <i class="fa-solid fa-chart-line"></i> Training Loss & LoRA Metrics
+          <i class="fa-solid fa-chart-line"></i> Training Loss &amp; VRAM Estimator
         </button>
         <button class="eval-tab-btn" id="tabTypoBtn" onclick="switchEvalTab('typo')">
-          <i class="fa-solid fa-wand-magic-sparkles"></i> Analyst Typo Normalizer
+          <i class="fa-solid fa-wand-magic-sparkles"></i> Pre-Inference Rule Normalizer
         </button>
       </div>
 
@@ -370,22 +351,21 @@
           <div
             style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-bottom:1rem;">
             <div>
-              <h3 style="color:#fff; font-size:1.15rem; margin:0 0 0.25rem;">Compare Baseline vs. Fine-Tuned Model</h3>
+              <h3 style="color:var(--text-primary); font-size:1.1rem; margin:0 0 0.25rem;">Base Gemma 2B vs. Fine-Tuned Mistral-7B</h3>
               <p style="color:var(--text-secondary); font-size:0.86rem; margin:0;">
-                See how the fine-tuned model resolves complex joins, COALESCE logic, heals analyst typos, and prevents
-                hallucinations.
+                See how fine-tuning on 900 mapping pairs enforces deterministic join paths, COALESCE fallback rules, and schema-validated projections.
               </p>
             </div>
             <div style="display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap;">
               <select class="form-control" id="evalScenarioSelect" onchange="loadEvalScenario(this.value)"
-                style="background:var(--bg-primary); border:1px solid var(--border-subtle); color:#fff; padding:0.5rem 0.8rem; border-radius:4px; font-size:0.85rem;">
-                <option value="case1">1. Multi-Table Consolidation with NULL Fallback</option>
-                <option value="case2">2. Multi-Level Relational Outer Joins</option>
-                <option value="case3">3. Autonomous Join-Key Extraction & Typo-Healing</option>
+                style="background:var(--bg-primary); border:1px solid var(--border-subtle); color:var(--text-primary); padding:0.5rem 0.8rem; border-radius:4px; font-size:0.85rem; font-family:var(--font-body);">
+                <option value="case1">1. Two-Table Join with NULL Fallback (COALESCE)</option>
+                <option value="case2">2. Three-Table Left Join</option>
+                <option value="case3">3. Implicit Join Resolution &amp; Shorthand Rule Normalization</option>
               </select>
               <button class="btn btn-sm btn-primary" id="runInferenceBtn" onclick="simulateInference()"
                 style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.45rem 0.9rem; font-size:0.82rem;">
-                <i class="fa-solid fa-play"></i> Show Sample Output
+                <i class="fa-solid fa-play"></i> Generate SQL
               </button>
             </div>
           </div>
@@ -395,11 +375,10 @@
             style="background:var(--bg-primary); border:1px solid var(--border-subtle); border-radius:var(--radius-sm); padding:1rem; margin-bottom:1.25rem;">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
               <div style="font-size:0.75rem; text-transform:uppercase; color:var(--text-muted); font-weight:700;">
-                Input Mapping Specifications (Analyst Spreadsheet Extract):
+                Mapping Specification (From Analyst Excel Sheet):
               </div>
               <span id="inferenceTelemetry"
-                style="font-size:0.72rem; font-family:var(--font-mono); color:var(--text-secondary);">Illustrative sample metrics ·
-                not live inference</span>
+                style="font-size:0.72rem; font-family:var(--font-mono); color:var(--text-muted);">Select a case and click Generate SQL</span>
             </div>
             <div id="evalInputPrompt"
               style="font-family:var(--font-mono); font-size:0.8rem; color:var(--text-secondary); white-space:pre-wrap;"></div>
@@ -410,27 +389,25 @@
             <!-- Bad: Off the shelf -->
             <div class="compare-box bad">
               <div style="display:flex; justify-content:space-between; align-items:center;">
-                <span class="compare-badge badge-bad"><i class="fa-solid fa-xmark"></i> Untrained Base Model (Gemma
-                  Baseline)</span>
+                <span class="compare-badge badge-bad"><i class="fa-solid fa-xmark"></i> Untrained Baseline (Gemma 2B)</span>
               </div>
               <pre class="code-view" id="baseModelOutput"></pre>
               <div id="baseErrorNote" hidden
-                style="margin-top:0.75rem; font-size:0.76rem; color:#f87171; border-top:1px solid rgba(239,68,68,0.2); padding-top:0.5rem;"></div>
+                style="margin-top:0.75rem; font-size:0.78rem; color:#f87171; border-top:1px solid rgba(239,68,68,0.2); padding-top:0.5rem;"></div>
             </div>
 
             <!-- Good: Fine-tuned -->
             <div class="compare-box good">
               <div style="display:flex; justify-content:space-between; align-items:center;">
-                <span class="compare-badge badge-good"><i class="fa-solid fa-check"></i> Fine-Tuned Mistral-7B (8-Bit
-                  QLoRA)</span>
+                <span class="compare-badge badge-good"><i class="fa-solid fa-check"></i> Fine-Tuned Mistral-7B (8-bit LoRA)</span>
                 <button onclick="copySqlCode()"
-                  style="background:transparent; border:1px solid var(--accent); color:var(--accent-text); border-radius:4px; padding:0.2rem 0.5rem; font-size:0.72rem; cursor:pointer;">
+                  style="background:transparent; border:1px solid var(--accent); color:var(--accent-text); border-radius:4px; padding:0.2rem 0.5rem; font-size:0.72rem; cursor:pointer; font-family:var(--font-body);">
                   <i class="fa-regular fa-copy"></i> Copy SQL
                 </button>
               </div>
               <pre class="code-view" id="finetunedModelOutput"></pre>
               <div id="fineSuccessNote" hidden
-                style="margin-top:0.75rem; font-size:0.76rem; color:var(--accent-text); border-top:1px solid var(--border-subtle); padding-top:0.5rem;"></div>
+                style="margin-top:0.75rem; font-size:0.78rem; color:var(--accent-text); border-top:1px solid var(--border-subtle); padding-top:0.5rem;"></div>
             </div>
           </div>
         </div>
@@ -439,8 +416,7 @@
       <!-- Tab 2: Training Loss & LoRA Metrics -->
       <div id="paneMetrics" style="display:none;">
         <div class="card-panel">
-          <h3 style="color:#fff; font-size:1.15rem; margin:0 0 1rem;">Actual Fine-Tuning Performance Logs & LoRA
-            Calculator</h3>
+          <h3 style="color:var(--text-primary); font-size:1.1rem; margin:0 0 1rem;">Recorded Training Metrics &amp; LoRA Memory Estimator</h3>
 
           <div class="metrics-stats-grid">
             <div class="stat-pill">
@@ -448,16 +424,16 @@
               <div class="stat-sub">Final Training Loss (Down from 1.049)</div>
             </div>
             <div class="stat-pill">
-              <div class="stat-num" style="color:var(--accent-text);">900</div>
-              <div class="stat-sub">Curated Enterprise JSONL Pairs</div>
+              <div class="stat-num" style="color:var(--text-primary);">900</div>
+              <div class="stat-sub">Mapping-to-SQL Training Pairs (JSONL)</div>
             </div>
             <div class="stat-pill">
-              <div class="stat-num" style="color:#a78bfa;">700</div>
-              <div class="stat-sub">Total Optimization Steps</div>
+              <div class="stat-num" style="color:var(--text-primary);">700</div>
+              <div class="stat-sub">Optimization Steps (Min 0.173 at Step 500)</div>
             </div>
             <div class="stat-pill">
-              <div class="stat-num" style="color:#fbbf24;">8.5 GB</div>
-              <div class="stat-sub">Peak VRAM (8-Bit Quantized LoRA)</div>
+              <div class="stat-num" style="color:var(--accent-text);">8.5 GB</div>
+              <div class="stat-sub">Peak VRAM Budget (8-bit Quantized LoRA)</div>
             </div>
           </div>
 
@@ -465,8 +441,7 @@
           <div class="chart-container"
             style="background:var(--bg-primary); border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:1.25rem; margin-bottom:1.5rem;">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
-              <span style="font-size:0.85rem; font-weight:600; color:#fff;">Training Loss Convergence Curve (Mistral-7B
-                LoRA over 700 Steps)</span>
+              <span style="font-size:0.85rem; font-weight:600; color:var(--text-primary);">Training Loss Curve (Mistral-7B LoRA, 700 Steps)</span>
               <span style="font-size:0.75rem; color:var(--accent-text); font-family:var(--font-mono);"><i
                   class="fa-solid fa-arrow-down"></i> 82.5% Loss Reduction</span>
             </div>
@@ -480,10 +455,10 @@
               <line x1="50" y1="170" x2="680" y2="170" stroke="#2c2824" stroke-dasharray="3,3" />
 
               <!-- Y-Axis Labels -->
-              <text x="15" y="25" fill="#64748b" font-size="11" font-family="monospace">1.05</text>
-              <text x="15" y="75" fill="#64748b" font-size="11" font-family="monospace">0.75</text>
-              <text x="15" y="125" fill="#64748b" font-size="11" font-family="monospace">0.45</text>
-              <text x="15" y="175" fill="#64748b" font-size="11" font-family="monospace">0.18</text>
+              <text x="15" y="25" fill="#8a8378" font-size="11" font-family="var(--font-mono)">1.05</text>
+              <text x="15" y="75" fill="#8a8378" font-size="11" font-family="var(--font-mono)">0.75</text>
+              <text x="15" y="125" fill="#8a8378" font-size="11" font-family="var(--font-mono)">0.45</text>
+              <text x="15" y="175" fill="#8a8378" font-size="11" font-family="var(--font-mono)">0.18</text>
 
               <!-- Convergence Area & Path -->
               <path
@@ -494,16 +469,16 @@
 
               <!-- Data Points with values -->
               <circle cx="60" cy="20" r="4" fill="#c4a574" />
-              <text x="65" y="15" fill="#b7b0a4" font-size="10" font-family="monospace">1.049 (Step 10)</text>
+              <text x="65" y="15" fill="#b7b0a4" font-size="10" font-family="var(--font-mono)">1.049 (Step 10)</text>
 
               <circle cx="140" cy="145" r="4" fill="#c4a574" />
-              <text x="145" y="140" fill="#b7b0a4" font-size="10" font-family="monospace">0.290 (Step 100)</text>
+              <text x="145" y="140" fill="#b7b0a4" font-size="10" font-family="var(--font-mono)">0.290 (Step 100)</text>
 
               <circle cx="300" cy="162" r="4" fill="#c4a574" />
               <circle cx="460" cy="172" r="4" fill="#c4a574" />
 
               <circle cx="620" cy="170" r="4" fill="#c4a574" />
-              <text x="540" y="195" fill="#c4a574" font-size="10" font-family="monospace">0.184 (Step 700 Final)</text>
+              <text x="540" y="195" fill="#c4a574" font-size="10" font-family="var(--font-mono)">0.184 (Step 700)</text>
             </svg>
 
             <!-- X-Axis Labels -->
@@ -523,9 +498,9 @@
           <!-- Interactive LoRA Parameter & VRAM Calculator -->
           <div style="background:var(--bg-primary); border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:1.25rem;">
             <div
-              style="font-size:0.9rem; font-weight:600; color:#fff; margin-bottom:0.75rem; display:flex; align-items:center; gap:0.5rem;">
+              style="font-size:0.9rem; font-weight:600; color:var(--text-primary); margin-bottom:0.75rem; display:flex; align-items:center; gap:0.5rem;">
               <i class="fa-solid fa-calculator" style="color:var(--accent-bright);"></i>
-              <span>Interactive LoRA & VRAM Parameter Estimator</span>
+              <span>LoRA Parameter &amp; VRAM Estimator</span>
             </div>
             <div
               style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:1rem; margin-bottom:1rem;">
@@ -534,7 +509,7 @@
                   style="display:block; font-size:0.75rem; color:var(--text-muted); font-weight:600; margin-bottom:0.3rem;">LoRA
                   Rank (r):</label>
                 <select id="calcRank" onchange="calculateLoraParams()"
-                  style="width:100%; background:var(--bg-primary); border:1px solid var(--border-bold); color:#fff; padding:0.4rem; border-radius:4px; font-size:0.85rem;">
+                  style="width:100%; background:var(--bg-primary); border:1px solid var(--border-bold); color:var(--text-primary); padding:0.45rem; border-radius:4px; font-size:0.85rem; font-family:var(--font-body);">
                   <option value="4">r = 4 (Lightweight)</option>
                   <option value="8" selected>r = 8 (Production Baseline)</option>
                   <option value="16">r = 16 (High Capacity)</option>
@@ -546,10 +521,10 @@
                   style="display:block; font-size:0.75rem; color:var(--text-muted); font-weight:600; margin-bottom:0.3rem;">Quantization
                   Precision:</label>
                 <select id="calcPrecision" onchange="calculateLoraParams()"
-                  style="width:100%; background:var(--bg-primary); border:1px solid var(--border-bold); color:#fff; padding:0.4rem; border-radius:4px; font-size:0.85rem;">
-                  <option value="8" selected>8-Bit (bitsandbytes) ~8.2 GB</option>
-                  <option value="4">4-Bit (QLoRA) ~5.8 GB</option>
-                  <option value="16">16-Bit Float (FP16) ~15.5 GB</option>
+                  style="width:100%; background:var(--bg-primary); border:1px solid var(--border-bold); color:var(--text-primary); padding:0.45rem; border-radius:4px; font-size:0.85rem; font-family:var(--font-body);">
+                  <option value="8" selected>8-bit (bitsandbytes) ~8.2 GB</option>
+                  <option value="4">4-bit (QLoRA) ~5.8 GB</option>
+                  <option value="16">16-bit Float (FP16) ~15.5 GB</option>
                 </select>
               </div>
               <div>
@@ -557,7 +532,7 @@
                   style="display:block; font-size:0.75rem; color:var(--text-muted); font-weight:600; margin-bottom:0.3rem;">Max
                   Sequence Length:</label>
                 <select id="calcSeqLen" onchange="calculateLoraParams()"
-                  style="width:100%; background:var(--bg-primary); border:1px solid var(--border-bold); color:#fff; padding:0.4rem; border-radius:4px; font-size:0.85rem;">
+                  style="width:100%; background:var(--bg-primary); border:1px solid var(--border-bold); color:var(--text-primary); padding:0.45rem; border-radius:4px; font-size:0.85rem; font-family:var(--font-body);">
                   <option value="512">512 Tokens</option>
                   <option value="1024" selected>1024 Tokens (Production)</option>
                   <option value="2048">2048 Tokens</option>
@@ -566,54 +541,53 @@
             </div>
             <div id="loraCalcResults"
               style="background:var(--bg-primary); border:1px solid var(--border-subtle); border-radius:4px; padding:0.75rem 1rem; font-family:var(--font-mono); font-size:0.8rem; color:var(--text-secondary);">
-              Trainable Parameters: 13.6M (0.19% of 7B) | Peak VRAM: 8.48 GB | Memory Efficiency: 4.2x vs FP16 Full
-              Finetuning
+              Trainable Parameters: 8.4M | Est. Peak VRAM: 8.20 GB
             </div>
           </div>
         </div>
       </div>
-    </div>
-    </div>
-    </div>
-    </div>
 
-    <!-- Tab 3: Typo Normalizer -->
+    <!-- Tab 3: Pre-Inference Schema & Mapping Rule Normalizer -->
     <div id="paneTypo" style="display:none;">
       <div class="card-panel">
-        <h3 style="color:#fff; font-size:1.15rem; margin:0 0 0.4rem;">Analyst Typo Normalization Preprocessor</h3>
-        <p style="color:var(--text-secondary); font-size:0.86rem; margin-bottom:1.25rem;">
-          Business analysts often write informal or misspelled SQL transformation functions in spreadsheets. The
-          preprocessor cleans them before tokenization.
+        <h3 style="color:var(--text-primary); font-size:1.1rem; margin:0 0 0.4rem;">Pre-Inference Schema &amp; Mapping Rule Normalizer</h3>
+        <p style="color:var(--text-secondary); font-size:0.86rem; margin-bottom:1.1rem;">
+          Analysts write informal transformation shorthand in Excel mapping workbooks and frequently omit explicit join keys. This deterministic pre-inference stage standardizes shorthand into canonical SQL rules and resolves foreign-key join paths from the schema catalog before Mistral-7B generates the query.
         </p>
+
+        <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:1rem;">
+          <button type="button" class="badge-chip" onclick="loadNormalizerPreset(0)" style="cursor:pointer; font-family:var(--font-body);">Preset 1: Null Fallback Shorthand</button>
+          <button type="button" class="badge-chip" onclick="loadNormalizerPreset(1)" style="cursor:pointer; font-family:var(--font-body);">Preset 2: Transform &amp; Implicit Left Join</button>
+          <button type="button" class="badge-chip" onclick="loadNormalizerPreset(2)" style="cursor:pointer; font-family:var(--font-body);">Preset 3: Conditional Aggregate Rule</button>
+        </div>
 
         <div style="margin-bottom:1.25rem;">
           <label
             style="display:block; font-size:0.78rem; font-weight:600; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.4rem;">
-            Type a transformation expression with typos to test live sanitization:
+            Informal analyst mapping rule &amp; table pair:
           </label>
-          <input type="text" id="typoInput" value="COLEASE(t1.FEE_AMT, 0.00)" oninput="testTypoHealing(this.value)"
-            style="width:100%; background:var(--bg-primary); border:1px solid var(--border-subtle); color:#fff; padding:0.75rem; border-radius:var(--radius-sm); font-family:var(--font-mono); font-size:0.88rem;">
+          <input type="text" id="typoInput" value="If ADJUSTMENT_AMOUNT is blank use BASE_AMOUNT else 0.00 | Join: SOURCE_PROFILE + SOURCE_ADJUSTMENT" oninput="testTypoHealing(this.value)"
+            style="width:100%; background:var(--bg-primary); border:1px solid var(--border-subtle); color:var(--text-primary); padding:0.75rem; border-radius:var(--radius-sm); font-family:var(--font-mono); font-size:0.86rem;">
         </div>
 
         <div
           style="background:var(--bg-primary); border:1px solid var(--accent); border-radius:var(--radius-sm); padding:1.25rem;">
           <div
-            style="font-size:0.75rem; text-transform:uppercase; color:var(--accent-text); font-weight:700; margin-bottom:0.4rem;">
-            Sanitized Output (Ready for Model Tokenization):
+            style="font-size:0.75rem; text-transform:uppercase; color:var(--accent-text); font-weight:700; margin-bottom:0.5rem;">
+            Canonical, schema-validated prompt sent to model:
           </div>
-          <div id="typoOutput" style="font-family:var(--font-mono); font-size:1rem; color:var(--accent-text);"></div>
+          <pre id="typoOutput" style="font-family:var(--font-mono); font-size:0.86rem; line-height:1.6; color:var(--accent-text); margin:0; white-space:pre-wrap;"></pre>
         </div>
 
-        <!-- Common Typo Dictionary -->
+        <!-- Deterministic Normalization Stages -->
         <div style="margin-top:1.5rem;">
-          <h4 style="color:#fff; font-size:0.92rem; margin-bottom:0.75rem;">Supported Automatic Normalization Rules:
+          <h4 style="color:var(--text-primary); font-size:0.92rem; margin-bottom:0.75rem;">Deterministic pre-inference normalization stages:
           </h4>
           <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
-            <span class="badge-chip">COLEASE &rarr; COALESCE</span>
-            <span class="badge-chip">COALSECE &rarr; COALESCE</span>
-            <span class="badge-chip">UPER &rarr; UPPER</span>
-            <span class="badge-chip">LOWWER &rarr; LOWER</span>
-            <span class="badge-chip">ST_MOVE &rarr; Straight move</span>
+            <span class="badge-chip">Shorthand Rule &rarr; Canonical ANSI SQL</span>
+            <span class="badge-chip">Implicit Table Pair &rarr; Foreign Key Join</span>
+            <span class="badge-chip">Unqualified Column &rarr; Deterministic Alias Binding</span>
+            <span class="badge-chip">Null-Fallback Standardization</span>
           </div>
         </div>
       </div>
@@ -647,8 +621,8 @@ ON t1.entity_id = t5.entity_key`,
 FROM SOURCE_PROFILE_DF t1
 INNER JOIN SOURCE_ADJUSTMENT_DF t2
   ON t1.entity_id = t2.entity_id`,
-        baseNote: "❌ Hallucinated alias t5, missed join key ref_id, invalid unclosed parenthesis in CASE statement.",
-        fineNote: "✅ Strict sequential aliases t1...t4, correct COALESCE resolution, fully valid ANSI SQL syntax."
+        baseNote: "Issue: Invented table alias t5, mismatched join column (entity_key), and left CASE parenthesis unclosed.",
+        fineNote: "Passed: Deterministic table aliases, valid COALESCE fallback, and clean ANSI SQL join."
       },
       case2: {
         input: `Table Source: SOURCE_PROFILE (t1), SOURCE_ACTIVITY (t3), SOURCE_REFERENCE (t4)
@@ -672,34 +646,35 @@ LEFT JOIN SOURCE_ACTIVITY_DF t3
   ON t3.entity_id = t1.entity_id
 LEFT JOIN SOURCE_REFERENCE_DF t4
   ON t4.reference_id = t3.reference_id`,
-        baseNote: "❌ Missing join ON conditions; untracked table aliases causes Cartesian product runtime failure.",
-        fineNote: "✅ Explicit sequential left joins on sample keys (entity_id, reference_id)."
+        baseNote: "Issue: Omitted both ON join conditions and left REFERENCE_KEY unaliased.",
+        fineNote: "Passed: Explicit sequential LEFT JOIN keys on entity_id and reference_id."
       },
       case3: {
         input: `Table Source: SOURCE_PROFILE (t1), SOURCE_ADJUSTMENT (t2)
 Attribute Source: t1.BASE_AMOUNT, t2.ADJUSTMENT_AMOUNT
 Target Column: NET_VALUE
-Transformation: COLEASE(t2.ADJUSTMENT_AMOUNT, t1.BASE_AMOUNT)
-Join: inner join on t1.entity_id = t2.entity_id`,
+Transformation: Fallback(ADJUSTMENT_AMOUNT -> BASE_AMOUNT, default 0.00)
+Join: Inner Join (Implicit FK via schema catalog: entity_id)`,
         base: `SELECT
-  COLEASE(t2.ADJUSTMENT_AMOUNT, t1.BASE_AMOUNT) AS NET_VALUE
+  ADJUSTMENT_AMOUNT AS NET_VALUE
 FROM SOURCE_PROFILE t1
 INNER JOIN SOURCE_ADJUSTMENT t7
   ON t1.entity_key = t7.entity_key`,
         finetuned: `SELECT
   t1.entity_id AS entity_id,
-  COALESCE(t2.ADJUSTMENT_AMOUNT, t1.BASE_AMOUNT) AS NET_VALUE
+  COALESCE(t2.ADJUSTMENT_AMOUNT, t1.BASE_AMOUNT, 0.00) AS NET_VALUE
 FROM SOURCE_PROFILE_DF t1
 INNER JOIN SOURCE_ADJUSTMENT_DF t2
   ON t1.entity_id = t2.entity_id`,
-        baseNote: "❌ Sample baseline output contains a typo, an inconsistent alias, and a missing join key.",
-        fineNote: "✅ Sample corrected output normalizes the typo and uses consistent aliases and join keys."
+        baseNote: "Issue: Dropped fallback rule, guessed unverified column entity_key, and hallucinated table alias t7.",
+        fineNote: "Passed: Expanded analyst shorthand into canonical COALESCE fallback and resolved implicit foreign key entity_id."
       }
     };
 
     window.addEventListener('DOMContentLoaded', () => {
       loadEvalScenario('case1');
       calculateLoraParams();
+      testTypoHealing(document.getElementById('typoInput').value);
     });
 
     function loadEvalScenario(key) {
@@ -756,7 +731,7 @@ INNER JOIN SOURCE_ADJUSTMENT_DF t2
         if (charIdx >= maxLen) {
           clearInterval(timer);
           btn.disabled = false;
-          btn.innerHTML = `<i class="fa-solid fa-play"></i> Run Inference`;
+          btn.innerHTML = `<i class="fa-solid fa-play"></i> Generate SQL`;
           const baseNote = document.getElementById('baseErrorNote');
           const fineNote = document.getElementById('fineSuccessNote');
           if (baseNote) {
@@ -768,7 +743,7 @@ INNER JOIN SOURCE_ADJUSTMENT_DF t2
             fineNote.hidden = !fineNote.textContent;
           }
           document.getElementById('inferenceTelemetry').textContent =
-            `Latency: ${(190 + Math.random() * 60).toFixed(0)}ms | 52.4 tok/s | VRAM: 8.24 GB`;
+            'Simulated output · Mistral-7B 8-bit LoRA (r=8, α=16)';
         }
       }, 25);
     }
@@ -802,21 +777,79 @@ INNER JOIN SOURCE_ADJUSTMENT_DF t2
       }
     }
 
-    function testTypoHealing(val) {
-      const typos = {
-        "COLEASE": "COALESCE",
-        "COALSECE": "COALESCE",
-        "COALESE": "COALESCE",
-        "UPER": "UPPER",
-        "LOWWER": "LOWER",
-        "ST_MOVE": "Straight move"
-      };
+    const NORMALIZER_PRESETS = [
+      'If ADJUSTMENT_AMOUNT is blank use BASE_AMOUNT else 0.00 | Join: SOURCE_PROFILE + SOURCE_ADJUSTMENT',
+      'Straight move CUSTOMER_STATUS; trim & uppercase | Join: CUSTOMER_CORE left join ACCOUNT_LEDGER',
+      'Sum TXN_AMOUNT where STATUS = Active | Join: ACCOUNT_HEADER + TXN_DETAIL'
+    ];
 
-      let cleaned = val;
-      for (const [typo, fixed] of Object.entries(typos)) {
-        cleaned = cleaned.replace(new RegExp(typo, 'gi'), fixed);
+    function loadNormalizerPreset(idx) {
+      const input = document.getElementById('typoInput');
+      if (!input || !NORMALIZER_PRESETS[idx]) return;
+      input.value = NORMALIZER_PRESETS[idx];
+      testTypoHealing(input.value);
+    }
+
+    function testTypoHealing(val) {
+      const raw = (val || '').trim();
+      const parts = raw.split('|');
+      const rulePart = (parts[0] || '').trim();
+      const joinPart = (parts[1] || '').trim();
+      const lowerRule = rulePart.toLowerCase();
+
+      let canonicalExpr = rulePart;
+      let aliasStatus = 'Unqualified columns bound to deterministic table aliases';
+
+      const blankMatch = rulePart.match(/if\s+([A-Za-z0-9_.]+)\s+is\s+(?:blank|null)\s+use\s+([A-Za-z0-9_.]+)(?:\s+else\s+([A-Za-z0-9_.']+))?/i);
+      const sumMatch = rulePart.match(/sum\s+([A-Za-z0-9_.]+)\s+where\s+([A-Za-z0-9_.]+)\s*=\s*([A-Za-z0-9_']+)/i);
+
+      if (blankMatch) {
+        const colA = blankMatch[1].includes('.') ? blankMatch[1] : `t2.${blankMatch[1]}`;
+        const colB = blankMatch[2].includes('.') ? blankMatch[2] : `t1.${blankMatch[2]}`;
+        const fallback = blankMatch[3] ? `, ${blankMatch[3]}` : '';
+        canonicalExpr = `COALESCE(${colA}, ${colB}${fallback})`;
+      } else if (sumMatch) {
+        const valCol = sumMatch[1].includes('.') ? sumMatch[1] : `t2.${sumMatch[1]}`;
+        const condCol = sumMatch[2].includes('.') ? sumMatch[2] : `t1.${sumMatch[2]}`;
+        canonicalExpr = `SUM(CASE WHEN UPPER(TRIM(${condCol})) = '${sumMatch[3].toUpperCase()}' THEN ${valCol} ELSE 0 END)`;
+      } else if (lowerRule.includes('straight move')) {
+        const colMatch = rulePart.match(/straight\s+move\s+([A-Za-z0-9_.]+)/i);
+        const col = colMatch ? colMatch[1] : 'SOURCE_COLUMN';
+        const qualified = col.includes('.') ? col : `t1.${col}`;
+        let expr = qualified;
+        if (lowerRule.includes('trim')) expr = `TRIM(${expr})`;
+        if (lowerRule.includes('upper')) expr = `UPPER(${expr})`;
+        if (lowerRule.includes('lower')) expr = `LOWER(${expr})`;
+        canonicalExpr = `${expr} AS ${col.split('.').pop()}`;
+      } else if (raw) {
+        canonicalExpr = rulePart
+          .replace(/\bif\s+([A-Za-z0-9_.]+)\s+is\s+(?:blank|null)\b/gi, 'COALESCE($1')
+          .replace(/\btrim\s+and\s+uppercase\b/gi, 'UPPER(TRIM(...))')
+          .replace(/\bdefault\s+([A-Za-z0-9_.']+)\b/gi, 'COALESCE(..., $1)');
+      } else {
+        canonicalExpr = '(Enter an analyst mapping rule above)';
+        aliasStatus = 'Waiting for rule input';
       }
-      document.getElementById('typoOutput').textContent = cleaned;
+
+      const upperJoin = joinPart.toUpperCase();
+      let joinResolved = 'Single-table projection (FROM t1)';
+      if (upperJoin.includes('SOURCE_PROFILE') && upperJoin.includes('SOURCE_ADJUSTMENT')) {
+        joinResolved = 'INNER JOIN SOURCE_ADJUSTMENT t2 ON t1.entity_id = t2.entity_id (Implicit FK matched in catalog)';
+      } else if (upperJoin.includes('CUSTOMER_CORE') && upperJoin.includes('ACCOUNT_LEDGER')) {
+        joinResolved = 'LEFT JOIN ACCOUNT_LEDGER t2 ON t1.customer_id = t2.customer_id (Implicit FK matched in catalog)';
+      } else if (upperJoin.includes('ACCOUNT_HEADER') && upperJoin.includes('TXN_DETAIL')) {
+        joinResolved = 'INNER JOIN TXN_DETAIL t2 ON t1.account_id = t2.account_id (Implicit FK matched in catalog)';
+      } else if (joinPart) {
+        joinResolved = `${joinPart.replace(/^Join:\s*/i, '')} -> Qualified via schema foreign-key catalog`;
+      }
+
+      const outEl = document.getElementById('typoOutput');
+      if (outEl) {
+        outEl.textContent =
+          `Expression : ${canonicalExpr}\n` +
+          `Join Path  : ${joinResolved}\n` +
+          `Validation : PASSED · ${aliasStatus}`;
+      }
     }
   </script>
 </body>

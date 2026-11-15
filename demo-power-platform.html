@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simulated Demo: Power Platform, SharePoint &amp; Copilot Studio | Ishraq Ahmad</title>
+  <meta name="description"
+    content="Clean-room browser simulation of enterprise Power Apps delegation rescue (9s to 3s), indexed SharePoint Lists, Power Automate Try/Catch approvals, Dataverse 1:N schemas, and Copilot Studio Teams handoff." />
+  <link rel="canonical" href="https://karlmagus.github.io/demo-power-platform.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Power Platform, SharePoint &amp; Copilot Studio Simulator | Ishraq Ahmad" />
+  <meta property="og:description"
+    content="Clean-room browser simulation demonstrating Canvas App rescue, SharePoint 5,000-item indexing, Try/Catch approvals, Dataverse 1:N onboarding, and Copilot Studio." />
+  <meta property="og:url" content="https://karlmagus.github.io/demo-power-platform.html" />
+  <meta name="twitter:card" content="summary" />
+  <script defer src="js/analytics.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css?v=20261116" />
+
+  <style>
+    body.demo-page-body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .demo-header-section {
+      padding: 3.5rem 0 2rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .status-badge-live {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      background: var(--accent-subtle);
+      border: 1px solid var(--accent);
+      color: var(--accent-text);
+      margin-bottom: 1rem;
+    }
+
+    .status-pulse {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .demo-heading {
+      font-family: var(--font-display);
+      font-size: 2.25rem;
+      font-weight: 500;
+      letter-spacing: -0.025em;
+      margin-bottom: 0.75rem;
+      color: var(--text-primary);
+    }
+
+    .demo-lead {
+      color: var(--text-secondary);
+      font-size: 1.02rem;
+      line-height: 1.65;
+      max-width: 860px;
+    }
+
+    .nda-banner {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-subtle);
+      border-left: 3px solid var(--accent);
+      border-radius: var(--radius-sm);
+      padding: 0.85rem 1.15rem;
+      margin-top: 1.25rem;
+      font-size: 0.84rem;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .workspace-shell {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin: 2rem 0 3rem;
+    }
+
+    .module-tabs-bar {
+      display: flex;
+      flex-wrap: wrap;
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 0.6rem 1rem 0;
+      gap: 0.4rem;
+    }
+
+    .module-tab-btn {
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid transparent;
+      color: var(--text-secondary);
+      padding: 0.75rem 1.1rem;
+      font-size: 0.86rem;
+      font-weight: 600;
+      font-family: var(--font-body);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all var(--transition-fast);
+    }
+
+    .module-tab-btn:hover {
+      color: var(--text-primary);
+    }
+
+    .module-tab-btn.active {
+      color: var(--accent-bright);
+      border-bottom-color: var(--accent);
+    }
+
+    .module-panel {
+      display: none;
+      padding: 1.75rem;
+    }
+
+    .module-panel.active {
+      display: block;
+    }
+
+    .panel-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .panel-title-group h2 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .panel-title-group p {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+
+    .segmented-switch {
+      display: inline-flex;
+      background: var(--bg-primary);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 3px;
+      gap: 4px;
+    }
+
+    .switch-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-secondary);
+      padding: 0.5rem 0.95rem;
+      border-radius: var(--radius-xs);
+      font-size: 0.82rem;
+      font-weight: 600;
+      font-family: var(--font-body);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .switch-btn.active {
+      background: var(--accent);
+      color: #141210;
+    }
+
+    .switch-btn.danger.active {
+      background: #991b1b;
+      color: #fecaca;
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .kpi-box {
+      background: var(--bg-primary);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.15rem;
+    }
+
+    .kpi-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+      display: block;
+    }
+
+    .kpi-value {
+      font-family: var(--font-mono);
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .kpi-value.warn {
+      color: #f87171;
+    }
+
+    .kpi-value.good {
+      color: var(--accent-bright);
+    }
+
+    .kpi-sub {
+      font-size: 0.76rem;
+      color: var(--text-secondary);
+      margin-top: 0.25rem;
+    }
+
+    .two-col-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .code-card {
+      background: var(--bg-primary);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.15rem;
+    }
+
+    .code-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    .code-pre {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      line-height: 1.6;
+      color: var(--text-primary);
+      white-space: pre-wrap;
+      margin: 0;
+    }
+
+    .list-pill-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .list-pill {
+      background: var(--bg-primary);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      padding: 0.45rem 0.85rem;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      cursor: pointer;
+    }
+
+    .list-pill.active {
+      background: var(--accent-subtle);
+      border-color: var(--accent);
+      color: var(--accent-text);
+      font-weight: 600;
+    }
+
+    .schema-table-wrap {
+      background: var(--bg-primary);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      overflow-x: auto;
+    }
+
+    .schema-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.8rem;
+      text-align: left;
+    }
+
+    .schema-table th {
+      background: var(--bg-secondary);
+      color: var(--text-muted);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.65rem 0.9rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .schema-table td {
+      padding: 0.65rem 0.9rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      color: var(--text-secondary);
+      font-family: var(--font-body);
+    }
+
+    .schema-table td:first-child {
+      font-family: var(--font-mono);
+    }
+
+    .index-tag {
+      display: inline-block;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-family: var(--font-body);
+      background: var(--accent-subtle);
+      color: var(--accent-text);
+      border: 1px solid var(--accent);
+    }
+
+    .flow-log {
+      background: var(--bg-primary);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      margin-top: 1rem;
+      font-family: var(--font-body);
+      font-size: 0.84rem;
+      line-height: 1.6;
+    }
+
+    .flow-step {
+      padding: 0.45rem 0.65rem;
+      border-left: 2px solid var(--accent);
+      margin-bottom: 0.5rem;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .flow-step.error {
+      border-left-color: #ef4444;
+      color: #fecaca;
+    }
+
+    .chat-box {
+      background: var(--bg-primary);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.15rem;
+      margin-top: 1rem;
+    }
+
+    .chat-msg {
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius-sm);
+      margin-bottom: 0.75rem;
+      font-size: 0.85rem;
+      line-height: 1.55;
+    }
+
+    .chat-msg.user {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-primary);
+    }
+
+    .chat-msg.bot {
+      background: var(--accent-subtle);
+      border: 1px solid var(--accent);
+      color: var(--text-primary);
+    }
+
+    .chat-msg.handoff {
+      background: rgba(239, 68, 68, 0.08);
+      border: 1px solid rgba(239, 68, 68, 0.45);
+      color: #fee2e2;
+    }
+
+    .prompt-btn {
+      background: var(--bg-primary);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      padding: 0.55rem 0.9rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.8rem;
+      text-align: left;
+      cursor: pointer;
+      transition: border-color var(--transition-fast);
+    }
+
+    .prompt-btn:hover,
+    .prompt-btn.active {
+      border-color: var(--accent);
+      color: var(--text-primary);
+    }
+  </style>
+</head>
+
+<body class="demo-page-body">
+
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-text">Ishraq Ahmad<span class="accent-dot">.</span></span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html#hero" class="nav-link">Home</a>
+        <a href="index.html#projects" class="nav-link">Projects</a>
+
+        <!-- Demos Dropdown -->
+        <div class="demos-dropdown" id="demosDropdown">
+          <button class="demos-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+            <i class="fa-solid fa-play" style="font-size: 0.7rem; color: var(--accent-text);"></i>
+            <span>Demos</span>
+            <i class="fa-solid fa-chevron-down dd-chevron"></i>
+          </button>
+          <div class="demos-dropdown-menu" role="menu">
+            <div class="dd-section-label">Interactive Demos</div>
+            <a href="demo-sql-finetuning.html" class="dd-item" role="menuitem">
+              <span class="dd-item-icon live"><i class="fa-solid fa-database"></i></span>
+              <span class="dd-item-text"><span class="dd-item-title">01 · Excel-to-SQL Model</span></span>
+              <span class="dd-item-badge dd-badge-live">Demo</span>
+            </a>
+            <a href="demo-etl-generator.html" class="dd-item" role="menuitem">
+              <span class="dd-item-icon live"><i class="fa-solid fa-diagram-project"></i></span>
+              <span class="dd-item-text"><span class="dd-item-title">02 · Spark Pipeline Compiler</span></span>
+              <span class="dd-item-badge dd-badge-live">Demo</span>
+            </a>
+            <a href="demo-classroom-cv.html" class="dd-item" role="menuitem">
+              <span class="dd-item-icon live"><i class="fa-solid fa-video"></i></span>
+              <span class="dd-item-text"><span class="dd-item-title">03 · Classroom Video Analytics</span></span>
+              <span class="dd-item-badge dd-badge-live">Demo</span>
+            </a>
+            <a href="demo-power-platform.html" class="dd-item dd-active" role="menuitem">
+              <span class="dd-item-icon live"><i class="fa-solid fa-layer-group"></i></span>
+              <span class="dd-item-text"><span class="dd-item-title">09–12 · Power Platform &amp; M365</span></span>
+              <span class="dd-item-badge dd-badge-live">Demo</span>
+            </a>
+          </div>
+        </div>
+
+        <a href="index.html#about" class="nav-link">About</a>
+        <a href="index.html#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="projects/power-apps-leave-expense-portal/" class="btn btn-sm btn-secondary">
+          <i class="fa-solid fa-arrow-left"></i>
+          <span>Case Study</span>
+        </a>
+      </div>
+    </div>
+  </header>
+  <script>
+    (function () { var d = document.getElementById('demosDropdown'), t = d.querySelector('.demos-dropdown-toggle'); t.addEventListener('click', function (e) { e.stopPropagation(); d.classList.toggle('open'); t.setAttribute('aria-expanded', d.classList.contains('open')) }); document.addEventListener('click', function () { d.classList.remove('open'); t.setAttribute('aria-expanded', 'false') }); d.querySelector('.demos-dropdown-menu').addEventListener('click', function (e) { e.stopPropagation() }) })();
+  </script>
+
+  <main style="flex: 1;">
+    <section class="demo-header-section">
+      <div class="container">
+        <div class="status-badge-live">
+          <span class="status-pulse"></span>
+          <span>Interactive Demo · Microsoft 365 &amp; Power Platform</span>
+        </div>
+        <h1 class="demo-heading">Power Platform, SharePoint &amp; Copilot Studio Architecture</h1>
+        <p class="demo-lead">
+          Explore the engineering patterns behind private client Microsoft 365 builds: compare the <strong>9s &rarr; 3s Canvas App delegation rescue</strong>, inspect <strong>5 indexed SharePoint Lists &amp; Teams approvals</strong>, and test <strong>Dataverse 1:N &amp; Copilot Studio ticket handoff</strong>.
+        </p>
+        <div class="nda-banner">
+          <i class="fa-solid fa-shield-halved" style="color: var(--accent-bright); margin-top: 0.15rem;"></i>
+          <div>
+            <strong>Client Confidentiality Note:</strong> Real client Power Platform systems run inside private Entra ID tenants. Names and rows below are sample data replicating only the delivered SharePoint schemas, Power Fx fixes, Try/Catch error handlers, and ALM architecture.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="workspace-shell">
+        <div class="module-tabs-bar" role="tablist">
+          <button type="button" class="module-tab-btn active" data-tab="rescue" role="tab">
+            <i class="fa-solid fa-gauge-high"></i>
+            <span>1. App Speed Rescue (~9s &rarr; ~3s)</span>
+          </button>
+          <button type="button" class="module-tab-btn" data-tab="sharepoint" role="tab">
+            <i class="fa-solid fa-table-list"></i>
+            <span>2. Leave &amp; Expense SharePoint Flow</span>
+          </button>
+          <button type="button" class="module-tab-btn" data-tab="dataverse" role="tab">
+            <i class="fa-solid fa-comments"></i>
+            <span>3. Dataverse Onboarding &amp; Teams Bot</span>
+          </button>
+        </div>
+
+        <!-- TAB 1: CANVAS APP RESCUE -->
+        <div class="module-panel active" id="tab-rescue">
+          <div class="panel-toolbar">
+            <div class="panel-title-group">
+              <h2>Project 11 · Operations Canvas App Speed &amp; Delegation Rescue</h2>
+              <p>Compare the abandoned third-party implementation with the refactored delegation-safe production formula.</p>
+            </div>
+            <div class="segmented-switch">
+              <button type="button" class="switch-btn danger" id="btnBeforeRescue">Before Rescue (Legacy)</button>
+              <button type="button" class="switch-btn active" id="btnAfterRescue">After Refactor (Delivered)</button>
+            </div>
+          </div>
+
+          <div class="kpi-grid" id="rescueKpis"></div>
+
+          <div class="two-col-grid">
+            <div class="code-card">
+              <div class="code-card-header">
+                <span><i class="fa-solid fa-code" style="color: var(--accent-bright);"></i> Gallery.Items &amp; OnVisible Power Fx</span>
+                <span id="rescueCodeBadge" class="index-tag">Delegation-Safe</span>
+              </div>
+              <pre class="code-pre" id="rescuePowerFx"></pre>
+            </div>
+            <div class="code-card">
+              <div class="code-card-header">
+                <span><i class="fa-solid fa-magnifying-glass-chart" style="color: var(--accent-bright);"></i> Architectural Root-Cause Fix Checklist</span>
+              </div>
+              <div id="rescueChecklist" style="font-size: 0.84rem; color: var(--text-secondary); line-height: 1.65;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 2: SHAREPOINT SCHEMA & APPROVAL FLOW -->
+        <div class="module-panel" id="tab-sharepoint">
+          <div class="panel-toolbar">
+            <div class="panel-title-group">
+              <h2>Project 09 · Leave &amp; Expense Approval Portal (5 SharePoint Lists + Power Automate)</h2>
+              <p>Inspect the 5-list schema indexed ahead of the 5,000-item threshold, then run the Teams Adaptive Card approval flow.</p>
+            </div>
+          </div>
+
+          <div class="list-pill-bar" id="spListButtons"></div>
+
+          <div class="schema-table-wrap">
+            <table class="schema-table">
+              <thead>
+                <tr>
+                  <th>Column / Field</th>
+                  <th>Type</th>
+                  <th>SharePoint Indexing / 5,000-Item Role</th>
+                  <th>Entra ID &amp; Item-Level Permission</th>
+                </tr>
+              </thead>
+              <tbody id="spSchemaBody"></tbody>
+            </table>
+          </div>
+
+          <div style="margin-top: 1.75rem;">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 0.75rem;">
+              <h3 style="font-size: 1rem; color: var(--text-primary); margin: 0;">
+                <i class="fa-solid fa-diagram-project" style="color: var(--accent-bright);"></i> Power Automate Flow Simulator (Teams Adaptive Cards + Try/Catch)
+              </h3>
+              <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                <button type="button" class="switch-btn active" onclick="runFlowSimulation('normal')">Simulate Standard Approval (~1 day)</button>
+                <button type="button" class="switch-btn" style="border: 1px solid var(--border-subtle);" onclick="runFlowSimulation('escalation')">Simulate 48h Escalation</button>
+                <button type="button" class="switch-btn danger" style="border: 1px solid #991b1b;" onclick="runFlowSimulation('error')">Simulate Failure + Try/Catch Alert</button>
+              </div>
+            </div>
+            <div class="flow-log" id="flowLog"></div>
+          </div>
+        </div>
+
+        <!-- TAB 3: DATAVERSE 1:N & COPILOT STUDIO -->
+        <div class="module-panel" id="tab-dataverse">
+          <div class="panel-toolbar">
+            <div class="panel-title-group">
+              <h2>Projects 10 &amp; 12 · Dataverse Onboarding Tracker &amp; Teams Policy Bot</h2>
+              <p>Review the 4-table 1:N Dataverse model and test approved SharePoint grounding vs. automated service-desk ticket handoff.</p>
+            </div>
+          </div>
+
+          <div class="kpi-grid">
+            <div class="kpi-box">
+              <span class="kpi-label">Table 01 · Parent</span>
+              <div class="kpi-value" style="font-size: 1rem;">Employee</div>
+              <div class="kpi-sub">1:N to Onboarding Case · Entra UPN &amp; Business Unit</div>
+            </div>
+            <div class="kpi-box">
+              <span class="kpi-label">Table 02 · Core Case</span>
+              <div class="kpi-value" style="font-size: 1rem;">Onboarding Case</div>
+              <div class="kpi-sub">1:N to Task · Business Rules + Auto-Close when 100% Complete</div>
+            </div>
+            <div class="kpi-box">
+              <span class="kpi-label">Table 03 · Execution</span>
+              <div class="kpi-value" style="font-size: 1rem;">Task</div>
+              <div class="kpi-sub">Assigned to HR / IT / Manager · Teams Alerts + Overdue Digest</div>
+            </div>
+            <div class="kpi-box">
+              <span class="kpi-label">Table 04 · Blueprint</span>
+              <div class="kpi-value" style="font-size: 1rem;">Task Template</div>
+              <div class="kpi-sub">1:N SLAOffsets · Seeded into Case via Power Automate</div>
+            </div>
+          </div>
+
+          <h3 style="font-size: 1rem; color: var(--text-primary); margin: 1.5rem 0 0.75rem;">
+            <i class="fa-brands fa-microsoft" style="color: var(--accent-bright);"></i> Copilot Studio Teams Policy Agent Simulator (Strict SharePoint Grounding)
+          </h3>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.6rem;">
+            <button type="button" class="prompt-btn active" onclick="askCopilot(0, this)">"How do I submit travel expenses and see approval status?"</button>
+            <button type="button" class="prompt-btn" onclick="askCopilot(1, this)">"Who assigns Day-1 laptop setup for new hires?"</button>
+            <button type="button" class="prompt-btn" onclick="askCopilot(2, this)">"Can I carry over 18 leave days under the merged entity annex?"</button>
+          </div>
+          <div class="chat-box" id="copilotChat"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Ishraq Ahmad. Sample architecture patterns preserving confidential client M365 environments.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Top-level module tab switching + URL hash deep linking (#rescue, #sharepoint, #dataverse)
+    function activatePowerPlatformTab(tabId) {
+      const targetBtn = document.querySelector(`.module-tab-btn[data-tab="${tabId}"]`);
+      const targetPanel = document.getElementById('tab-' + tabId);
+      if (!targetBtn || !targetPanel) return;
+
+      document.querySelectorAll('.module-tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.module-panel').forEach(p => p.classList.remove('active'));
+      targetBtn.classList.add('active');
+      targetPanel.classList.add('active');
+    }
+
+    document.querySelectorAll('.module-tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tabId = btn.dataset.tab;
+        activatePowerPlatformTab(tabId);
+        if (history.replaceState) {
+          history.replaceState(null, '', '#' + tabId);
+        }
+      });
+    });
+
+    function syncTabFromHash() {
+      const hash = window.location.hash.replace('#', '').trim();
+      if (hash === 'rescue' || hash === 'sharepoint' || hash === 'dataverse') {
+        activatePowerPlatformTab(hash);
+      }
+    }
+
+    window.addEventListener('hashchange', syncTabFromHash);
+    window.addEventListener('DOMContentLoaded', syncTabFromHash);
+    syncTabFromHash();
+
+    // TAB 1 DATA: Before vs After Canvas App Rescue
+    const rescueStates = {
+      before: {
+        badge: '2 Delegation Warnings · Slow',
+        kpis: [
+          { label: 'Screen Load Time', val: '~9.0 s', cls: 'warn', sub: 'Users abandoning slow app' },
+          { label: 'Delegation Status', val: '2 Caps (500)', cls: 'warn', sub: 'Client-side Search() missed rows' },
+          { label: 'Gallery Lookups', val: 'N+1 Per Row', cls: 'warn', sub: 'Multiple LookUp() calls on render' },
+          { label: 'Screen Visits', val: 'Re-fetches All', cls: 'warn', sub: 'Redundant OnVisible network calls' }
+        ],
+        fx: `// BEFORE (Legacy Third-Party App — Slow & Non-Delegable)
+// Problem: Triggers full client-side download + silent 500-row cap
+SortByColumns(
+  Search(
+    AddColumns(
+      InventoryRequests,
+      "DeptName", LookUp(Departments, ID = DeptId).Title, // N+1 per row!
+      "OwnerName", LookUp(Employees, ID = OwnerId).FullName
+    ),
+    txtSearch.Text, "Title", "Description"
+  ),
+  "Created", SortOrder.Descending
+)`,
+        notes: `
+          <ul style="padding-left: 1.1rem; margin: 0;">
+            <li><strong>Full-List Download:</strong> Loaded entire SharePoint list into client memory before filtering.</li>
+            <li><strong>Ignored Delegation:</strong> Non-delegable <code>Search()</code> &amp; <code>AddColumns()</code> silently truncated older records.</li>
+            <li><strong>Per-Row N+1 Queries:</strong> Resolved <code>Departments</code> and <code>Employees</code> repeatedly inside every visible gallery card.</li>
+            <li><strong>Heavy Home Screen:</strong> Loaded secondary audit tables on every navigation trigger without loading spinners.</li>
+          </ul>`
+      },
+      after: {
+        badge: '0 Warnings · Server-Side',
+        kpis: [
+          { label: 'Screen Load Time', val: '~3.0 s', cls: 'good', sub: '~67% faster; adoption restored' },
+          { label: 'Delegation Status', val: '0 Warnings', cls: 'good', sub: 'Indexed server-side Filter() first' },
+          { label: 'Lookup Caching', val: '1x Collection', cls: 'good', sub: 'colDepts & colEmployees loaded once' },
+          { label: 'UX State Guards', val: 'Explicit States', cls: 'good', sub: 'Spinner + clear error banner' }
+        ],
+        fx: `// AFTER (Refactored Production App — ~9s -> ~3s)
+// App.OnStart: Cache static small lookup lists once
+Concurrent(
+  ClearCollect(colDepts, ShowColumns(Departments, "ID", "Title")),
+  ClearCollect(colEmployees, ShowColumns(Employees, "ID", "DisplayName"))
+);
+
+// Gallery.Items: Indexed server-side Filter() before Search()
+With(
+  {
+    wServerFiltered: Filter(
+      InventoryRequests,
+      Status.Value = ddStatus.Selected.Value &&
+      Created >= dpFrom.SelectedDate // Both indexed in SharePoint!
+    )
+  },
+  Search(wServerFiltered, txtSearch.Text, "Title")
+) // Gallery card reads LookUp(colDepts, ...) from local RAM in <1ms`,
+        notes: `
+          <ul style="padding-left: 1.1rem; margin: 0;">
+            <li><strong>Filter Before Search:</strong> Pushes indexed equality and date filters to SharePoint first, keeping working sets tiny and 100% delegable.</li>
+            <li><strong>Cached Lookup Collections:</strong> Replaced per-row SharePoint lookups with one-time in-memory <code>ClearCollect()</code> tables.</li>
+            <li><strong>Lean Home Screen:</strong> Reduced control count, deferred secondary panels on demand, and added explicit loading &amp; error states.</li>
+          </ul>`
+      }
+    };
+
+    function renderRescue(mode) {
+      const s = rescueStates[mode];
+      document.getElementById('btnBeforeRescue').classList.toggle('active', mode === 'before');
+      document.getElementById('btnAfterRescue').classList.toggle('active', mode === 'after');
+      document.getElementById('rescueCodeBadge').textContent = s.badge;
+      document.getElementById('rescuePowerFx').textContent = s.fx;
+      document.getElementById('rescueChecklist').innerHTML = s.notes;
+      document.getElementById('rescueKpis').innerHTML = s.kpis.map(k => `
+        <div class="kpi-box">
+          <span class="kpi-label">${k.label}</span>
+          <div class="kpi-value ${k.cls}">${k.val}</div>
+          <div class="kpi-sub">${k.sub}</div>
+        </div>
+      `).join('');
+    }
+    document.getElementById('btnBeforeRescue').addEventListener('click', () => renderRescue('before'));
+    document.getElementById('btnAfterRescue').addEventListener('click', () => renderRescue('after'));
+    renderRescue('after');
+
+    // TAB 2 DATA: 5 SharePoint Lists
+    const spLists = {
+      'Requests (~20 cols)': [
+        ['ID / Title', 'Counter / Text', 'Primary key (auto-indexed)', 'Item-level: Requester + Manager + HR'],
+        ['Employee', 'Lookup -> Employees', 'INDEXED (delegation-safe >5k)', 'Scoped to authenticated UPN'],
+        ['Department', 'Lookup -> Departments', 'Indexed filter for Manager queue', 'Manager Entra Security Group'],
+        ['Status / RequestType', 'Choice', 'Status INDEXED (Pending/Approved)', 'Validates transitions before submit'],
+        ['Amount / Dates', 'Currency / DateTime', 'Created INDEXED (range queries)', 'Duplicate + date-range validation']
+      ],
+      'Employees': [
+        ['UPN / DisplayName', 'Text / Person', 'Indexed UPN lookup', 'Entra Security Group: Employee'],
+        ['LineManager', 'Person / Lookup', 'Resolves Teams Adaptive Card approver', 'Entra Group: Manager'],
+        ['Department', 'Lookup -> Departments', 'Auto-populates default cost center', 'Read-only to standard staff']
+      ],
+      'Departments': [
+        ['DeptCode / Title', 'Text', 'Small static reference (<100 rows)', 'Cached once via ClearCollect'],
+        ['EscalationApprover', 'Person', 'Used after 48h reminder timeout', 'Maintained by HR Admins']
+      ],
+      'Request Types': [
+        ['TypeCode / Category', 'Choice / Text', 'Drives dynamic Canvas App validation', 'Leave vs. Expense policy branching'],
+        ['RequiresReceipt', 'Boolean', 'Pre-submit check blocks missing PDFs', 'HR Admin editable config']
+      ],
+      'Audit/Log': [
+        ['RequestID', 'Number / Lookup', 'Indexed trail for Power BI Teams tab', 'Append-only via Service Account flow'],
+        ['Actor / Decision / Timestamp', 'Text / Choice / DateTime', 'Measures turnaround (days -> ~1 day)', 'Immutable governance log']
+      ]
+    };
+
+    const spButtonsEl = document.getElementById('spListButtons');
+    const spSchemaBody = document.getElementById('spSchemaBody');
+    Object.keys(spLists).forEach((name, idx) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'list-pill' + (idx === 0 ? ' active' : '');
+      b.textContent = name;
+      b.addEventListener('click', () => {
+        document.querySelectorAll('.list-pill').forEach(x => x.classList.remove('active'));
+        b.classList.add('active');
+        renderSpTable(name);
+      });
+      spButtonsEl.appendChild(b);
+    });
+
+    function renderSpTable(name) {
+      spSchemaBody.innerHTML = spLists[name].map(r => `
+        <tr>
+          <td style="color: var(--text-primary); font-weight: 600;">${r[0]}</td>
+          <td>${r[1]}</td>
+          <td><span class="index-tag">${r[2]}</span></td>
+          <td>${r[3]}</td>
+        </tr>
+      `).join('');
+    }
+    renderSpTable('Requests (~20 cols)');
+
+    const flowScenarios = {
+      normal: [
+        { cls: '', text: '[1. Canvas App Pre-Submit Guard] Verified required receipt, date range > 0, and 0 duplicate requests for UPN.' },
+        { cls: '', text: '[2. Service Account Connection Ref] Triggered under svc-powerplatform@client.onmicrosoft.com (immune to staff turnover).' },
+        { cls: '', text: '[3. SharePoint Item-Level Security] Restricted item permissions so only Requester, Line Manager, and HR group can view.' },
+        { cls: '', text: '[4. Approval Action] Sent Teams Adaptive Card + Outlook Actionable Email to Line Manager -> Approved in 18h (turnaround ~1 day).' },
+        { cls: '', text: '[5. Audit & Reporting] Updated Status=Approved, wrote row to Audit/Log, notified requester, refreshed Power BI Teams tab.' }
+      ],
+      escalation: [
+        { cls: '', text: '[1. Submit & Dispatch] Set Status=Pending; dispatched Teams Adaptive Card + Outlook approval email to Line Manager.' },
+        { cls: '', text: '[2. 48h Reminder Timer] Manager had not acted after 48 hours -> automated gentle reminder sent via Teams & Outlook.' },
+        { cls: '', text: '[3. Next-Level Escalation] Secondary SLA elapsed -> escalated to Departments.EscalationApprover; logged escalation event.' },
+        { cls: '', text: '[4. Resolution] Escalation approver approved inline inside Teams -> requester notified and Audit/Log sealed.' }
+      ],
+      error: [
+        { cls: '', text: '[1. Try Scope] Executed OData Get items (Filter Query: Status eq \'Pending\') with concurrency control.' },
+        { cls: 'error', text: '[2. Simulated Fault] Throttling (HTTP 429) or downstream SharePoint column mismatch detected inside Try Scope.' },
+        { cls: '', text: '[3. Catch Scope (Configure run after: has failed, has timed out)] Captured workflow().run link + exact action error JSON.' },
+        { cls: '', text: '[4. Admin Alert Dispatched] Emailed Power Platform Admin 1-click flow run URL and failed payload for rapid diagnosis.' }
+      ]
+    };
+
+    function runFlowSimulation(type) {
+      document.getElementById('flowLog').innerHTML = flowScenarios[type]
+        .map(s => `<div class="flow-step ${s.cls}">${s.text}</div>`)
+        .join('');
+    }
+    runFlowSimulation('normal');
+
+    // TAB 3 DATA: Copilot Studio Simulator
+    const copilotPrompts = [
+      {
+        q: 'How do I submit travel expenses and see approval status?',
+        cls: 'bot',
+        a: '<strong>Copilot Studio (Grounded in SharePoint: /Policies/Expense_Guide_v4.pdf):</strong><br>Open the <em>Leave &amp; Expense Portal</em> tab in Microsoft Teams, attach your receipt PDF, and submit. Your line manager receives a Teams Adaptive Card immediately (48h reminder enabled), and you can track real-time Pending/Approved status on the home screen.<br><span style="font-size:0.75rem; color:var(--accent-text);">Source cited: SharePoint Approved Knowledge Base only</span>'
+      },
+      {
+        q: 'Who assigns Day-1 laptop setup for new hires?',
+        cls: 'bot',
+        a: '<strong>Copilot Studio (Grounded in SharePoint: /IT/Onboarding_SOP.docx):</strong><br>When HR opens an <em>Onboarding Case</em> in the Dataverse Onboarding Tracker, Power Automate automatically expands <em>Task Templates</em> into role-assigned tasks for HR, IT, and the hiring manager—posting instant Teams notifications and Outlook overdue digests so Day-1 equipment tasks are not missed.<br><span style="font-size:0.75rem; color:var(--accent-text);">Source cited: SharePoint Approved Knowledge Base only</span>'
+      },
+      {
+        q: 'Can I carry over 18 leave days under the merged entity annex?',
+        cls: 'handoff',
+        a: '<strong>Guardrail Triggered &rarr; No Approved Source Found:</strong><br>"I do not have an approved HR policy document covering merged-entity carryover exceptions beyond standard limits. To avoid guessing, I can raise an HR service-desk ticket for you right now."<br><strong>Power Automate Fallback Action Executed:</strong> Created Ticket <code>#SD-4819</code> with transcript context and logged unanswered query for weekly topic/content tuning.'
+      }
+    ];
+
+    function askCopilot(idx, btnEl) {
+      document.querySelectorAll('.prompt-btn').forEach(b => b.classList.remove('active'));
+      if (btnEl) btnEl.classList.add('active');
+      const item = copilotPrompts[idx];
+      document.getElementById('copilotChat').innerHTML = `
+        <div class="chat-msg user"><strong>Staff Member (Teams):</strong> ${item.q}</div>
+        <div class="chat-msg ${item.cls}">${item.a}</div>
+      `;
+    }
+    askCopilot(0, document.querySelector('.prompt-btn'));
+  </script>
+</body>
+
+</html>

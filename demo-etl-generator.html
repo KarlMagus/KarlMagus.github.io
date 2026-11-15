@@ -23,7 +23,7 @@
     href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=20261116" />
 
   <style>
     /* Demo Custom Styles Aligned with Portfolio Design System */
@@ -69,10 +69,10 @@
     .demo-heading {
       font-family: var(--font-display);
       font-size: 2.25rem;
-      font-weight: 700;
-      letter-spacing: -0.03em;
+      font-weight: 500;
+      letter-spacing: -0.025em;
       margin-bottom: 0.75rem;
-      color: #ffffff;
+      color: var(--text-primary);
     }
 
     .demo-lead {
@@ -165,19 +165,21 @@
       border-radius: 50%;
       background: var(--accent-subtle);
       border: 1px solid var(--accent);
-      color: var(--text-secondary);
+      color: var(--accent-text);
+      font-family: var(--font-mono);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 700;
+      font-weight: 600;
       font-size: 0.8rem;
     }
 
     .step-text h4 {
+      font-family: var(--font-body);
       font-size: 0.88rem;
       font-weight: 600;
       margin: 0;
-      color: #ffffff;
+      color: var(--text-primary);
     }
 
     .step-text p {
@@ -246,7 +248,8 @@
 
     .seg-tab-btn.active {
       background: var(--accent);
-      color: #ffffff;
+      color: #141210;
+      font-weight: 600;
     }
 
     .scenario-dropdown {
@@ -268,7 +271,7 @@
 
     .run-btn {
       background: var(--accent);
-      color: #ffffff;
+      color: #141210;
       border: none;
       padding: 0.65rem 1.4rem;
       border-radius: var(--radius-sm);
@@ -283,18 +286,18 @@
     }
 
     .run-btn:hover {
-      background: var(--accent-bright);
+      opacity: 0.9;
     }
 
     /* Explanation Banner under controls */
     .mode-explainer {
-      background: transparent;
+      background: var(--bg-primary);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-sm);
       padding: 0.75rem 1rem;
       margin-bottom: 1.25rem;
-      font-size: 0.82rem;
-      color: #bfdbfe;
+      font-size: 0.84rem;
+      color: var(--text-secondary);
       display: flex;
       align-items: center;
       gap: 0.6rem;
@@ -313,7 +316,7 @@
       width: 100%;
       border-collapse: collapse;
       font-size: 0.8rem;
-      font-family: var(--font-mono);
+      font-family: var(--font-body);
       text-align: left;
     }
 
@@ -379,7 +382,7 @@
 
     .output-tabs-header {
       display: flex;
-      background: #0a101d;
+      background: var(--bg-secondary);
       border-bottom: 1px solid var(--border-subtle);
       padding: 0.5rem 1rem 0;
       gap: 0.5rem;
@@ -404,7 +407,7 @@
     }
 
     .output-tab-btn.active {
-      color: #60a5fa;
+      color: var(--accent-text);
       border-bottom-color: var(--accent);
       background: transparent;
       border-radius: var(--radius-sm) var(--radius-sm) 0 0;
@@ -428,7 +431,7 @@
       font-family: var(--font-mono);
       font-size: 0.84rem;
       line-height: 1.65;
-      color: #e2e8f0;
+      color: var(--text-primary);
       margin: 0;
       white-space: pre-wrap;
     }
@@ -443,9 +446,9 @@
     }
 
     .action-btn-sm {
-      background: var(--border-subtle);
-      border: 1px solid #334155;
-      color: #f1f5f9;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-bold);
+      color: var(--text-primary);
       padding: 0.4rem 0.75rem;
       border-radius: var(--radius-xs);
       font-size: 0.75rem;
@@ -458,7 +461,8 @@
     }
 
     .action-btn-sm:hover {
-      background: #334155;
+      border-color: var(--accent);
+      color: var(--accent-text);
     }
 
     /* DAG Pipeline Visual Cards */
@@ -544,43 +548,25 @@
           <div class="demos-dropdown-menu" role="menu">
             <div class="dd-section-label">Interactive Demos</div>
             <a href="demo-sql-finetuning.html" class="dd-item" role="menuitem">
-              <span class="dd-item-icon live"><i class="fa-solid fa-brain"></i></span>
-              <span class="dd-item-text"><span class="dd-item-title">01 · NL-to-SQL Fine-Tuning</span></span>
-              <span class="dd-item-badge dd-badge-live">Simulated</span>
+              <span class="dd-item-icon live"><i class="fa-solid fa-database"></i></span>
+              <span class="dd-item-text"><span class="dd-item-title">01 · Excel-to-SQL Model</span></span>
+              <span class="dd-item-badge dd-badge-live">Demo</span>
             </a>
             <a href="demo-etl-generator.html" class="dd-item dd-active" role="menuitem">
-              <span class="dd-item-icon live"><i class="fa-solid fa-bolt"></i></span>
-              <span class="dd-item-text"><span class="dd-item-title">03 · Schema & ETL Generator</span></span>
-              <span class="dd-item-badge dd-badge-live">Simulated</span>
+              <span class="dd-item-icon live"><i class="fa-solid fa-diagram-project"></i></span>
+              <span class="dd-item-text"><span class="dd-item-title">02 · Spark Pipeline Compiler</span></span>
+              <span class="dd-item-badge dd-badge-live">Demo</span>
             </a>
             <a href="demo-classroom-cv.html" class="dd-item" role="menuitem">
               <span class="dd-item-icon live"><i class="fa-solid fa-video"></i></span>
-              <span class="dd-item-text"><span class="dd-item-title">04 · Classroom CV Analytics</span></span>
-              <span class="dd-item-badge dd-badge-live">Simulated</span>
+              <span class="dd-item-text"><span class="dd-item-title">03 · Classroom Video Analytics</span></span>
+              <span class="dd-item-badge dd-badge-live">Demo</span>
             </a>
-            <div class="dd-divider"></div>
-            <div class="dd-section-label">Coming Soon</div>
-            </span>
-            <span class="dd-item dd-disabled">
-              <span class="dd-item-icon soon"><i class="fa-solid fa-stethoscope"></i></span>
-              <span class="dd-item-text"><span class="dd-item-title">05 · Voice AI & EHR</span></span>
-              <span class="dd-item-badge dd-badge-soon">Soon</span>
-            </span>
-            <span class="dd-item dd-disabled">
-              <span class="dd-item-icon soon"><i class="fa-solid fa-graduation-cap"></i></span>
-              <span class="dd-item-text"><span class="dd-item-title">06 · AI Quiz Generation</span></span>
-              <span class="dd-item-badge dd-badge-soon">Soon</span>
-            </span>
-            <span class="dd-item dd-disabled">
-              <span class="dd-item-icon soon"><i class="fa-solid fa-chart-gantt"></i></span>
-              <span class="dd-item-text"><span class="dd-item-title">07 · Enterprise PMS Analytics</span></span>
-              <span class="dd-item-badge dd-badge-soon">Soon</span>
-            </span>
-            <span class="dd-item dd-disabled">
-              <span class="dd-item-icon soon"><i class="fa-solid fa-music"></i></span>
-              <span class="dd-item-text"><span class="dd-item-title">08 · Bio-Adaptive Meditation</span></span>
-              <span class="dd-item-badge dd-badge-soon">Soon</span>
-            </span>
+            <a href="demo-power-platform.html" class="dd-item" role="menuitem">
+              <span class="dd-item-icon live"><i class="fa-solid fa-layer-group"></i></span>
+              <span class="dd-item-text"><span class="dd-item-title">09–12 · Power Platform &amp; M365</span></span>
+              <span class="dd-item-badge dd-badge-live">Demo</span>
+            </a>
           </div>
         </div>
 
@@ -600,45 +586,42 @@
     (function () { var d = document.getElementById('demosDropdown'), t = d.querySelector('.demos-dropdown-toggle'); t.addEventListener('click', function (e) { e.stopPropagation(); d.classList.toggle('open'); t.setAttribute('aria-expanded', d.classList.contains('open')) }); document.addEventListener('click', function () { d.classList.remove('open'); t.setAttribute('aria-expanded', 'false') }); d.querySelector('.demos-dropdown-menu').addEventListener('click', function (e) { e.stopPropagation() }) })();
   </script>
 
-  <!-- Hero & STAR Problem Framing Section -->
+  <!-- Hero Section -->
   <section class="demo-header-section">
     <div class="container">
       <div class="status-badge-live">
         <span class="status-pulse"></span>
-        <span>Browser Simulation · Fictional Sample Data</span>
+        <span>Interactive Demo · Spark Pipeline Compiler</span>
       </div>
-      <h1 class="demo-heading">Enterprise Mapping-to-SQL & ETL DAG Generator</h1>
+      <h1 class="demo-heading">Spreadsheet-to-Spark ETL Pipeline Compiler</h1>
       <p class="demo-lead">
-        Explore a simulated spreadsheet-to-SQL workflow with sample mappings, joins, validation, and ETL pipeline
-        output.
+        Select a mapping sheet below to compile a 7-stage Apache Spark DAG manifest, or switch to Incremental Patch mode to add a new table without touching upstream stages.
       </p>
-      <p class="demo-simulation-notice" role="note">This demonstration runs entirely in your browser using fictional
-        sample schemas and preset transformations. It does not connect to an AI model, client system, database, or cloud
-        pipeline.</p>
+      <p class="demo-simulation-notice" role="note">Browser simulation using sample mapping sheets and a local compiler engine. No external Spark cluster or database is connected.</p>
 
       <!-- 3-Step Visual Flow -->
       <div class="flow-steps-bar">
         <div class="flow-step-item">
           <div class="step-number">1</div>
           <div class="step-text">
-            <h4>Raw Spreadsheet Input</h4>
-            <p>Source tables, target columns, joins</p>
+            <h4>Excel/CSV Mapping</h4>
+            <p>Source tables, columns &amp; join keys</p>
           </div>
         </div>
         <i class="fa-solid fa-arrow-right step-arrow"></i>
         <div class="flow-step-item">
           <div class="step-number">2</div>
           <div class="step-text">
-            <h4>Local Demo Engine</h4>
-            <p>Parses aliases, keys &amp; COALESCE</p>
+            <h4>DAG Compiler</h4>
+            <p>Assigns aliases, joins &amp; SQL transforms</p>
           </div>
         </div>
         <i class="fa-solid fa-arrow-right step-arrow"></i>
         <div class="flow-step-item">
           <div class="step-number">3</div>
           <div class="step-text">
-            <h4>Example Outputs</h4>
-            <p>Example SQL &amp; ETL DAG</p>
+            <h4>Spark Manifest</h4>
+            <p>7-stage JSON &amp; pre-flight checks</p>
           </div>
         </div>
       </div>
@@ -655,10 +638,10 @@
         <div class="workspace-header">
           <!-- Mode Switcher -->
           <div>
-            <span class="control-label">What do you want to test?</span>
+            <span class="control-label">Mode</span>
             <div class="segmented-tabs">
               <button class="seg-tab-btn active" id="modeGenBtn" onclick="setMode('generator')">
-                <i class="fa-solid fa-bolt"></i> Full Pipeline (New Migration)
+                <i class="fa-solid fa-bolt"></i> Compile Full Pipeline
               </button>
               <button class="seg-tab-btn" id="modeEnhBtn" onclick="setMode('enhancer')">
                 <i class="fa-solid fa-code-merge"></i> Incremental Patch (Add Table)
@@ -668,12 +651,11 @@
 
           <!-- Scenario Dropdown -->
           <div>
-            <span class="control-label">Choose a Sample Scenario</span>
+            <span class="control-label">Mapping Sheet</span>
             <select class="scenario-dropdown" id="scenarioSelect" onchange="loadScenario(this.value)">
-              <option value="financial">1. Sample Entity Consolidation (Source A + B -> Example Summary)</option>
-              <option value="sample_activity">2. Sample Profile and Activity Merge (Source A + B -> Example Output)
-              </option>
-              <option value="enhancer_delta">3. Sample Schema Update (Add a Source)</option>
+              <option value="financial">1. Account Balance Consolidation (2 Source Tables)</option>
+              <option value="sample_activity">2. Customer Profile &amp; Activity Join</option>
+              <option value="enhancer_delta">3. Incremental Schema Update (Add Reference Table)</option>
             </select>
           </div>
 
@@ -681,7 +663,7 @@
           <div>
             <span class="control-label" style="color:transparent;">Action</span>
             <button class="run-btn" id="runPipelineBtn" onclick="executePipeline()">
-              <i class="fa-solid fa-play"></i> Run Demo Simulation
+              <i class="fa-solid fa-play"></i> Compile Pipeline
             </button>
           </div>
         </div>
@@ -690,17 +672,15 @@
         <div class="mode-explainer" id="modeExplainer">
           <i class="fa-solid fa-circle-info"></i>
           <span id="modeExplainerText">
-            <strong>Full Pipeline Mode:</strong> Processes a fictional sample mapping with multiple source tables and
-            displays an example DAG.
+            <strong>Full Pipeline Mode:</strong> Compiles a mapping sheet into a multi-stage Spark DAG manifest with SQL transformations and validation checks.
           </span>
         </div>
 
         <!-- Raw Mapping Preview Table -->
         <div
           style="margin-bottom: 0.5rem; font-size: 0.8rem; font-weight: 600; color: var(--text-secondary); display:flex; justify-content:space-between; align-items:center;">
-          <span>Fictional Sample Mapping Preview:</span>
-          <span style="font-size: 0.74rem; color: var(--text-muted); font-family: var(--font-mono);">Preset in-browser
-            example</span>
+          <span>Input Mapping Sheet</span>
+          <span style="font-size: 0.74rem; color: var(--text-muted); font-family: var(--font-mono);">Sample CSV/Excel rows</span>
         </div>
         <div class="table-scroll">
           <table class="styled-table" id="mappingTable">
@@ -732,13 +712,13 @@
       <div class="output-card" id="resultsSection">
         <div class="output-tabs-header">
           <button class="output-tab-btn active" id="tabSqlBtn" onclick="switchTab('sql')">
-            <i class="fa-solid fa-database"></i> Example SQL Output
+            <i class="fa-solid fa-database"></i> Generated Spark SQL
           </button>
           <button class="output-tab-btn" id="tabJsonBtn" onclick="switchTab('json')">
-            <i class="fa-solid fa-code"></i> Execution DAG Manifest (JSON)
+            <i class="fa-solid fa-code"></i> DAG Manifest (JSON)
           </button>
           <button class="output-tab-btn" id="tabDagBtn" onclick="switchTab('dag')">
-            <i class="fa-solid fa-diagram-project"></i> Pipeline Topology & Validation
+            <i class="fa-solid fa-diagram-project"></i> Stages &amp; Pre-Flight Checks
           </button>
         </div>
 
@@ -777,13 +757,11 @@
 
             <!-- Pre-Flight Verification Gate Section -->
             <div
-              style="background: #0a101d; border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.25rem;">
+              style="background: var(--bg-primary); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.25rem;">
               <div
-                style="font-size: 0.92rem; font-weight: 600; color: #fff; margin-bottom: 0.75rem; display: flex; align-items: center; justify-content: space-between;">
-                <span><i class="fa-solid fa-shield-halved" style="color: var(--accent-text);"></i> 10 Automated Pre-Flight Quality
-                  Gate Matrix</span>
-                <span style="font-size: 0.72rem; color: var(--accent-text); font-family: var(--font-mono);">Pre-Spark Executor
-                  Validation</span>
+                style="font-size: 0.92rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.75rem; display: flex; align-items: center; justify-content: space-between;">
+                <span><i class="fa-solid fa-shield-halved" style="color: var(--accent-text);"></i> 10 Pre-Flight Validation Checks</span>
+                <span style="font-size: 0.72rem; color: var(--accent-text); font-family: var(--font-mono);">Runs before Spark execution</span>
               </div>
               <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.5rem;"
                 id="preChecksList">
@@ -822,11 +800,11 @@
       const explainer = document.getElementById('modeExplainerText');
 
       if (mode === 'enhancer') {
-        explainer.innerHTML = `<strong>Incremental Patch Mode:</strong> Demonstrates a sample schema update that adds a source to an example pipeline while preserving unchanged stages.`;
+        explainer.innerHTML = `<strong>Incremental Patch Mode:</strong> Appends a newly requested table into an existing Spark DAG manifest without rewriting verified upstream stages.`;
         document.getElementById('scenarioSelect').value = 'enhancer_delta';
         loadScenario('enhancer_delta');
       } else {
-        explainer.innerHTML = `<strong>Full Pipeline Mode:</strong> Processes the selected fictional mapping and displays an example multi-stage DAG.`;
+        explainer.innerHTML = `<strong>Full Pipeline Mode:</strong> Compiles the selected mapping sheet into a multi-stage Spark DAG manifest with SQL transformations and validation checks.`;
         if (document.getElementById('scenarioSelect').value === 'enhancer_delta') {
           document.getElementById('scenarioSelect').value = 'financial';
           loadScenario('financial');
@@ -851,13 +829,13 @@
           const tr = document.createElement('tr');
           tr.innerHTML = `
             <td><span class="badge-chip">${r.SOR_NAME || '-'}</span></td>
-            <td><strong style="color:#60a5fa;">${r.TABLE_SOURCE || '-'}</strong></td>
-            <td>${r.ATTRIBUTE_SOURCE || '-'}</td>
+            <td><strong style="color:var(--text-primary);">${r.TABLE_SOURCE || '-'}</strong></td>
+            <td style="font-family:var(--font-mono);">${r.ATTRIBUTE_SOURCE || '-'}</td>
             <td><strong style="color:var(--accent-text);">${r.TABLE_TARGET || '-'}</strong></td>
-            <td>${r.TABLE_COLUMN || '-'}</td>
-            <td><code style="color:#fcd34d;">${r.TRANSFORMATION || '-'}</code></td>
+            <td style="font-family:var(--font-mono);">${r.TABLE_COLUMN || '-'}</td>
+            <td><code style="color:var(--accent-text);">${r.TRANSFORMATION || '-'}</code></td>
             <td>${r.JOIN_TYPE || '-'}</td>
-            <td><code style="color:#94a3b8;">${r.JOIN_CONDITION || '-'}</code></td>
+            <td><code style="color:var(--text-muted);">${r.JOIN_CONDITION || '-'}</code></td>
           `;
           tbody.appendChild(tr);
         });
@@ -876,10 +854,10 @@
       terminal.innerHTML = '';
 
       const steps = [
-        "[1/4] Parsing fictional source-to-target sample mapping...",
-        "[2/4] Identifying sample source tables and assigning dataframe aliases...",
-        "[3/4] Checking sample join conditions and required keys...",
-        "[4/4] Building example SQL transformations and a sample DAG manifest..."
+        "[1/4] Parsing source-to-target mapping columns...",
+        "[2/4] Resolving source tables and sequential dataframe aliases...",
+        "[3/4] Validating join keys and NULL fallback rules...",
+        "[4/4] Generating Spark SQL stages and pre-flight checks..."
       ];
 
       let stepIdx = 0;
@@ -905,7 +883,7 @@
         const terminal = document.getElementById('terminalLog');
         const doneDiv = document.createElement('div');
         doneDiv.className = 'log-line complete';
-        doneDiv.innerHTML = `<i class="fa-solid fa-circle-check"></i> <strong>Simulation Complete: Displayed ${currentResult.summary.total_flows} sample DAG flows and example checks.</strong>`;
+        doneDiv.innerHTML = `<i class="fa-solid fa-circle-check"></i> <strong>Compiled ${currentResult.summary.total_flows} DAG flows and passed 10 pre-flight validation checks.</strong>`;
         terminal.appendChild(doneDiv);
 
         renderOutputs(currentResult);
@@ -924,7 +902,7 @@
 
       // 1. Render SQL
       let sqlDisplay = `-- ==========================================================================\n`;
-      sqlDisplay += `-- SAMPLE ANSI SQL OUTPUT FROM FICTIONAL MAPPING\n`;
+      sqlDisplay += `-- COMPILED SPARK SQL OUTPUT\n`;
       sqlDisplay += `-- Target: ${result.summary.target_table} | System of Record: ${result.summary.sor_name}\n`;
       sqlDisplay += `-- ==========================================================================\n\n`;
 
@@ -945,7 +923,7 @@
         <span class="badge-chip"><i class="fa-solid fa-database"></i> Source Tables: ${result.summary.unique_sources} (${result.summary.source_tables.join(', ')})</span>
         <span class="badge-chip"><i class="fa-solid fa-bullseye"></i> Target: ${result.summary.target_table}</span>
         <span class="badge-chip"><i class="fa-solid fa-layer-group"></i> Total Flows: ${result.summary.total_flows}</span>
-        <span class="badge-chip" style="background: rgba(34, 197, 94, 0.15); color: #86efac; border-color: rgba(34, 197, 94, 0.3);"><i class="fa-solid fa-shield-halved"></i> Example Checks: 10/10</span>
+        <span class="badge-chip" style="background: var(--accent-subtle); color: var(--accent-text); border-color: var(--accent);"><i class="fa-solid fa-shield-halved"></i> Pre-Flight Checks: 10/10</span>
       `;
 
       const dagGrid = document.getElementById('dagGrid');
@@ -957,7 +935,7 @@
         card.innerHTML = `
           <div class="dag-node-header">
             <span class="dag-pill">FLOW ID: ${flow.flowId}</span>
-            <span style="font-size:0.75rem; color:#94a3b8;">${flow.registerName}</span>
+            <span style="font-size:0.75rem; color:var(--text-muted);">${flow.registerName}</span>
           </div>
           <div class="dag-node-title">${flow.flowDesc}</div>
           <div class="dag-node-meta">

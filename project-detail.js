@@ -137,14 +137,24 @@ function renderProjectDetail() {
     `).join('');
   }
 
-  // Sidebar Live Demo CTA
+  // Sidebar Live Product & Demo CTAs
   const sidebarCta = document.querySelector('.sidebar-cta');
-  if (sidebarCta && project.liveDemo) {
-    sidebarCta.innerHTML = `
+  if (sidebarCta && (project.liveDemo || project.liveUrl)) {
+    const liveProductBtn = project.liveUrl ? `
+      <a href="${project.liveUrl}" class="btn btn-primary btn-block" target="_blank" rel="noopener noreferrer" style="margin-bottom: 0.75rem;">
+        <span>Visit Live Product</span>
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </a>
+    ` : '';
+    const liveDemoBtn = project.liveDemo ? `
       <a href="${project.liveDemo}" class="btn btn-primary btn-block" style="margin-bottom: 0.75rem;">
         <i class="fa-solid fa-play"></i>
         <span>Launch Interactive Demo</span>
       </a>
+    ` : '';
+    sidebarCta.innerHTML = `
+      ${liveProductBtn}
+      ${liveDemoBtn}
       <a href="index.html#contact" class="btn btn-secondary btn-block">
         <span>Discuss a Similar Project</span>
         <i class="fa-regular fa-paper-plane"></i>

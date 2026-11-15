@@ -26,7 +26,7 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=20261116" />
 
   <style>
     :root {
@@ -108,10 +108,10 @@
     .demo-heading {
       font-family: var(--font-display);
       font-size: 2.25rem;
-      font-weight: 700;
-      color: #fff;
+      font-weight: 500;
+      color: var(--text-primary);
       margin-bottom: 0.75rem;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.025em;
     }
 
     .demo-lead {
@@ -209,8 +209,8 @@
       background: var(--bg-primary);
       border-radius: var(--radius-md);
       overflow: hidden;
-      border: 1px solid #1e293b;
-      box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.7);
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.6);
     }
 
     #cvCanvas {
@@ -238,7 +238,7 @@
       height: 38px;
       border-radius: 50%;
       background: var(--accent-bright);
-      color: #fff;
+      color: #141210;
       border: none;
       display: flex;
       align-items: center;
@@ -320,10 +320,10 @@
     }
 
     .stat-val-big {
-      font-family: var(--font-display);
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #fff;
+      font-family: var(--font-mono);
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--text-primary);
     }
 
     /* Attentiveness Live Gauge */
@@ -377,14 +377,14 @@
     }
 
     .formula-pill {
-      font-family: var(--font-code);
-      font-size: 0.72rem;
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
       background: var(--bg-primary);
-      border: 1px solid #1e293b;
+      border: 1px solid var(--border-subtle);
       border-radius: 4px;
-      padding: 0.45rem 0.65rem;
-      color: #94a3b8;
-      line-height: 1.4;
+      padding: 0.5rem 0.7rem;
+      color: var(--text-secondary);
+      line-height: 1.45;
     }
 
     /* Roster Table */
@@ -392,6 +392,7 @@
       width: 100%;
       border-collapse: collapse;
       font-size: 0.8rem;
+      font-family: var(--font-body);
     }
 
     .roster-table th {
@@ -467,7 +468,7 @@
   </style>
 </head>
 
-<body>
+<body class="demo-page-body">
   <!-- Soft Blueprint Background -->
   <div class="tech-grid-bg" aria-hidden="true"></div>
 
@@ -492,43 +493,25 @@
           <div class="demos-dropdown-menu" role="menu">
             <div class="dd-section-label">Interactive Demos</div>
             <a href="demo-sql-finetuning.html" class="dd-item" role="menuitem">
-              <span class="dd-item-icon live"><i class="fa-solid fa-brain"></i></span>
-              <span class="dd-item-text"><span class="dd-item-title">01 · NL-to-SQL Fine-Tuning</span></span>
-              <span class="dd-item-badge dd-badge-live">Simulated</span>
+              <span class="dd-item-icon live"><i class="fa-solid fa-database"></i></span>
+              <span class="dd-item-text"><span class="dd-item-title">01 · Excel-to-SQL Model</span></span>
+              <span class="dd-item-badge dd-badge-live">Demo</span>
             </a>
             <a href="demo-etl-generator.html" class="dd-item" role="menuitem">
-              <span class="dd-item-icon live"><i class="fa-solid fa-bolt"></i></span>
-              <span class="dd-item-text"><span class="dd-item-title">03 · Schema & ETL Generator</span></span>
-              <span class="dd-item-badge dd-badge-live">Simulated</span>
+              <span class="dd-item-icon live"><i class="fa-solid fa-diagram-project"></i></span>
+              <span class="dd-item-text"><span class="dd-item-title">02 · Spark Pipeline Compiler</span></span>
+              <span class="dd-item-badge dd-badge-live">Demo</span>
             </a>
             <a href="demo-classroom-cv.html" class="dd-item dd-active" role="menuitem">
               <span class="dd-item-icon live"><i class="fa-solid fa-video"></i></span>
-              <span class="dd-item-text"><span class="dd-item-title">04 · Classroom CV Analytics</span></span>
-              <span class="dd-item-badge dd-badge-live">Simulated</span>
+              <span class="dd-item-text"><span class="dd-item-title">03 · Classroom Video Analytics</span></span>
+              <span class="dd-item-badge dd-badge-live">Demo</span>
             </a>
-            <div class="dd-divider"></div>
-            <div class="dd-section-label">Coming Soon</div>
-            </span>
-            <span class="dd-item dd-disabled">
-              <span class="dd-item-icon soon"><i class="fa-solid fa-stethoscope"></i></span>
-              <span class="dd-item-text"><span class="dd-item-title">05 · Voice AI & EHR</span></span>
-              <span class="dd-item-badge dd-badge-soon">Soon</span>
-            </span>
-            <span class="dd-item dd-disabled">
-              <span class="dd-item-icon soon"><i class="fa-solid fa-graduation-cap"></i></span>
-              <span class="dd-item-text"><span class="dd-item-title">06 · AI Quiz Generation</span></span>
-              <span class="dd-item-badge dd-badge-soon">Soon</span>
-            </span>
-            <span class="dd-item dd-disabled">
-              <span class="dd-item-icon soon"><i class="fa-solid fa-chart-gantt"></i></span>
-              <span class="dd-item-text"><span class="dd-item-title">07 · Enterprise PMS Analytics</span></span>
-              <span class="dd-item-badge dd-badge-soon">Soon</span>
-            </span>
-            <span class="dd-item dd-disabled">
-              <span class="dd-item-icon soon"><i class="fa-solid fa-music"></i></span>
-              <span class="dd-item-text"><span class="dd-item-title">08 · Bio-Adaptive Meditation</span></span>
-              <span class="dd-item-badge dd-badge-soon">Soon</span>
-            </span>
+            <a href="demo-power-platform.html" class="dd-item" role="menuitem">
+              <span class="dd-item-icon live"><i class="fa-solid fa-layer-group"></i></span>
+              <span class="dd-item-text"><span class="dd-item-title">09–12 · Power Platform &amp; M365</span></span>
+              <span class="dd-item-badge dd-badge-live">Demo</span>
+            </a>
           </div>
         </div>
 
@@ -548,20 +531,18 @@
     (function () { var d = document.getElementById('demosDropdown'), t = d.querySelector('.demos-dropdown-toggle'); t.addEventListener('click', function (e) { e.stopPropagation(); d.classList.toggle('open'); t.setAttribute('aria-expanded', d.classList.contains('open')) }); document.addEventListener('click', function () { d.classList.remove('open'); t.setAttribute('aria-expanded', 'false') }); d.querySelector('.demos-dropdown-menu').addEventListener('click', function (e) { e.stopPropagation() }) })();
   </script>
 
-  <!-- Hero Header & STAR Framing -->
+  <!-- Hero Header -->
   <section class="demo-header-section">
     <div class="container">
       <div class="status-badge-cv">
         <span class="pulse-emerald"></span>
-        <span>Browser Simulation · Synthetic Sample Data</span>
+        <span>Interactive Demo · Classroom Video Analytics</span>
       </div>
-      <h1 class="demo-heading">Classroom Video Analytics Simulation</h1>
+      <h1 class="demo-heading">Classroom Attendance &amp; Engagement Analytics</h1>
       <p class="demo-lead">
-        Explore a simulated computer-vision workflow with time-aligned overlays and example activity signals.
+        Scrub through the timeline or jump to key events to inspect student recognition, phone/sleep distraction alerts, and live attentiveness scoring.
       </p>
-      <p class="demo-simulation-notice" role="note">This browser-only demo uses synthetic participants and illustrative
-        scores. It does not upload or analyze video, call AWS Rekognition, identify real people, or measure actual
-        attention, emotion, or wellbeing.</p>
+      <p class="demo-simulation-notice" role="note">Browser simulation of the Django + AWS Rekognition Video pipeline using example classroom scenes and scoring formulas. No real student footage or AWS API calls are sent.</p>
 
     </div>
   </section>
@@ -573,14 +554,14 @@
         <!-- Left: Video Viewport & Controls -->
         <div>
           <div class="panel-card" style="margin-bottom:1.5rem;">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; flex-wrap:wrap; gap:0.5rem;">
               <h2
-                style="font-size:1rem; font-weight:600; color:#fff; margin:0; display:flex; align-items:center; gap:0.5rem;">
+                style="font-size:1rem; font-weight:600; color:var(--text-primary); margin:0; display:flex; align-items:center; gap:0.5rem;">
                 <i class="fa-solid fa-video" style="color:var(--accent-bright);"></i>
-                Sample Video Analytics Canvas (Simulated Overlays)
+                Lecture Video Feed — Bounding Box &amp; Telemetry Overlay
               </h2>
               <span style="font-size:0.75rem; font-family:var(--font-code); color:var(--accent-text);">
-                <i class="fa-solid fa-circle" style="font-size:0.5rem;"></i> SYNTHETIC SAMPLE STREAM
+                <i class="fa-solid fa-circle" style="font-size:0.5rem;"></i> 30 FPS OVERLAY PREVIEW
               </span>
             </div>
 
@@ -601,8 +582,7 @@
 
             <!-- Quick Jump Event Bar -->
             <div class="event-jump-bar">
-              <span style="font-size:0.75rem; color:var(--text-muted); align-self:center; font-weight:600;">TIMELINE
-                EVENTS:</span>
+              <span style="font-size:0.75rem; color:var(--text-muted); align-self:center; font-weight:600;">JUMP TO EVENT:</span>
               <button class="jump-btn" onclick="seekTo(4)">
                 <i class="fa-solid fa-user-check" style="color:var(--accent);"></i> 00:04 Baseline Attendance
               </button>
@@ -610,10 +590,10 @@
                 <i class="fa-solid fa-mobile-screen" style="color:#f43f5e;"></i> 00:16 Phone Distraction
               </button>
               <button class="jump-btn" onclick="seekTo(28)">
-                <i class="fa-solid fa-bed" style="color:#f59e0b;"></i> 00:28 Fatigue / Sleep Detection
+                <i class="fa-solid fa-bed" style="color:#f59e0b;"></i> 00:28 Sleeping Alert
               </button>
               <button class="jump-btn" onclick="seekTo(38)">
-                <i class="fa-solid fa-hand" style="color:var(--accent);"></i> 00:38 Hand Raised Gesture
+                <i class="fa-solid fa-hand" style="color:var(--accent);"></i> 00:38 Hand Raised
               </button>
             </div>
           </div>
@@ -621,40 +601,39 @@
           <!-- Bottom: Telemetry Stats & Raw AWS JSON Inspector -->
           <div class="panel-card">
             <h3
-              style="font-size:0.95rem; font-weight:600; color:#fff; margin:0 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+              style="font-size:0.95rem; font-weight:600; color:var(--text-primary); margin:0 0 1rem; display:flex; align-items:center; gap:0.5rem;">
               <i class="fa-solid fa-code" style="color:var(--accent-bright);"></i>
-              Synthetic Rekognition-Style Sample Payload (Demo ID: <span id="jobIdLabel"
-                style="font-family:var(--font-code); color:var(--text-secondary);">demo_sample_01</span>)
+              Frame Telemetry Payload (AWS Rekognition Format · Job: <span id="jobIdLabel"
+                style="font-family:var(--font-code); color:var(--text-secondary);">lec_session_01</span>)
             </h3>
             <pre class="code-box-mini" id="rekognitionJsonBox">Loading telemetry payload...</pre>
             <div style="display:flex; justify-content:flex-end; gap:0.75rem; margin-top:0.75rem;">
               <button class="btn btn-secondary btn-sm" onclick="copyRekognitionJson()">
-                <i class="fa-regular fa-copy"></i> Copy JSON AST
+                <i class="fa-regular fa-copy"></i> Copy JSON
               </button>
               <button class="btn btn-primary btn-sm" onclick="exportRekognitionJson()">
-                <i class="fa-solid fa-download"></i> Export Sample JSON
+                <i class="fa-solid fa-download"></i> Export JSON
               </button>
             </div>
           </div>
         </div>
 
-        <!-- Right: Sample Activity Score, Formula & Synthetic Participants -->
+        <!-- Right: Attentiveness Score, Formula & Enrolled Student Roster -->
         <div>
           <!-- Live Attentiveness Score Gauge -->
           <div class="gauge-wrapper">
             <div class="gauge-header">
-              <span class="gauge-title"><i class="fa-solid fa-chart-line"></i> Illustrative Activity Score</span>
+              <span class="gauge-title"><i class="fa-solid fa-chart-line"></i> Class Attentiveness Score</span>
               <span class="gauge-value" id="liveScoreText">84.5%</span>
             </div>
             <div class="gauge-progress-bg">
               <div class="gauge-progress-fill" id="scoreBar" style="width: 84.5%;"></div>
             </div>
             <div class="formula-pill">
-              <strong>Illustrative Demo Formula (Not Validated):</strong><br />
-              Example score = [(Sample Signal &times; 0.6) + (Sample Gaze &times; 0.4) - (Sample Activity &times; 0.5)]
-              &times; 100<br />
-              <span id="formulaValues" style="color:#c4a574;">Current: [(0.90 &times; 0.6) + (0.95 &times; 0.4) - (0.15
-                &times; 0.5)] &times; 100 = 84.5</span>
+              <strong>Scoring Formula:</strong><br />
+              (0.6 × Emotion + 0.4 × Forward Gaze &minus; 0.5 × Phone Penalty) × 100<br />
+              <span id="formulaValues" style="color:#c4a574;">Current: [(0.90 × 0.6) + (0.95 × 0.4) - (0.15
+                × 0.5)] × 100 = 84.5</span>
             </div>
           </div>
 
@@ -674,17 +653,16 @@
             </div>
             <div class="metric-stat-box">
               <div class="stat-label-tiny">Unknowns</div>
-              <div class="stat-val-big" style="color:#94a3b8;" id="unknownCount">0</div>
+              <div class="stat-val-big" style="color:var(--text-muted);" id="unknownCount">0</div>
             </div>
           </div>
 
-          <!-- Synthetic Participant Activity Table -->
+          <!-- Enrolled Student Roster Table -->
           <div class="panel-card">
             <h3
-              style="font-size:0.92rem; font-weight:600; color:#fff; margin:0 0 1rem; display:flex; align-items:center; justify-content:space-between;">
-              <span><i class="fa-solid fa-clipboard-user" style="color:var(--accent-bright);"></i> Synthetic Participant
-                Activity</span>
-              <span style="font-size:0.7rem; font-family:var(--font-code); color:var(--text-muted);">Sample Data</span>
+              style="font-size:0.92rem; font-weight:600; color:var(--text-primary); margin:0 0 1rem; display:flex; align-items:center; justify-content:space-between;">
+              <span><i class="fa-solid fa-clipboard-user" style="color:var(--accent-bright);"></i> Enrolled Student Roster</span>
+              <span style="font-size:0.7rem; font-family:var(--font-code); color:var(--text-muted);">Live State</span>
             </h3>
 
             <table class="roster-table">
@@ -722,10 +700,10 @@
     // Synthetic demonstration data; no AWS service or real participant data is used.
     // -------------------------------------------------------------
     const SESSION_STUDENTS = [
-      { id: "DEMO_01", name: "Sample Participant 01", x: 56, y: 168, w: 150, h: 175, baseEmotion: "Calm", tool: "Notebook" },
-      { id: "DEMO_02", name: "Sample Participant 02", x: 286, y: 158, w: 150, h: 175, baseEmotion: "Focused", tool: "Laptop" },
-      { id: "DEMO_03", name: "Sample Participant 03", x: 516, y: 168, w: 150, h: 175, baseEmotion: "Neutral", tool: "Notebook" },
-      { id: "DEMO_04", name: "Sample Participant 04", x: 746, y: 172, w: 150, h: 175, baseEmotion: "Focused", tool: "Pen" }
+      { id: "STU_01", name: "Student 01", x: 56, y: 168, w: 150, h: 175, baseEmotion: "Calm", tool: "Notebook" },
+      { id: "STU_02", name: "Student 02", x: 286, y: 158, w: 150, h: 175, baseEmotion: "Focused", tool: "Laptop" },
+      { id: "STU_03", name: "Student 03", x: 516, y: 168, w: 150, h: 175, baseEmotion: "Neutral", tool: "Notebook" },
+      { id: "STU_04", name: "Student 04", x: 746, y: 172, w: 150, h: 175, baseEmotion: "Focused", tool: "Pen" }
     ];
 
     let currentTime = 0;
@@ -795,31 +773,31 @@
       const h = canvas.height;
 
       // 1. Draw Simulated Classroom Background
-      ctx.fillStyle = '#0f172a';
+      ctx.fillStyle = '#141210';
       ctx.fillRect(0, 0, w, h);
 
       // Floor & Wall Perspective
-      ctx.fillStyle = '#090d16';
+      ctx.fillStyle = '#100e0c';
       ctx.fillRect(0, 0, w, h * 0.45);
 
       // Blackboard / Presentation Screen
-      ctx.fillStyle = '#1e293b';
-      ctx.strokeStyle = '#334155';
+      ctx.fillStyle = '#1c1916';
+      ctx.strokeStyle = '#3d3832';
       ctx.lineWidth = 2;
       ctx.fillRect(w * 0.25, 30, w * 0.5, 120);
       ctx.strokeRect(w * 0.25, 30, w * 0.5, 120);
 
       // Screen Text
-      ctx.fillStyle = '#64748b';
-      ctx.font = '12px "JetBrains Mono"';
-      ctx.fillText("LECTURE: DISTRIBUTED SYSTEMS ARCHITECTURE", w * 0.28, 65);
-      ctx.fillStyle = '#38bdf8';
-      ctx.fillText("SIMULATED COMPUTER VISION SAMPLE", w * 0.28, 90);
+      ctx.fillStyle = '#b7b0a4';
+      ctx.font = '12px "JetBrains Mono", monospace';
+      ctx.fillText("DISTRIBUTED SYSTEMS LECTURE", w * 0.28, 65);
+      ctx.fillStyle = '#c4a574';
+      ctx.fillText("REKOGNITION + OPENCV OVERLAY STREAM", w * 0.28, 90);
 
       // Classroom Desks Row
-      ctx.fillStyle = '#1e293b';
+      ctx.fillStyle = '#1c1916';
       ctx.fillRect(40, 360, w - 80, 140);
-      ctx.strokeStyle = '#334155';
+      ctx.strokeStyle = '#3d3832';
       ctx.strokeRect(40, 360, w - 80, 140);
 
       // Event Scenarios based on Timeline
@@ -846,16 +824,16 @@
       // 2. Draw Students & Bounding Boxes
       SESSION_STUDENTS.forEach((stu, idx) => {
         let boxColor = '#10b981';
-        let subLabel = "SIGNAL 95%";
+        let subLabel = "FACE 95%";
         let emotionColor = "#34d399";
-        const demoLabel = `DEMO ${String(idx + 1).padStart(2, "0")}`;
+        const demoLabel = `STUDENT ${String(idx + 1).padStart(2, "0")}`;
 
-        ctx.fillStyle = '#334155';
+        ctx.fillStyle = '#3d3832';
         ctx.beginPath();
         ctx.arc(stu.x + stu.w / 2, stu.y + 45, 38, 0, Math.PI * 2);
         ctx.fill();
 
-        ctx.fillStyle = '#1e293b';
+        ctx.fillStyle = '#24201c';
         ctx.beginPath();
         ctx.ellipse(stu.x + stu.w / 2, stu.y + 125, 50, 40, 0, 0, Math.PI * 2);
         ctx.fill();
@@ -918,19 +896,19 @@
 
         ctx.fillStyle = boxColor;
         ctx.fillRect(stu.x, stu.y - 24, stu.w, 24);
-        fillClippedText(demoLabel, stu.x, stu.y - 24, stu.w, 24, 'bold 11px "Geist", sans-serif', '#000');
+        fillClippedText(demoLabel, stu.x, stu.y - 24, stu.w, 24, 'bold 11px "Geist", sans-serif', '#141210');
 
-        ctx.fillStyle = 'rgba(15, 23, 42, 0.85)';
+        ctx.fillStyle = 'rgba(20, 18, 16, 0.9)';
         ctx.fillRect(stu.x, stu.y + stu.h, stu.w, 20);
         fillClippedText(subLabel, stu.x, stu.y + stu.h, stu.w, 20, '10px "JetBrains Mono"', emotionColor);
       });
 
       // Frame Timestamp Overlay in Top-Right
-      ctx.fillStyle = 'rgba(15, 23, 42, 0.85)';
+      ctx.fillStyle = 'rgba(20, 18, 16, 0.9)';
       ctx.fillRect(w - 220, 15, 205, 32);
-      ctx.strokeStyle = '#334155';
+      ctx.strokeStyle = '#3d3832';
       ctx.strokeRect(w - 220, 15, 205, 32);
-      ctx.fillStyle = '#38bdf8';
+      ctx.fillStyle = '#c4a574';
       ctx.font = '11px "JetBrains Mono"';
       ctx.fillText(`FRAME: ${(time * 30).toFixed(0)} | FPS: 30.0`, w - 210, 35);
     }
@@ -1004,7 +982,7 @@
           statusBadge = `<span class="badge-status status-present">RAISED</span>`;
         }
 
-        const participantLabel = `Participant ${String(idx + 1).padStart(2, "0")}`;
+        const participantLabel = `Student ${String(idx + 1).padStart(2, "0")}`;
         return `
           <tr>
             <td>
