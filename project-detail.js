@@ -20,6 +20,15 @@ function renderProjectDetail() {
   const project = getProjectById(projectId);
   if (!project) return;
 
+  if (document.body) {
+    document.body.dataset.projectId = project.id;
+  }
+  const outboundTarget = project.liveUrl
+    ? (project.liveUrl.includes('compelion')
+      ? 'live_product_compelion'
+      : (project.liveUrl.includes('quizentia') ? 'live_product_quizentia' : ''))
+    : '';
+
   // Set page title
   document.title = `${project.title} | Technical Deep-Dive`;
 
@@ -66,7 +75,9 @@ function renderProjectDetail() {
           <h3>${project.liveDemoTitle || 'Test the Pipeline in Your Browser'}</h3>
           <p>${project.liveDemoDesc || 'Upload or choose mapping spreadsheets, inspect join keys, and synthesize ANSI SQL & Spark DAGs in real time.'}</p>
         </div>
-        <a href="${project.liveDemo}" class="btn btn-primary">
+        <a href="${project.liveDemo}" class="btn btn-primary"
+          data-analytics-event="select_content" data-analytics-category="demo_launch"
+          data-analytics-label="${project.id}_demo_banner" data-analytics-project="${project.id}">
           <i class="fa-solid fa-play"></i>
           <span>Launch Interactive Demo</span>
         </a>
@@ -139,23 +150,32 @@ function renderProjectDetail() {
 
   // Sidebar Live Product & Demo CTAs
   const sidebarCta = document.querySelector('.sidebar-cta');
-  if (sidebarCta && (project.liveDemo || project.liveUrl)) {
+  if (sidebarCta) {
     const liveProductBtn = project.liveUrl ? `
-      <a href="${project.liveUrl}" class="btn btn-primary btn-block" target="_blank" rel="noopener noreferrer" style="margin-bottom: 0.75rem;">
+      <a href="${project.liveUrl}" class="btn btn-primary btn-block" target="_blank" rel="noopener noreferrer" style="margin-bottom: 0.75rem;"
+        data-analytics-event="outbound_click" data-analytics-category="outbound_proof"
+        data-analytics-label="${project.id}_sidebar_live_site"
+        ${outboundTarget ? `data-analytics-target="${outboundTarget}"` : ''}
+        data-analytics-project="${project.id}">
         <span>Visit Live Product</span>
         <i class="fa-solid fa-arrow-up-right-from-square"></i>
       </a>
     ` : '';
     const liveDemoBtn = project.liveDemo ? `
-      <a href="${project.liveDemo}" class="btn btn-primary btn-block" style="margin-bottom: 0.75rem;">
+      <a href="${project.liveDemo}" class="btn btn-primary btn-block" style="margin-bottom: 0.75rem;"
+        data-analytics-event="select_content" data-analytics-category="demo_launch"
+        data-analytics-label="${project.id}_sidebar_demo" data-analytics-project="${project.id}">
         <i class="fa-solid fa-play"></i>
         <span>Launch Interactive Demo</span>
       </a>
     ` : '';
+    const discussBtnClass = (project.liveDemo || project.liveUrl) ? 'btn btn-secondary btn-block' : 'btn btn-primary btn-block';
     sidebarCta.innerHTML = `
       ${liveProductBtn}
       ${liveDemoBtn}
-      <a href="index.html#contact" class="btn btn-secondary btn-block">
+      <a href="index.html#contact" class="${discussBtnClass}"
+        data-analytics-event="select_content" data-analytics-category="case_study_cta"
+        data-analytics-label="${project.id}_discuss_work" data-analytics-project="${project.id}">
         <span>Discuss a Similar Project</span>
         <i class="fa-regular fa-paper-plane"></i>
       </a>
@@ -174,6 +194,10 @@ function renderProjectDetail() {
   const prevProjectName = document.getElementById('prevProjectName');
   if (prevBtn && prevProjectName) {
     prevBtn.href = `projects/${encodeURIComponent(prevProject.id)}/`;
+    prevBtn.setAttribute('data-analytics-event', 'select_content');
+    prevBtn.setAttribute('data-analytics-category', 'case_study_nav');
+    prevBtn.setAttribute('data-analytics-label', `prev_${prevProject.id}`);
+    prevBtn.setAttribute('data-analytics-project', prevProject.id);
     prevProjectName.textContent = prevProject.title;
   }
 
@@ -181,6 +205,10 @@ function renderProjectDetail() {
   const nextProjectName = document.getElementById('nextProjectName');
   if (nextBtn && nextProjectName) {
     nextBtn.href = `projects/${encodeURIComponent(nextProject.id)}/`;
+    nextBtn.setAttribute('data-analytics-event', 'select_content');
+    nextBtn.setAttribute('data-analytics-category', 'case_study_nav');
+    nextBtn.setAttribute('data-analytics-label', `next_${nextProject.id}`);
+    nextBtn.setAttribute('data-analytics-project', nextProject.id);
     nextProjectName.textContent = nextProject.title;
   }
 

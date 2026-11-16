@@ -19,6 +19,7 @@ function renderProjectCards(filter) {
     : PORTFOLIO_PROJECTS.filter((project) => Array.isArray(project.filterGroups) && project.filterGroups.includes(filter));
 
   container.innerHTML = filtered.map((project) => {
+    const safeProjectId = escapeCardHtml(project.id);
     const detailHref = `projects/${encodeURIComponent(project.id)}/`;
     const typeLabel = project.solutionType || project.categoryLabel;
     const summaryText = project.cardSummary || project.shortDesc;
@@ -28,15 +29,24 @@ function renderProjectCards(filter) {
 
     let primaryAction = '';
     if (project.liveUrl) {
+      const outboundTarget = project.liveUrl.includes('compelion')
+        ? 'live_product_compelion'
+        : (project.liveUrl.includes('quizentia') ? 'live_product_quizentia' : '');
       primaryAction = `
-        <a href="${escapeCardHtml(project.liveUrl)}" class="link-btn link-btn-demo" target="_blank" rel="noopener noreferrer">
+        <a href="${escapeCardHtml(project.liveUrl)}" class="link-btn link-btn-demo" target="_blank" rel="noopener noreferrer"
+          data-analytics-event="outbound_click" data-analytics-category="outbound_proof"
+          data-analytics-label="${safeProjectId}_live_site"
+          ${outboundTarget ? `data-analytics-target="${outboundTarget}"` : ''}
+          data-analytics-project="${safeProjectId}">
           <i class="fa-solid fa-arrow-up-right-from-square"></i>
           <span>Live Website</span>
         </a>
       `;
     } else if (project.liveDemo) {
       primaryAction = `
-        <a href="${escapeCardHtml(project.liveDemo)}" class="link-btn link-btn-demo">
+        <a href="${escapeCardHtml(project.liveDemo)}" class="link-btn link-btn-demo"
+          data-analytics-event="select_content" data-analytics-category="demo_launch"
+          data-analytics-label="${safeProjectId}_demo_card" data-analytics-project="${safeProjectId}">
           <i class="fa-solid fa-play"></i>
           <span>Interactive Demo</span>
         </a>
@@ -51,7 +61,9 @@ function renderProjectCards(filter) {
             <span class="project-type-badge">${escapeCardHtml(typeLabel)}</span>
           </div>
           <h3 class="project-title">
-            <a href="${detailHref}" class="project-title-link">${escapeCardHtml(project.title)}</a>
+            <a href="${detailHref}" class="project-title-link"
+              data-analytics-event="select_content" data-analytics-category="project_card"
+              data-analytics-label="${safeProjectId}" data-analytics-project="${safeProjectId}">${escapeCardHtml(project.title)}</a>
           </h3>
           <p class="project-summary">${escapeCardHtml(summaryText)}</p>
           ${project.outcomeBadge ? `
@@ -65,7 +77,9 @@ function renderProjectCards(filter) {
           </div>
           <div class="project-links">
             ${primaryAction}
-            <a href="${detailHref}" class="link-btn link-btn-details">
+            <a href="${detailHref}" class="link-btn link-btn-details"
+              data-analytics-event="select_content" data-analytics-category="project_card"
+              data-analytics-label="${safeProjectId}" data-analytics-project="${safeProjectId}">
               <span>View Details</span>
               <i class="fa-solid fa-arrow-right"></i>
             </a>

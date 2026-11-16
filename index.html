@@ -65,7 +65,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&amp;display=swap"
     rel="stylesheet" />
 
   <!-- Font Awesome Icons -->
@@ -91,7 +91,8 @@
       </nav>
 
       <div class="nav-cta">
-        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation"
+          data-analytics-event="select_content" data-analytics-category="navigation" data-analytics-label="mobile_nav_toggle">
           <span></span>
           <span></span>
           <span></span>
@@ -118,10 +119,12 @@
           </p>
 
           <div class="hero-actions">
-            <a href="#projects" class="btn btn-primary" id="heroViewWork">
+            <a href="#projects" class="btn btn-primary" id="heroViewWork"
+              data-analytics-event="select_content" data-analytics-category="hero_cta" data-analytics-label="view_my_work">
               <span>View My Work</span>
             </a>
-            <a href="#contact" class="btn btn-secondary" id="heroGetInTouch">
+            <a href="#contact" class="btn btn-secondary" id="heroGetInTouch"
+              data-analytics-event="select_content" data-analytics-category="hero_cta" data-analytics-label="get_in_touch">
               <span>Get in Touch</span>
             </a>
           </div>
@@ -173,7 +176,7 @@
                   </div>
                   <div class="bio-stat">
                     <span class="bio-num">B.Tech</span>
-                    <span class="bio-text">Computer Science & Eng.</span>
+                    <span class="bio-text">Computer Science &amp; Eng.</span>
                   </div>
                 </div>
               </div>
@@ -203,11 +206,14 @@
             </div>
 
             <div class="about-actions">
-              <a href="Ishraq_Ahmad_Resume.pdf" class="btn btn-primary" id="downloadResumeBtn" download>
+              <a href="Ishraq_Ahmad_Resume.pdf" class="btn btn-primary" id="downloadResumeBtn" download
+                data-analytics-event="file_download" data-analytics-category="conversion"
+                data-analytics-label="Ishraq_Ahmad_AI_ML_Engineer_Resume.pdf" data-analytics-manual="true">
                 <i class="fa-solid fa-download"></i>
                 <span>Download Resume</span>
               </a>
-              <a href="#contact" class="btn btn-secondary">
+              <a href="#contact" class="btn btn-secondary"
+                data-analytics-event="select_content" data-analytics-category="about_cta" data-analytics-label="about_contact">
                 <span>Contact</span>
               </a>
             </div>
@@ -225,7 +231,8 @@
         <div class="skills-index" id="skillsIndex">
           <div class="skill-row">
             <button type="button" class="skill-row-button" id="skill-btn-01" aria-expanded="false"
-              aria-controls="skill-panel-01">
+              aria-controls="skill-panel-01"
+              data-analytics-event="select_content" data-analytics-category="skills_accordion" data-analytics-label="skill_01_business_enablement">
               <span class="skill-row-num">01</span>
               <span class="skill-row-name">Business Enablement, Handover &amp; Advisory</span>
             </button>
@@ -238,7 +245,8 @@
           </div>
           <div class="skill-row">
             <button type="button" class="skill-row-button" id="skill-btn-02" aria-expanded="false"
-              aria-controls="skill-panel-02">
+              aria-controls="skill-panel-02"
+              data-analytics-event="select_content" data-analytics-category="skills_accordion" data-analytics-label="skill_02_power_platform">
               <span class="skill-row-num">02</span>
               <span class="skill-row-name">Power Platform, Automation &amp; Integrations</span>
             </button>
@@ -254,7 +262,8 @@
           </div>
           <div class="skill-row">
             <button type="button" class="skill-row-button" id="skill-btn-03" aria-expanded="false"
-              aria-controls="skill-panel-03">
+              aria-controls="skill-panel-03"
+              data-analytics-event="select_content" data-analytics-category="skills_accordion" data-analytics-label="skill_03_genai_agents">
               <span class="skill-row-num">03</span>
               <span class="skill-row-name">Generative AI &amp; Multi-Agent Systems</span>
             </button>
@@ -267,7 +276,8 @@
           </div>
           <div class="skill-row">
             <button type="button" class="skill-row-button" id="skill-btn-04" aria-expanded="false"
-              aria-controls="skill-panel-04">
+              aria-controls="skill-panel-04"
+              data-analytics-event="select_content" data-analytics-category="skills_accordion" data-analytics-label="skill_04_rag_data_pipelines">
               <span class="skill-row-num">04</span>
               <span class="skill-row-name">RAG, Search &amp; Data Pipelines</span>
             </button>
@@ -279,7 +289,8 @@
           </div>
           <div class="skill-row">
             <button type="button" class="skill-row-button" id="skill-btn-05" aria-expanded="false"
-              aria-controls="skill-panel-05">
+              aria-controls="skill-panel-05"
+              data-analytics-event="select_content" data-analytics-category="skills_accordion" data-analytics-label="skill_05_ml_finetuning_vision">
               <span class="skill-row-num">05</span>
               <span class="skill-row-name">Machine Learning, Fine-Tuning &amp; Vision</span>
             </button>
@@ -291,7 +302,8 @@
           </div>
           <div class="skill-row">
             <button type="button" class="skill-row-button" id="skill-btn-06" aria-expanded="false"
-              aria-controls="skill-panel-06">
+              aria-controls="skill-panel-06"
+              data-analytics-event="select_content" data-analytics-category="skills_accordion" data-analytics-label="skill_06_fullstack_bi">
               <span class="skill-row-num">06</span>
               <span class="skill-row-name">Full-Stack, Backend &amp; BI Engineering</span>
             </button>
@@ -303,7 +315,8 @@
           </div>
           <div class="skill-row">
             <button type="button" class="skill-row-button" id="skill-btn-07" aria-expanded="false"
-              aria-controls="skill-panel-07">
+              aria-controls="skill-panel-07"
+              data-analytics-event="select_content" data-analytics-category="skills_accordion" data-analytics-label="skill_07_governance_cloud_mlops">
               <span class="skill-row-num">07</span>
               <span class="skill-row-name">Governance, Security &amp; Cloud/MLOps</span>
             </button>
@@ -318,7 +331,8 @@
           </div>
           <div class="skill-row">
             <button type="button" class="skill-row-button" id="skill-btn-08" aria-expanded="false"
-              aria-controls="skill-panel-08">
+              aria-controls="skill-panel-08"
+              data-analytics-event="select_content" data-analytics-category="skills_accordion" data-analytics-label="skill_08_ai_assisted_delivery">
               <span class="skill-row-num">08</span>
               <span class="skill-row-name">AI-Assisted &amp; Rapid Delivery Workflows</span>
             </button>
@@ -342,15 +356,25 @@
 
         <!-- Category Filter Bar -->
         <div class="project-filter-bar" id="projectFilterBar" role="tablist" aria-label="Filter projects by category">
-          <button type="button" class="filter-pill active" data-filter="all" role="tab" aria-selected="true">All
+          <button type="button" class="filter-pill active" data-filter="all" role="tab" aria-selected="true"
+            data-analytics-event="select_content" data-analytics-category="project_filter" data-analytics-label="all"
+            data-analytics-filter="all">All
             Projects (12)</button>
-          <button type="button" class="filter-pill" data-filter="power-platform" role="tab" aria-selected="false">Power
+          <button type="button" class="filter-pill" data-filter="power-platform" role="tab" aria-selected="false"
+            data-analytics-event="select_content" data-analytics-category="project_filter"
+            data-analytics-label="power-platform" data-analytics-filter="power-platform">Power
             Platform &amp; M365 (4)</button>
-          <button type="button" class="filter-pill" data-filter="chatbots-voice" role="tab" aria-selected="false">AI
+          <button type="button" class="filter-pill" data-filter="chatbots-voice" role="tab" aria-selected="false"
+            data-analytics-event="select_content" data-analytics-category="project_filter"
+            data-analytics-label="chatbots-voice" data-analytics-filter="chatbots-voice">AI
             Chatbots &amp; Voice (3)</button>
-          <button type="button" class="filter-pill" data-filter="web-saas" role="tab" aria-selected="false">Web Apps
+          <button type="button" class="filter-pill" data-filter="web-saas" role="tab" aria-selected="false"
+            data-analytics-event="select_content" data-analytics-category="project_filter"
+            data-analytics-label="web-saas" data-analytics-filter="web-saas">Web Apps
             &amp; SaaS (4)</button>
-          <button type="button" class="filter-pill" data-filter="data-automation" role="tab" aria-selected="false">Data
+          <button type="button" class="filter-pill" data-filter="data-automation" role="tab" aria-selected="false"
+            data-analytics-event="select_content" data-analytics-category="project_filter"
+            data-analytics-label="data-automation" data-analytics-filter="data-automation">Data
             &amp; Workflow Automation (3)</button>
         </div>
 
@@ -407,7 +431,8 @@
                   project.</span>
               </div>
 
-              <button type="submit" class="btn btn-primary btn-block" id="submitFormBtn">
+              <button type="submit" class="btn btn-primary btn-block" id="submitFormBtn"
+                data-analytics-event="generate_lead" data-analytics-category="conversion" data-analytics-label="contact_form_submit" data-analytics-manual="true">
                 <span>Submit</span>
               </button>
 
@@ -419,16 +444,22 @@
             <span class="social-footer-label">Or connect directly via:</span>
             <div class="social-links">
               <a href="https://www.linkedin.com/in/ishraq-ahmad-737063315/" target="_blank" rel="noopener noreferrer"
-                class="social-btn" aria-label="LinkedIn Profile">
+                class="social-btn" aria-label="LinkedIn Profile"
+                data-analytics-event="outbound_click" data-analytics-category="outbound_proof"
+                data-analytics-label="linkedin_profile" data-analytics-target="linkedin_profile">
                 <i class="fa-brands fa-linkedin-in"></i>
                 <span>LinkedIn</span>
               </a>
               <a href="https://github.com/KarlMagus/" target="_blank" rel="noopener noreferrer" class="social-btn"
-                aria-label="GitHub Profile">
+                aria-label="GitHub Profile"
+                data-analytics-event="outbound_click" data-analytics-category="outbound_proof"
+                data-analytics-label="github_profile" data-analytics-target="github_profile">
                 <i class="fa-brands fa-github"></i>
                 <span>GitHub</span>
               </a>
-              <a href="mailto:ishraq_ahmad@outlook.com" class="social-btn" aria-label="Email">
+              <a href="mailto:ishraq_ahmad@outlook.com" class="social-btn" aria-label="Email"
+                data-analytics-event="outbound_click" data-analytics-category="outbound_proof"
+                data-analytics-label="email_direct" data-analytics-target="email_direct">
                 <i class="fa-solid fa-envelope"></i>
                 <span>Email</span>
               </a>

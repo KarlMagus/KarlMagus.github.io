@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="../../project-detail.css?v=20261116" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":"Operations App Speed & Scale Rescue","description":"Audited and refactored an abandoned third-party inventory/operations Canvas App—eliminating delegation warnings, N+1 gallery lookups, and full-list client filtering to cut screen load time from ~9 seconds to ~3 seconds and restore staff adoption.","url":"https://karlmagus.github.io/projects/canvas-app-performance-rescue/","creator":{"@type":"Person","name":"Ishraq Ahmad","url":"https://karlmagus.github.io/"},"keywords":"Power Apps (Canvas), Power Fx, SharePoint Delegation, ClearCollect"}</script>
 </head>
-<body class="project-detail-body">
+<body class="project-detail-body" data-project-id="canvas-app-performance-rescue">
   <div class="tech-grid-bg" aria-hidden="true"></div>
   <header class="navbar">
     <div class="nav-container">
@@ -32,14 +32,18 @@
         <a href="../../index.html#contact" class="nav-link">Contact</a>
       </nav>
       <div class="nav-cta">
-        <a href="../../index.html#projects" class="btn btn-sm btn-secondary"><i class="fa-solid fa-arrow-left"></i><span>All Projects</span></a>
+        <a href="../../index.html#projects" class="btn btn-sm btn-secondary"
+          data-analytics-event="select_content" data-analytics-category="case_study_nav"
+          data-analytics-label="top_nav_all_projects"><i class="fa-solid fa-arrow-left"></i><span>All Projects</span></a>
       </div>
     </div>
   </header>
   <main class="project-detail-main">
     <div class="container">
       <nav class="detail-breadcrumb" aria-label="Breadcrumb">
-        <a href="../../index.html#projects"><i class="fa-solid fa-chevron-left"></i> Portfolio</a>
+        <a href="../../index.html#projects"
+          data-analytics-event="select_content" data-analytics-category="case_study_nav"
+          data-analytics-label="breadcrumb_portfolio"><i class="fa-solid fa-chevron-left"></i> Portfolio</a>
         <span class="breadcrumb-separator">/</span>
         <span class="breadcrumb-current">Power Platform</span>
       </nav>
@@ -70,7 +74,9 @@
         <h3>Interactive Canvas App Before/After Rescue Simulator</h3>
         <p>Toggle Before vs. After refactoring to inspect the exact Power Fx formula changes that eliminated delegation warnings and cut load time from ~9s to ~3s.</p>
       </div>
-      <a href="../../demo-power-platform.html#rescue" class="btn btn-primary">
+      <a href="../../demo-power-platform.html#rescue" class="btn btn-primary"
+        data-analytics-event="select_content" data-analytics-category="demo_launch"
+        data-analytics-label="canvas-app-performance-rescue_demo_banner" data-analytics-project="canvas-app-performance-rescue">
         <i class="fa-solid fa-play"></i>
         <span>Launch Interactive Demo</span>
       </a>
@@ -131,7 +137,7 @@
         <section class="detail-section">
           <h2 class="detail-section-title">
             <i class="fa-solid fa-bolt"></i>
-            <span>Delegation-Safe Power Fx & Caching Refactor</span>
+            <span>Delegation-Safe Power Fx &amp; Caching Refactor</span>
           </h2>
           <div class="detail-prose">
             
@@ -148,14 +154,14 @@
         <section class="detail-section">
           <h2 class="detail-section-title">
             <i class="fa-solid fa-gauge-high"></i>
-            <span>Verified Impact & Before/After Code Simulator</span>
+            <span>Verified Impact &amp; Before/After Code Simulator</span>
           </h2>
           <div class="detail-prose">
             
           <p>Deployed cleanly through <code>Dev &rarr; Test &rarr; Prod</code> Managed Solutions with column-change safety checks:</p>
           <ul>
             <li><strong>Outcome:</strong> Screen load dropped from <code>~9 seconds</code> to <code>~3 seconds</code> with <code>0</code> delegation warnings, restoring trust and day-to-day usage across operations staff.</li>
-            <li><strong>Interactive Demo:</strong> Compare the exact Before vs. After Power Fx code and KPI breakdown in the <a href="../../demo-power-platform.html#rescue" style="color:var(--accent-bright); text-decoration:underline; font-weight:600;">Canvas App Rescue Simulator</a>.</li>
+            <li><strong>Interactive Demo:</strong> Compare the exact Before vs. After Power Fx code and KPI breakdown in the <a href="../../demo-power-platform.html#rescue" data-analytics-event="select_content" data-analytics-category="demo_launch" data-analytics-label="canvas-app-performance-rescue_inline_demo" data-analytics-project="canvas-app-performance-rescue" style="color:var(--accent-bright); text-decoration:underline; font-weight:600;">Canvas App Rescue Simulator</a>.</li>
           </ul>
         
           </div>
@@ -172,19 +178,29 @@
             <div class="sidebar-divider"></div>
             
             
-    <a href="../../demo-power-platform.html#rescue" class="btn btn-primary btn-block" style="margin-bottom: 0.75rem;">
+    <a href="../../demo-power-platform.html#rescue" class="btn btn-primary btn-block" style="margin-bottom: 0.75rem;"
+      data-analytics-event="select_content" data-analytics-category="demo_launch"
+      data-analytics-label="canvas-app-performance-rescue_sidebar_demo" data-analytics-project="canvas-app-performance-rescue">
       <i class="fa-solid fa-play"></i>
       <span>Open Interactive Demo</span>
     </a>
   
-            <a href="../../index.html#contact" class="btn btn-secondary btn-block"><span>Discuss Similar Work</span></a>
+            <a href="../../index.html#contact" class="btn btn-secondary btn-block"
+              data-analytics-event="select_content" data-analytics-category="case_study_cta"
+              data-analytics-label="canvas-app-performance-rescue_discuss_work" data-analytics-project="canvas-app-performance-rescue"><span>Discuss Similar Work</span></a>
           </div>
         </aside>
       </div>
       <nav class="detail-footer-nav" aria-label="Project navigation">
-        <a href="../dataverse-hr-onboarding-tracker/" class="nav-project-btn"><i class="fa-solid fa-arrow-left"></i><span><span class="nav-hint">Previous Project</span><span class="nav-name">Employee Onboarding Tracker</span></span></a>
-        <a href="../../index.html#projects" class="nav-all-btn"><i class="fa-solid fa-grid-2"></i><span>View All 12 Projects</span></a>
-        <a href="../copilot-studio-hr-it-policy-bot/" class="nav-project-btn"><span><span class="nav-hint">Next Project</span><span class="nav-name">HR &amp; IT Service Desk Policy Bot</span></span><i class="fa-solid fa-arrow-right"></i></a>
+        <a href="../dataverse-hr-onboarding-tracker/" class="nav-project-btn"
+          data-analytics-event="select_content" data-analytics-category="case_study_nav"
+          data-analytics-label="prev_dataverse-hr-onboarding-tracker" data-analytics-project="dataverse-hr-onboarding-tracker"><i class="fa-solid fa-arrow-left"></i><span><span class="nav-hint">Previous Project</span><span class="nav-name">Employee Onboarding Tracker</span></span></a>
+        <a href="../../index.html#projects" class="nav-all-btn"
+          data-analytics-event="select_content" data-analytics-category="case_study_nav"
+          data-analytics-label="view_all_projects"><i class="fa-solid fa-grid-2"></i><span>View All 12 Projects</span></a>
+        <a href="../copilot-studio-hr-it-policy-bot/" class="nav-project-btn"
+          data-analytics-event="select_content" data-analytics-category="case_study_nav"
+          data-analytics-label="next_copilot-studio-hr-it-policy-bot" data-analytics-project="copilot-studio-hr-it-policy-bot"><span><span class="nav-hint">Next Project</span><span class="nav-name">HR &amp; IT Service Desk Policy Bot</span></span><i class="fa-solid fa-arrow-right"></i></a>
       </nav>
     </div>
   </main>

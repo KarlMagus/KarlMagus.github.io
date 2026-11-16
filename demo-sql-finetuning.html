@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Model Inference & Fine-Tuning Inspector | Ishraq Ahmad</title>
+  <title>Model Inference &amp; Fine-Tuning Inspector | Ishraq Ahmad</title>
   <meta name="description"
     content="Browser simulation of model evaluation, training metrics, pre-inference schema and mapping rule normalization, and sample output comparison." />
   <link rel="canonical" href="https://karlmagus.github.io/demo-sql-finetuning.html" />
@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&amp;display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css?v=20261116" />
@@ -263,29 +263,30 @@
 
         <!-- Demos Dropdown -->
         <div class="demos-dropdown" id="demosDropdown">
-          <button class="demos-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+          <button class="demos-dropdown-toggle" aria-expanded="false" aria-haspopup="true"
+            data-analytics-event="select_content" data-analytics-category="demo_nav" data-analytics-label="demos_dropdown_toggle">
             <i class="fa-solid fa-play" style="font-size: 0.7rem; color: var(--accent-text);"></i>
             <span>Demos</span>
             <i class="fa-solid fa-chevron-down dd-chevron"></i>
           </button>
           <div class="demos-dropdown-menu" role="menu">
             <div class="dd-section-label">Interactive Demos</div>
-            <a href="demo-sql-finetuning.html" class="dd-item dd-active" role="menuitem">
+            <a href="demo-sql-finetuning.html" class="dd-item dd-active" role="menuitem" data-analytics-event="select_content" data-analytics-category="demo_nav" data-analytics-label="nav_demo_sql_finetuning">
               <span class="dd-item-icon live"><i class="fa-solid fa-database"></i></span>
               <span class="dd-item-text"><span class="dd-item-title">01 · Excel-to-SQL Model</span></span>
               <span class="dd-item-badge dd-badge-live">Demo</span>
             </a>
-            <a href="demo-etl-generator.html" class="dd-item" role="menuitem">
+            <a href="demo-etl-generator.html" class="dd-item" role="menuitem" data-analytics-event="select_content" data-analytics-category="demo_nav" data-analytics-label="nav_demo_etl_generator">
               <span class="dd-item-icon live"><i class="fa-solid fa-diagram-project"></i></span>
               <span class="dd-item-text"><span class="dd-item-title">02 · Spark Pipeline Compiler</span></span>
               <span class="dd-item-badge dd-badge-live">Demo</span>
             </a>
-            <a href="demo-classroom-cv.html" class="dd-item" role="menuitem">
+            <a href="demo-classroom-cv.html" class="dd-item" role="menuitem" data-analytics-event="select_content" data-analytics-category="demo_nav" data-analytics-label="nav_demo_classroom_cv">
               <span class="dd-item-icon live"><i class="fa-solid fa-video"></i></span>
               <span class="dd-item-text"><span class="dd-item-title">03 · Classroom Video Analytics</span></span>
               <span class="dd-item-badge dd-badge-live">Demo</span>
             </a>
-            <a href="demo-power-platform.html" class="dd-item" role="menuitem">
+            <a href="demo-power-platform.html" class="dd-item" role="menuitem" data-analytics-event="select_content" data-analytics-category="demo_nav" data-analytics-label="nav_demo_power_platform">
               <span class="dd-item-icon live"><i class="fa-solid fa-layer-group"></i></span>
               <span class="dd-item-text"><span class="dd-item-title">09–12 · Power Platform &amp; M365</span></span>
               <span class="dd-item-badge dd-badge-live">Demo</span>
@@ -298,7 +299,7 @@
       </nav>
 
       <div class="nav-cta">
-        <a href="projects/mapping-to-sql-gemma/" class="btn btn-sm btn-secondary">
+        <a href="projects/mapping-to-sql-gemma/" class="btn btn-sm btn-secondary" data-analytics-event="select_content" data-analytics-category="demo_nav" data-analytics-label="back_to_case_study" data-analytics-project="mapping-to-sql-gemma">
           <i class="fa-solid fa-arrow-left"></i>
           <span>Case Study</span>
         </a>
@@ -334,13 +335,13 @@
 
       <!-- Navigation Tabs -->
       <div class="eval-tabs-bar">
-        <button class="eval-tab-btn active" id="tabCompareBtn" onclick="switchEvalTab('compare')">
+        <button class="eval-tab-btn active" id="tabCompareBtn" onclick="switchEvalTab('compare')" data-analytics-event="demo_interaction" data-analytics-category="demo_engagement" data-analytics-label="tab_compare" data-analytics-demo="sql_finetuning_inspector" data-analytics-action="tab_switch" data-analytics-project="mapping-to-sql-gemma" data-analytics-manual="true">
           <i class="fa-solid fa-code-compare"></i> Model Output Comparison
         </button>
-        <button class="eval-tab-btn" id="tabMetricsBtn" onclick="switchEvalTab('metrics')">
+        <button class="eval-tab-btn" id="tabMetricsBtn" onclick="switchEvalTab('metrics')" data-analytics-event="demo_interaction" data-analytics-category="demo_engagement" data-analytics-label="tab_metrics" data-analytics-demo="sql_finetuning_inspector" data-analytics-action="tab_switch" data-analytics-project="mapping-to-sql-gemma" data-analytics-manual="true">
           <i class="fa-solid fa-chart-line"></i> Training Loss &amp; VRAM Estimator
         </button>
-        <button class="eval-tab-btn" id="tabTypoBtn" onclick="switchEvalTab('typo')">
+        <button class="eval-tab-btn" id="tabTypoBtn" onclick="switchEvalTab('typo')" data-analytics-event="demo_interaction" data-analytics-category="demo_engagement" data-analytics-label="tab_typo_normalizer" data-analytics-demo="sql_finetuning_inspector" data-analytics-action="tab_switch" data-analytics-project="mapping-to-sql-gemma" data-analytics-manual="true">
           <i class="fa-solid fa-wand-magic-sparkles"></i> Pre-Inference Rule Normalizer
         </button>
       </div>
@@ -363,7 +364,7 @@
                 <option value="case2">2. Three-Table Left Join</option>
                 <option value="case3">3. Implicit Join Resolution &amp; Shorthand Rule Normalization</option>
               </select>
-              <button class="btn btn-sm btn-primary" id="runInferenceBtn" onclick="simulateInference()"
+              <button class="btn btn-sm btn-primary" id="runInferenceBtn" onclick="simulateInference()" data-analytics-event="demo_interaction" data-analytics-category="demo_engagement" data-analytics-label="generate_sql" data-analytics-demo="sql_finetuning_inspector" data-analytics-action="model_run" data-analytics-project="mapping-to-sql-gemma" data-analytics-manual="true"
                 style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.45rem 0.9rem; font-size:0.82rem;">
                 <i class="fa-solid fa-play"></i> Generate SQL
               </button>
@@ -400,7 +401,7 @@
             <div class="compare-box good">
               <div style="display:flex; justify-content:space-between; align-items:center;">
                 <span class="compare-badge badge-good"><i class="fa-solid fa-check"></i> Fine-Tuned Mistral-7B (8-bit LoRA)</span>
-                <button onclick="copySqlCode()"
+                <button onclick="copySqlCode()" data-analytics-event="demo_interaction" data-analytics-category="demo_engagement" data-analytics-label="copy_sql" data-analytics-demo="sql_finetuning_inspector" data-analytics-action="copy_code" data-analytics-project="mapping-to-sql-gemma" data-analytics-manual="true"
                   style="background:transparent; border:1px solid var(--accent); color:var(--accent-text); border-radius:4px; padding:0.2rem 0.5rem; font-size:0.72rem; cursor:pointer; font-family:var(--font-body);">
                   <i class="fa-regular fa-copy"></i> Copy SQL
                 </button>
@@ -508,7 +509,7 @@
                 <label
                   style="display:block; font-size:0.75rem; color:var(--text-muted); font-weight:600; margin-bottom:0.3rem;">LoRA
                   Rank (r):</label>
-                <select id="calcRank" onchange="calculateLoraParams()"
+                <select id="calcRank" onchange="calculateLoraParams(true)"
                   style="width:100%; background:var(--bg-primary); border:1px solid var(--border-bold); color:var(--text-primary); padding:0.45rem; border-radius:4px; font-size:0.85rem; font-family:var(--font-body);">
                   <option value="4">r = 4 (Lightweight)</option>
                   <option value="8" selected>r = 8 (Production Baseline)</option>
@@ -520,7 +521,7 @@
                 <label
                   style="display:block; font-size:0.75rem; color:var(--text-muted); font-weight:600; margin-bottom:0.3rem;">Quantization
                   Precision:</label>
-                <select id="calcPrecision" onchange="calculateLoraParams()"
+                <select id="calcPrecision" onchange="calculateLoraParams(true)"
                   style="width:100%; background:var(--bg-primary); border:1px solid var(--border-bold); color:var(--text-primary); padding:0.45rem; border-radius:4px; font-size:0.85rem; font-family:var(--font-body);">
                   <option value="8" selected>8-bit (bitsandbytes) ~8.2 GB</option>
                   <option value="4">4-bit (QLoRA) ~5.8 GB</option>
@@ -531,7 +532,7 @@
                 <label
                   style="display:block; font-size:0.75rem; color:var(--text-muted); font-weight:600; margin-bottom:0.3rem;">Max
                   Sequence Length:</label>
-                <select id="calcSeqLen" onchange="calculateLoraParams()"
+                <select id="calcSeqLen" onchange="calculateLoraParams(true)"
                   style="width:100%; background:var(--bg-primary); border:1px solid var(--border-bold); color:var(--text-primary); padding:0.45rem; border-radius:4px; font-size:0.85rem; font-family:var(--font-body);">
                   <option value="512">512 Tokens</option>
                   <option value="1024" selected>1024 Tokens (Production)</option>
@@ -556,9 +557,9 @@
         </p>
 
         <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:1rem;">
-          <button type="button" class="badge-chip" onclick="loadNormalizerPreset(0)" style="cursor:pointer; font-family:var(--font-body);">Preset 1: Null Fallback Shorthand</button>
-          <button type="button" class="badge-chip" onclick="loadNormalizerPreset(1)" style="cursor:pointer; font-family:var(--font-body);">Preset 2: Transform &amp; Implicit Left Join</button>
-          <button type="button" class="badge-chip" onclick="loadNormalizerPreset(2)" style="cursor:pointer; font-family:var(--font-body);">Preset 3: Conditional Aggregate Rule</button>
+          <button type="button" class="badge-chip" onclick="loadNormalizerPreset(0)" data-analytics-event="demo_interaction" data-analytics-category="demo_engagement" data-analytics-label="normalizer_preset_1" data-analytics-demo="sql_finetuning_inspector" data-analytics-action="preset_select" data-analytics-project="mapping-to-sql-gemma" data-analytics-manual="true" style="cursor:pointer; font-family:var(--font-body);">Preset 1: Null Fallback Shorthand</button>
+          <button type="button" class="badge-chip" onclick="loadNormalizerPreset(1)" data-analytics-event="demo_interaction" data-analytics-category="demo_engagement" data-analytics-label="normalizer_preset_2" data-analytics-demo="sql_finetuning_inspector" data-analytics-action="preset_select" data-analytics-project="mapping-to-sql-gemma" data-analytics-manual="true" style="cursor:pointer; font-family:var(--font-body);">Preset 2: Transform &amp; Implicit Left Join</button>
+          <button type="button" class="badge-chip" onclick="loadNormalizerPreset(2)" data-analytics-event="demo_interaction" data-analytics-category="demo_engagement" data-analytics-label="normalizer_preset_3" data-analytics-demo="sql_finetuning_inspector" data-analytics-action="preset_select" data-analytics-project="mapping-to-sql-gemma" data-analytics-manual="true" style="cursor:pointer; font-family:var(--font-body);">Preset 3: Conditional Aggregate Rule</button>
         </div>
 
         <div style="margin-bottom:1.25rem;">
@@ -599,7 +600,7 @@
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-bottom">
-      <p>&copy; 2026 Ishraq Ahmad · Machine Learning & AI Engineering Portfolio</p>
+      <p>&copy; 2026 Ishraq Ahmad · Machine Learning &amp; AI Engineering Portfolio</p>
     </div>
   </footer>
 
@@ -672,12 +673,12 @@ INNER JOIN SOURCE_ADJUSTMENT_DF t2
     };
 
     window.addEventListener('DOMContentLoaded', () => {
-      loadEvalScenario('case1');
-      calculateLoraParams();
+      loadEvalScenario('case1', false);
+      calculateLoraParams(false);
       testTypoHealing(document.getElementById('typoInput').value);
     });
 
-    function loadEvalScenario(key) {
+    function loadEvalScenario(key, isUserAction = true) {
       const data = SCENARIOS[key];
       if (!data) return;
       document.getElementById('evalInputPrompt').textContent = data.input;
@@ -693,6 +694,15 @@ INNER JOIN SOURCE_ADJUSTMENT_DF t2
         fineNote.textContent = '';
         fineNote.hidden = true;
       }
+      if (isUserAction && typeof window.trackEvent === 'function') {
+        window.trackEvent('demo_interaction', {
+          event_category: 'demo_engagement',
+          event_label: `scenario_${key}`,
+          demo_name: 'sql_finetuning',
+          demo_action: 'preset_select',
+          project_id: 'mapping-to-sql-gemma'
+        });
+      }
     }
 
     function switchEvalTab(tab) {
@@ -703,6 +713,16 @@ INNER JOIN SOURCE_ADJUSTMENT_DF t2
       document.getElementById('paneCompare').style.display = tab === 'compare' ? 'block' : 'none';
       document.getElementById('paneMetrics').style.display = tab === 'metrics' ? 'block' : 'none';
       document.getElementById('paneTypo').style.display = tab === 'typo' ? 'block' : 'none';
+
+      if (typeof window.trackEvent === 'function') {
+        window.trackEvent('demo_interaction', {
+          event_category: 'demo_engagement',
+          event_label: `tab_${tab}`,
+          demo_name: 'sql_finetuning',
+          demo_action: 'tab_switch',
+          project_id: 'mapping-to-sql-gemma'
+        });
+      }
     }
 
     function simulateInference() {
@@ -710,6 +730,16 @@ INNER JOIN SOURCE_ADJUSTMENT_DF t2
       const key = document.getElementById('evalScenarioSelect').value;
       const data = SCENARIOS[key];
       if (!data) return;
+
+      if (typeof window.trackEvent === 'function') {
+        window.trackEvent('demo_interaction', {
+          event_category: 'demo_engagement',
+          event_label: `generate_sql_${key}`,
+          demo_name: 'sql_finetuning',
+          demo_action: 'workflow_run',
+          project_id: 'mapping-to-sql-gemma'
+        });
+      }
 
       btn.disabled = true;
       btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Generating...`;
@@ -750,12 +780,21 @@ INNER JOIN SOURCE_ADJUSTMENT_DF t2
 
     function copySqlCode() {
       const sql = document.getElementById('finetunedModelOutput').textContent;
+      if (typeof window.trackEvent === 'function') {
+        window.trackEvent('demo_interaction', {
+          event_category: 'demo_engagement',
+          event_label: 'copy_finetuned_sql',
+          demo_name: 'sql_finetuning',
+          demo_action: 'copy_output',
+          project_id: 'mapping-to-sql-gemma'
+        });
+      }
       navigator.clipboard.writeText(sql).then(() => {
         alert("Fine-tuned ANSI SQL copied to clipboard!");
       });
     }
 
-    function calculateLoraParams() {
+    function calculateLoraParams(isUserAction = false) {
       const r = parseInt(document.getElementById('calcRank').value) || 8;
       const precision = parseInt(document.getElementById('calcPrecision').value) || 8;
       const seqLen = parseInt(document.getElementById('calcSeqLen').value) || 1024;
@@ -775,6 +814,16 @@ INNER JOIN SOURCE_ADJUSTMENT_DF t2
         resBox.textContent =
           `Trainable Parameters: ${loraParams}M (${pct}% of 7.2B) | Est. Peak VRAM: ${totalVram} GB | Activation Sequence: ${seqLen} Tokens`;
       }
+
+      if (isUserAction === true && typeof window.trackEvent === 'function') {
+        window.trackEvent('demo_interaction', {
+          event_category: 'demo_engagement',
+          event_label: `lora_calc_r${r}_p${precision}_s${seqLen}`,
+          demo_name: 'sql_finetuning',
+          demo_action: 'preset_select',
+          project_id: 'mapping-to-sql-gemma'
+        });
+      }
     }
 
     const NORMALIZER_PRESETS = [
@@ -788,6 +837,15 @@ INNER JOIN SOURCE_ADJUSTMENT_DF t2
       if (!input || !NORMALIZER_PRESETS[idx]) return;
       input.value = NORMALIZER_PRESETS[idx];
       testTypoHealing(input.value);
+      if (typeof window.trackEvent === 'function') {
+        window.trackEvent('demo_interaction', {
+          event_category: 'demo_engagement',
+          event_label: `normalizer_preset_${idx + 1}`,
+          demo_name: 'sql_finetuning',
+          demo_action: 'preset_select',
+          project_id: 'mapping-to-sql-gemma'
+        });
+      }
     }
 
     function testTypoHealing(val) {

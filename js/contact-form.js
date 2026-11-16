@@ -47,6 +47,18 @@ document.addEventListener('DOMContentLoaded', () => {
         throw new Error(responseData?.errors?.map((error) => error.message).join(', ') || 'Unable to send message.');
       }
 
+      if (typeof window.trackEvent === 'function') {
+        window.trackEvent('generate_lead', {
+          event_category: 'conversion',
+          event_label: 'contact_form_submit',
+          form_id: 'contactForm',
+          form_destination: 'formspree',
+          value: 1,
+          currency: 'USD',
+          transport_type: 'beacon'
+        });
+      }
+
       submitButton.innerHTML = '<i class="fa-solid fa-check"></i> <span>Message Sent!</span>';
       status.className = 'form-status success';
       status.textContent = "Thanks for reaching out! I'll get back to you within 24 hours.";

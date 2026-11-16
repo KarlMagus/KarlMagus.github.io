@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="../../project-detail.css?v=20261116" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":"Automated Data Pipeline Builder","description":"Replaces weeks of manual Spark ETL coding with a self-serve pipeline compiler that generates 7-stage DAG manifests and safely patches new tables into live workflows.","url":"https://karlmagus.github.io/projects/enterprise-json-query-enhancer/","creator":{"@type":"Person","name":"Ishraq Ahmad","url":"https://karlmagus.github.io/"},"keywords":"Gemini 2.0/2.5 Flash, Python, Flask, Apache Spark, JSON Schema"}</script>
 </head>
-<body class="project-detail-body">
+<body class="project-detail-body" data-project-id="enterprise-json-query-enhancer">
   <div class="tech-grid-bg" aria-hidden="true"></div>
   <header class="navbar">
     <div class="nav-container">
@@ -32,14 +32,18 @@
         <a href="../../index.html#contact" class="nav-link">Contact</a>
       </nav>
       <div class="nav-cta">
-        <a href="../../index.html#projects" class="btn btn-sm btn-secondary"><i class="fa-solid fa-arrow-left"></i><span>All Projects</span></a>
+        <a href="../../index.html#projects" class="btn btn-sm btn-secondary"
+          data-analytics-event="select_content" data-analytics-category="case_study_nav"
+          data-analytics-label="top_nav_all_projects"><i class="fa-solid fa-arrow-left"></i><span>All Projects</span></a>
       </div>
     </div>
   </header>
   <main class="project-detail-main">
     <div class="container">
       <nav class="detail-breadcrumb" aria-label="Breadcrumb">
-        <a href="../../index.html#projects"><i class="fa-solid fa-chevron-left"></i> Portfolio</a>
+        <a href="../../index.html#projects"
+          data-analytics-event="select_content" data-analytics-category="case_study_nav"
+          data-analytics-label="breadcrumb_portfolio"><i class="fa-solid fa-chevron-left"></i> Portfolio</a>
         <span class="breadcrumb-separator">/</span>
         <span class="breadcrumb-current">Data pipelines</span>
       </nav>
@@ -70,7 +74,9 @@
         <h3>Interactive ETL DAG Compiler Demo</h3>
         <p>Explore the browser-side sample compiler: upload or choose mapping spreadsheets, inspect join keys, compile 7-stage Spark DAG manifests, and test the Incremental Schema Enhancer.</p>
       </div>
-      <a href="../../demo-etl-generator.html" class="btn btn-primary">
+      <a href="../../demo-etl-generator.html" class="btn btn-primary"
+        data-analytics-event="select_content" data-analytics-category="demo_launch"
+        data-analytics-label="enterprise-json-query-enhancer_demo_banner" data-analytics-project="enterprise-json-query-enhancer">
         <i class="fa-solid fa-play"></i>
         <span>Launch Interactive Demo</span>
       </a>
@@ -114,7 +120,7 @@
         <section class="detail-section">
           <h2 class="detail-section-title">
             <i class="fa-solid fa-bullseye"></i>
-            <span>Stakeholder Problem & Rapid Sprint Scope</span>
+            <span>Stakeholder Problem &amp; Rapid Sprint Scope</span>
           </h2>
           <div class="detail-prose">
             
@@ -144,7 +150,7 @@
         <section class="detail-section">
           <h2 class="detail-section-title">
             <i class="fa-solid fa-shield-halved"></i>
-            <span>Incremental Schema Patching, Pre-Flight Safety & Handover</span>
+            <span>Incremental Schema Patching, Pre-Flight Safety &amp; Handover</span>
           </h2>
           <div class="detail-prose">
             
@@ -153,7 +159,7 @@
             <li><strong>Incremental Schema Enhancer:</strong> Automatically diffs newly added tables or attributes and patches them into existing DAG JSON manifests without modifying verified upstream flows.</li>
             <li><strong>10 Automated Pre-Flight Checks:</strong> Verifies JSON schema structure, flow ID ordering, column references, DAG acyclicity, and path writeability before cluster deployment.</li>
             <li><strong>Walkthrough & Documentation:</strong> Conducted a live Google Meet walkthrough with the client team and delivered the codebase and operational setup guide.</li>
-            <li><strong>Interactive Demo:</strong> Test pipeline compilation and delta patching in the <a href="../../demo-etl-generator.html" style="color:var(--accent-bright); text-decoration:underline; font-weight:600;">Interactive ETL DAG Compiler Demo</a>.</li>
+            <li><strong>Interactive Demo:</strong> Test pipeline compilation and delta patching in the <a href="../../demo-etl-generator.html" data-analytics-event="select_content" data-analytics-category="demo_launch" data-analytics-label="enterprise-json-query-enhancer_inline_demo" data-analytics-project="enterprise-json-query-enhancer" style="color:var(--accent-bright); text-decoration:underline; font-weight:600;">Interactive ETL DAG Compiler Demo</a>.</li>
           </ul>
         
           </div>
@@ -170,19 +176,29 @@
             <div class="sidebar-divider"></div>
             
             
-    <a href="../../demo-etl-generator.html" class="btn btn-primary btn-block" style="margin-bottom: 0.75rem;">
+    <a href="../../demo-etl-generator.html" class="btn btn-primary btn-block" style="margin-bottom: 0.75rem;"
+      data-analytics-event="select_content" data-analytics-category="demo_launch"
+      data-analytics-label="enterprise-json-query-enhancer_sidebar_demo" data-analytics-project="enterprise-json-query-enhancer">
       <i class="fa-solid fa-play"></i>
       <span>Open Interactive Demo</span>
     </a>
   
-            <a href="../../index.html#contact" class="btn btn-secondary btn-block"><span>Discuss Similar Work</span></a>
+            <a href="../../index.html#contact" class="btn btn-secondary btn-block"
+              data-analytics-event="select_content" data-analytics-category="case_study_cta"
+              data-analytics-label="enterprise-json-query-enhancer_discuss_work" data-analytics-project="enterprise-json-query-enhancer"><span>Discuss Similar Work</span></a>
           </div>
         </aside>
       </div>
       <nav class="detail-footer-nav" aria-label="Project navigation">
-        <a href="../mapping-to-sql-gemma/" class="nav-project-btn"><i class="fa-solid fa-arrow-left"></i><span><span class="nav-hint">Previous Project</span><span class="nav-name">Automated SQL Generation Tool</span></span></a>
-        <a href="../../index.html#projects" class="nav-all-btn"><i class="fa-solid fa-grid-2"></i><span>View All 12 Projects</span></a>
-        <a href="../ai-classroom-monitor/" class="nav-project-btn"><span><span class="nav-hint">Next Project</span><span class="nav-name">Classroom Attendance &amp; Engagement Monitor</span></span><i class="fa-solid fa-arrow-right"></i></a>
+        <a href="../mapping-to-sql-gemma/" class="nav-project-btn"
+          data-analytics-event="select_content" data-analytics-category="case_study_nav"
+          data-analytics-label="prev_mapping-to-sql-gemma" data-analytics-project="mapping-to-sql-gemma"><i class="fa-solid fa-arrow-left"></i><span><span class="nav-hint">Previous Project</span><span class="nav-name">Automated SQL Generation Tool</span></span></a>
+        <a href="../../index.html#projects" class="nav-all-btn"
+          data-analytics-event="select_content" data-analytics-category="case_study_nav"
+          data-analytics-label="view_all_projects"><i class="fa-solid fa-grid-2"></i><span>View All 12 Projects</span></a>
+        <a href="../ai-classroom-monitor/" class="nav-project-btn"
+          data-analytics-event="select_content" data-analytics-category="case_study_nav"
+          data-analytics-label="next_ai-classroom-monitor" data-analytics-project="ai-classroom-monitor"><span><span class="nav-hint">Next Project</span><span class="nav-name">Classroom Attendance &amp; Engagement Monitor</span></span><i class="fa-solid fa-arrow-right"></i></a>
       </nav>
     </div>
   </main>

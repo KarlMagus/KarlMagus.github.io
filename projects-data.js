@@ -67,7 +67,7 @@ const PORTFOLIO_PROJECTS = [
             <li><strong>On-Premise Self-Service Web Portal:</strong> Delivered a browser-based FastAPI upload portal where analysts drop in Excel/CSV mapping workbooks, inspect generated SQL and JSON manifests, and export production queries with zero external cloud exposure.</li>
             <li><strong>Verified Convergence:</strong> Cross-entropy loss decreased from 1.049 (step 10) to 0.184 (step 700), with a minimum of 0.173 at step 500.</li>
             <li><strong>Live Handover:</strong> Ran a live walkthrough demonstrating upload-to-SQL workflows and delivered weights, source repository, and setup runbooks to the client team.</li>
-            <li><strong>Interactive Demo:</strong> Inspect loss curves, sample SQL outputs, and pre-inference rule normalization in the <a href="../../demo-sql-finetuning.html" style="color:var(--accent-bright); text-decoration:underline; font-weight:600;">Interactive SQL Fine-Tuning Demo</a>.</li>
+            <li><strong>Interactive Demo:</strong> Inspect loss curves, sample SQL outputs, and pre-inference rule normalization in the <a href="../../demo-sql-finetuning.html" data-analytics-event="select_content" data-analytics-category="demo_launch" data-analytics-label="mapping-to-sql-gemma_inline_demo" data-analytics-project="mapping-to-sql-gemma" style="color:var(--accent-bright); text-decoration:underline; font-weight:600;">Interactive SQL Fine-Tuning Demo</a>.</li>
           </ul>
         `
       }
@@ -137,7 +137,7 @@ const PORTFOLIO_PROJECTS = [
             <li><strong>Incremental Schema Enhancer:</strong> Automatically diffs newly added tables or attributes and patches them into existing DAG JSON manifests without modifying verified upstream flows.</li>
             <li><strong>10 Automated Pre-Flight Checks:</strong> Verifies JSON schema structure, flow ID ordering, column references, DAG acyclicity, and path writeability before cluster deployment.</li>
             <li><strong>Walkthrough & Documentation:</strong> Conducted a live Google Meet walkthrough with the client team and delivered the codebase and operational setup guide.</li>
-            <li><strong>Interactive Demo:</strong> Test pipeline compilation and delta patching in the <a href="../../demo-etl-generator.html" style="color:var(--accent-bright); text-decoration:underline; font-weight:600;">Interactive ETL DAG Compiler Demo</a>.</li>
+            <li><strong>Interactive Demo:</strong> Test pipeline compilation and delta patching in the <a href="../../demo-etl-generator.html" data-analytics-event="select_content" data-analytics-category="demo_launch" data-analytics-label="enterprise-json-query-enhancer_inline_demo" data-analytics-project="enterprise-json-query-enhancer" style="color:var(--accent-bright); text-decoration:underline; font-weight:600;">Interactive ETL DAG Compiler Demo</a>.</li>
           </ul>
         `
       }
@@ -205,7 +205,7 @@ const PORTFOLIO_PROJECTS = [
           <ul>
             <li><strong>Visual Overlay Rendering:</strong> Server-side OpenCV and MoviePy pipeline burns green boxes for enrolled students and red boxes for distractions/unrecognized faces into H.264 video for instant review.</li>
             <li><strong>Secure Media &amp; Telemetry:</strong> Stores frame-level events in AWS DynamoDB, relational session audit logs on the backend, and serves S3 videos to the Preact/Vite frontend via 1-hour pre-signed URLs with HTTP Range scrubbing.</li>
-            <li><strong>Interactive Demo:</strong> Inspect overlays and test attentiveness scoring in the <a href="../../demo-classroom-cv.html" style="color:var(--accent-bright); text-decoration:underline; font-weight:600;">Interactive Computer Vision Telemetry Demo</a>.</li>
+            <li><strong>Interactive Demo:</strong> Inspect overlays and test attentiveness scoring in the <a href="../../demo-classroom-cv.html" data-analytics-event="select_content" data-analytics-category="demo_launch" data-analytics-label="ai-classroom-monitor_inline_demo" data-analytics-project="ai-classroom-monitor" style="color:var(--accent-bright); text-decoration:underline; font-weight:600;">Interactive Computer Vision Telemetry Demo</a>.</li>
           </ul>
         `
       }
@@ -219,7 +219,7 @@ const PORTFOLIO_PROJECTS = [
     solutionType: "AI Voice Agent & Web Portal",
     filterGroups: ["chatbots-voice", "web-saas"],
     role: "Full-Stack AI & Systems Engineer (Sole Developer)",
-    title: "AI Clinic Receptionist & Portal",
+    title: "CareLoop — AI Clinic Receptionist & Portal",
     cardSummary: "Answers clinic booking calls 24/7, sends WhatsApp confirmations, and alerts doctors when lab reports arrive.",
     outcomeBadge: "24/7 booking & lab alerts",
     cardTags: ["Voice AI", "Workflow Automation", "Web Portals"],
@@ -288,7 +288,7 @@ const PORTFOLIO_PROJECTS = [
     solutionType: "Live EdTech SaaS",
     filterGroups: ["web-saas"],
     role: "Full-Stack AI Engineer",
-    title: "Quizentia - AI Quiz & Assessment Builder",
+    title: "Quizentia — AI Quiz & Assessment Builder",
     liveUrl: "https://quizentia.com/",
     cardSummary: "Turns PDFs, diagrams, YouTube videos, and web links into editable practice quizzes in seconds.",
     outcomeBadge: "Live · quizentia.com",
@@ -317,7 +317,7 @@ const PORTFOLIO_PROJECTS = [
         title: "Stakeholder Need & Live SaaS Product (quizentia.com)",
         icon: "fa-graduation-cap",
         content: `
-          <p>Course creators and educators needed a single workspace to convert real study materials—multi-page textbooks, diagram screenshots, lecture videos, and online articles—directly into structured assessments without tedious copy-pasting. Live at <a href="https://quizentia.com/" target="_blank" rel="noopener noreferrer" style="color:var(--accent-bright); text-decoration:underline;">quizentia.com</a>, Quizentia handles ingestion, interactive practice, editing, and document export end to end.</p>
+          <p>Course creators and educators needed a single workspace to convert real study materials—multi-page textbooks, diagram screenshots, lecture videos, and online articles—directly into structured assessments without tedious copy-pasting. Live at <a href="https://quizentia.com/" target="_blank" rel="noopener noreferrer" data-analytics-event="outbound_click" data-analytics-category="outbound_proof" data-analytics-label="ai-quiz-generation-saas_inline_live_site" data-analytics-target="live_product_quizentia" data-analytics-project="ai-quiz-generation-saas" style="color:var(--accent-bright); text-decoration:underline;">quizentia.com</a>, Quizentia handles ingestion, interactive practice, editing, and document export end to end.</p>
         `
       },
       {
@@ -354,7 +354,7 @@ const PORTFOLIO_PROJECTS = [
     solutionType: "Live Enterprise Web Platform",
     filterGroups: ["web-saas"],
     role: "Full-Stack AI Engineer (Sole Developer)",
-    title: "Compelion - Enterprise Strategy & Project Platform",
+    title: "Compelion — Enterprise Strategy & Project Platform",
     liveUrl: "https://www.compelion.com/",
     cardSummary: "Turns executive goals into department tasks, tracks process metrics, escalates risks, and publishes bilingual insights.",
     outcomeBadge: "Live · compelion.com",
@@ -383,7 +383,7 @@ const PORTFOLIO_PROJECTS = [
         title: "Executive Problem & Multi-Tenant Governance (compelion.com)",
         icon: "fa-briefcase",
         content: `
-          <p>Enterprise PMOs struggled to keep strategic plans connected to day-to-day department execution. Built and launched at <a href="https://www.compelion.com/" target="_blank" rel="noopener noreferrer" style="color:var(--accent-bright); text-decoration:underline;">compelion.com</a>, Compelion replaces disconnected spreadsheets with a single multi-tenant workspace secured by Microsoft Azure MSAL and Google OAuth 2.0 SSO plus Stripe subscription billing.</p>
+          <p>Enterprise PMOs struggled to keep strategic plans connected to day-to-day department execution. Built and launched at <a href="https://www.compelion.com/" target="_blank" rel="noopener noreferrer" data-analytics-event="outbound_click" data-analytics-category="outbound_proof" data-analytics-label="enterprise-pms-innovation-analytics_inline_live_site" data-analytics-target="live_product_compelion" data-analytics-project="enterprise-pms-innovation-analytics" style="color:var(--accent-bright); text-decoration:underline;">compelion.com</a>, Compelion replaces disconnected spreadsheets with a single multi-tenant workspace secured by Microsoft Azure MSAL and Google OAuth 2.0 SSO plus Stripe subscription billing.</p>
         `
       },
       {
@@ -487,7 +487,7 @@ const PORTFOLIO_PROJECTS = [
     solutionType: "Document Q&A Chatbot",
     filterGroups: ["chatbots-voice"],
     role: "Full-Stack AI Engineer",
-    title: "Contract & Policy Assistant AI",
+    title: "DocuChat AI — Contract & Policy Assistant",
     cardSummary: "Private local assistant that cross-examines 200+ page contracts and HR manuals with exact page citations.",
     outcomeBadge: "200+ page PDFs · Cited Q&A",
     cardTags: ["Document Chatbot", "Local AI", "Citations"],
@@ -610,7 +610,7 @@ const PORTFOLIO_PROJECTS = [
           <ul>
             <li><strong>Role-Based Access:</strong> Enforced <code>Employee</code>, <code>Manager</code>, and <code>HR</code> Entra ID security groups with item-level SharePoint permissions restricting sensitive items to the requester, approver, and HR.</li>
             <li><strong>Teams Power BI Reporting:</strong> Published a Power BI report inside a Microsoft Teams tab tracking request counts, pending approvals per manager, and approval turnaround (reduced from days to <code>~1 day</code>).</li>
-            <li><strong>Interactive Demo:</strong> Inspect the 5-list schema and simulate approvals or <code>Try/Catch</code> errors in the <a href="../../demo-power-platform.html#sharepoint" style="color:var(--accent-bright); text-decoration:underline; font-weight:600;">SharePoint &amp; Approval Flow Simulator</a>.</li>
+            <li><strong>Interactive Demo:</strong> Inspect the 5-list schema and simulate approvals or <code>Try/Catch</code> errors in the <a href="../../demo-power-platform.html#sharepoint" data-analytics-event="select_content" data-analytics-category="demo_launch" data-analytics-label="power-apps-leave-expense-portal_inline_demo" data-analytics-project="power-apps-leave-expense-portal" style="color:var(--accent-bright); text-decoration:underline; font-weight:600;">SharePoint &amp; Approval Flow Simulator</a>.</li>
           </ul>
         `
       }
@@ -681,7 +681,7 @@ const PORTFOLIO_PROJECTS = [
           <p>Built for clear ownership across teams without exposing sensitive HR records:</p>
           <ul>
             <li><strong>Role-Based Views &amp; Security Roles:</strong> Configured dedicated HR, IT, and Manager queues paired with Business Unit Dataverse security roles (<code>Employee</code>, <code>Manager</code>, <code>HR</code>).</li>
-            <li><strong>ALM &amp; Handover:</strong> Deployed as Managed Solutions (<code>Dev &rarr; Test &rarr; Prod</code>) with admin checklists and live department training. Inspect the schema in the <a href="../../demo-power-platform.html#dataverse" style="color:var(--accent-bright); text-decoration:underline; font-weight:600;">Dataverse &amp; Copilot Studio Simulator</a>.</li>
+            <li><strong>ALM &amp; Handover:</strong> Deployed as Managed Solutions (<code>Dev &rarr; Test &rarr; Prod</code>) with admin checklists and live department training. Inspect the schema in the <a href="../../demo-power-platform.html#dataverse" data-analytics-event="select_content" data-analytics-category="demo_launch" data-analytics-label="dataverse-hr-onboarding-tracker_inline_demo" data-analytics-project="dataverse-hr-onboarding-tracker" style="color:var(--accent-bright); text-decoration:underline; font-weight:600;">Dataverse &amp; Copilot Studio Simulator</a>.</li>
           </ul>
         `
       }
@@ -753,7 +753,7 @@ const PORTFOLIO_PROJECTS = [
           <p>Deployed cleanly through <code>Dev &rarr; Test &rarr; Prod</code> Managed Solutions with column-change safety checks:</p>
           <ul>
             <li><strong>Outcome:</strong> Screen load dropped from <code>~9 seconds</code> to <code>~3 seconds</code> with <code>0</code> delegation warnings, restoring trust and day-to-day usage across operations staff.</li>
-            <li><strong>Interactive Demo:</strong> Compare the exact Before vs. After Power Fx code and KPI breakdown in the <a href="../../demo-power-platform.html#rescue" style="color:var(--accent-bright); text-decoration:underline; font-weight:600;">Canvas App Rescue Simulator</a>.</li>
+            <li><strong>Interactive Demo:</strong> Compare the exact Before vs. After Power Fx code and KPI breakdown in the <a href="../../demo-power-platform.html#rescue" data-analytics-event="select_content" data-analytics-category="demo_launch" data-analytics-label="canvas-app-performance-rescue_inline_demo" data-analytics-project="canvas-app-performance-rescue" style="color:var(--accent-bright); text-decoration:underline; font-weight:600;">Canvas App Rescue Simulator</a>.</li>
           </ul>
         `
       }
@@ -823,7 +823,7 @@ const PORTFOLIO_PROJECTS = [
           <p>Sustained accuracy through real usage telemetry and structured handover:</p>
           <ul>
             <li><strong>Continuous Topic Tuning:</strong> Reviewed unanswered query logs after rollout to spot missing synonyms, update SharePoint SOP wording, and add new topics where patterns emerged.</li>
-            <li><strong>Interactive Demo:</strong> Try grounded Q&amp;A vs. guardrail fallback in Tab 3 of the <a href="../../demo-power-platform.html#dataverse" style="color:var(--accent-bright); text-decoration:underline; font-weight:600;">Power Platform &amp; Copilot Studio Simulator</a>.</li>
+            <li><strong>Interactive Demo:</strong> Try grounded Q&amp;A vs. guardrail fallback in Tab 3 of the <a href="../../demo-power-platform.html#dataverse" data-analytics-event="select_content" data-analytics-category="demo_launch" data-analytics-label="copilot-studio-hr-it-policy-bot_inline_demo" data-analytics-project="copilot-studio-hr-it-policy-bot" style="color:var(--accent-bright); text-decoration:underline; font-weight:600;">Power Platform &amp; Copilot Studio Simulator</a>.</li>
           </ul>
         `
       }

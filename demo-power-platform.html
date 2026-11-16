@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&amp;display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css?v=20261116" />
@@ -438,29 +438,30 @@
 
         <!-- Demos Dropdown -->
         <div class="demos-dropdown" id="demosDropdown">
-          <button class="demos-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+          <button class="demos-dropdown-toggle" aria-expanded="false" aria-haspopup="true"
+            data-analytics-event="select_content" data-analytics-category="demo_nav" data-analytics-label="demos_dropdown_toggle">
             <i class="fa-solid fa-play" style="font-size: 0.7rem; color: var(--accent-text);"></i>
             <span>Demos</span>
             <i class="fa-solid fa-chevron-down dd-chevron"></i>
           </button>
           <div class="demos-dropdown-menu" role="menu">
             <div class="dd-section-label">Interactive Demos</div>
-            <a href="demo-sql-finetuning.html" class="dd-item" role="menuitem">
+            <a href="demo-sql-finetuning.html" class="dd-item" role="menuitem" data-analytics-event="select_content" data-analytics-category="demo_nav" data-analytics-label="nav_demo_sql_finetuning">
               <span class="dd-item-icon live"><i class="fa-solid fa-database"></i></span>
               <span class="dd-item-text"><span class="dd-item-title">01 · Excel-to-SQL Model</span></span>
               <span class="dd-item-badge dd-badge-live">Demo</span>
             </a>
-            <a href="demo-etl-generator.html" class="dd-item" role="menuitem">
+            <a href="demo-etl-generator.html" class="dd-item" role="menuitem" data-analytics-event="select_content" data-analytics-category="demo_nav" data-analytics-label="nav_demo_etl_generator">
               <span class="dd-item-icon live"><i class="fa-solid fa-diagram-project"></i></span>
               <span class="dd-item-text"><span class="dd-item-title">02 · Spark Pipeline Compiler</span></span>
               <span class="dd-item-badge dd-badge-live">Demo</span>
             </a>
-            <a href="demo-classroom-cv.html" class="dd-item" role="menuitem">
+            <a href="demo-classroom-cv.html" class="dd-item" role="menuitem" data-analytics-event="select_content" data-analytics-category="demo_nav" data-analytics-label="nav_demo_classroom_cv">
               <span class="dd-item-icon live"><i class="fa-solid fa-video"></i></span>
               <span class="dd-item-text"><span class="dd-item-title">03 · Classroom Video Analytics</span></span>
               <span class="dd-item-badge dd-badge-live">Demo</span>
             </a>
-            <a href="demo-power-platform.html" class="dd-item dd-active" role="menuitem">
+            <a href="demo-power-platform.html" class="dd-item dd-active" role="menuitem" data-analytics-event="select_content" data-analytics-category="demo_nav" data-analytics-label="nav_demo_power_platform">
               <span class="dd-item-icon live"><i class="fa-solid fa-layer-group"></i></span>
               <span class="dd-item-text"><span class="dd-item-title">09–12 · Power Platform &amp; M365</span></span>
               <span class="dd-item-badge dd-badge-live">Demo</span>
@@ -473,7 +474,7 @@
       </nav>
 
       <div class="nav-cta">
-        <a href="projects/power-apps-leave-expense-portal/" class="btn btn-sm btn-secondary">
+        <a href="projects/power-apps-leave-expense-portal/" class="btn btn-sm btn-secondary" data-analytics-event="select_content" data-analytics-category="demo_nav" data-analytics-label="back_to_case_study" data-analytics-project="power-apps-leave-expense-portal">
           <i class="fa-solid fa-arrow-left"></i>
           <span>Case Study</span>
         </a>
@@ -507,15 +508,15 @@
     <div class="container">
       <div class="workspace-shell">
         <div class="module-tabs-bar" role="tablist">
-          <button type="button" class="module-tab-btn active" data-tab="rescue" role="tab">
+          <button type="button" class="module-tab-btn active" data-tab="rescue" role="tab" data-analytics-event="demo_interaction" data-analytics-category="demo_engagement" data-analytics-label="module_tab_canvas_rescue" data-analytics-demo="power_platform_simulator" data-analytics-action="tab_switch" data-analytics-project="power-apps-leave-expense-portal" data-analytics-manual="true">
             <i class="fa-solid fa-gauge-high"></i>
             <span>1. App Speed Rescue (~9s &rarr; ~3s)</span>
           </button>
-          <button type="button" class="module-tab-btn" data-tab="sharepoint" role="tab">
+          <button type="button" class="module-tab-btn" data-tab="sharepoint" role="tab" data-analytics-event="demo_interaction" data-analytics-category="demo_engagement" data-analytics-label="module_tab_leave_expense_flow" data-analytics-demo="power_platform_simulator" data-analytics-action="tab_switch" data-analytics-project="power-apps-leave-expense-portal" data-analytics-manual="true">
             <i class="fa-solid fa-table-list"></i>
             <span>2. Leave &amp; Expense SharePoint Flow</span>
           </button>
-          <button type="button" class="module-tab-btn" data-tab="dataverse" role="tab">
+          <button type="button" class="module-tab-btn" data-tab="dataverse" role="tab" data-analytics-event="demo_interaction" data-analytics-category="demo_engagement" data-analytics-label="module_tab_dataverse_teams_bot" data-analytics-demo="power_platform_simulator" data-analytics-action="tab_switch" data-analytics-project="power-apps-leave-expense-portal" data-analytics-manual="true">
             <i class="fa-solid fa-comments"></i>
             <span>3. Dataverse Onboarding &amp; Teams Bot</span>
           </button>
@@ -529,8 +530,8 @@
               <p>Compare the abandoned third-party implementation with the refactored delegation-safe production formula.</p>
             </div>
             <div class="segmented-switch">
-              <button type="button" class="switch-btn danger" id="btnBeforeRescue">Before Rescue (Legacy)</button>
-              <button type="button" class="switch-btn active" id="btnAfterRescue">After Refactor (Delivered)</button>
+              <button type="button" class="switch-btn danger" id="btnBeforeRescue" data-analytics-event="demo_interaction" data-analytics-category="demo_engagement" data-analytics-label="switch_before_rescue" data-analytics-demo="power_platform_simulator" data-analytics-action="state_toggle" data-analytics-project="canvas-app-performance-rescue" data-analytics-manual="true">Before Rescue (Legacy)</button>
+              <button type="button" class="switch-btn active" id="btnAfterRescue" data-analytics-event="demo_interaction" data-analytics-category="demo_engagement" data-analytics-label="switch_after_rescue" data-analytics-demo="power_platform_simulator" data-analytics-action="state_toggle" data-analytics-project="canvas-app-performance-rescue" data-analytics-manual="true">After Refactor (Delivered)</button>
             </div>
           </div>
 
@@ -584,9 +585,9 @@
                 <i class="fa-solid fa-diagram-project" style="color: var(--accent-bright);"></i> Power Automate Flow Simulator (Teams Adaptive Cards + Try/Catch)
               </h3>
               <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-                <button type="button" class="switch-btn active" onclick="runFlowSimulation('normal')">Simulate Standard Approval (~1 day)</button>
-                <button type="button" class="switch-btn" style="border: 1px solid var(--border-subtle);" onclick="runFlowSimulation('escalation')">Simulate 48h Escalation</button>
-                <button type="button" class="switch-btn danger" style="border: 1px solid #991b1b;" onclick="runFlowSimulation('error')">Simulate Failure + Try/Catch Alert</button>
+                <button type="button" class="switch-btn active" onclick="runFlowSimulation('normal')" data-analytics-event="demo_interaction" data-analytics-category="demo_engagement" data-analytics-label="flow_sim_normal" data-analytics-demo="power_platform_simulator" data-analytics-action="workflow_simulation" data-analytics-project="power-apps-leave-expense-portal" data-analytics-manual="true">Simulate Standard Approval (~1 day)</button>
+                <button type="button" class="switch-btn" style="border: 1px solid var(--border-subtle);" onclick="runFlowSimulation('escalation')" data-analytics-event="demo_interaction" data-analytics-category="demo_engagement" data-analytics-label="flow_sim_escalation" data-analytics-demo="power_platform_simulator" data-analytics-action="workflow_simulation" data-analytics-project="power-apps-leave-expense-portal" data-analytics-manual="true">Simulate 48h Escalation</button>
+                <button type="button" class="switch-btn danger" style="border: 1px solid #991b1b;" onclick="runFlowSimulation('error')" data-analytics-event="demo_interaction" data-analytics-category="demo_engagement" data-analytics-label="flow_sim_error" data-analytics-demo="power_platform_simulator" data-analytics-action="workflow_simulation" data-analytics-project="power-apps-leave-expense-portal" data-analytics-manual="true">Simulate Failure + Try/Catch Alert</button>
               </div>
             </div>
             <div class="flow-log" id="flowLog"></div>
@@ -629,9 +630,9 @@
             <i class="fa-brands fa-microsoft" style="color: var(--accent-bright);"></i> Copilot Studio Teams Policy Agent Simulator (Strict SharePoint Grounding)
           </h3>
           <div style="display: flex; flex-wrap: wrap; gap: 0.6rem;">
-            <button type="button" class="prompt-btn active" onclick="askCopilot(0, this)">"How do I submit travel expenses and see approval status?"</button>
-            <button type="button" class="prompt-btn" onclick="askCopilot(1, this)">"Who assigns Day-1 laptop setup for new hires?"</button>
-            <button type="button" class="prompt-btn" onclick="askCopilot(2, this)">"Can I carry over 18 leave days under the merged entity annex?"</button>
+            <button type="button" class="prompt-btn active" onclick="askCopilot(0, this)" data-analytics-event="demo_interaction" data-analytics-category="demo_engagement" data-analytics-label="copilot_prompt_0" data-analytics-demo="power_platform_simulator" data-analytics-action="copilot_query" data-analytics-project="copilot-studio-hr-it-policy-bot" data-analytics-manual="true">"How do I submit travel expenses and see approval status?"</button>
+            <button type="button" class="prompt-btn" onclick="askCopilot(1, this)" data-analytics-event="demo_interaction" data-analytics-category="demo_engagement" data-analytics-label="copilot_prompt_1" data-analytics-demo="power_platform_simulator" data-analytics-action="copilot_query" data-analytics-project="copilot-studio-hr-it-policy-bot" data-analytics-manual="true">"Who assigns Day-1 laptop setup for new hires?"</button>
+            <button type="button" class="prompt-btn" onclick="askCopilot(2, this)" data-analytics-event="demo_interaction" data-analytics-category="demo_engagement" data-analytics-label="copilot_prompt_2" data-analytics-demo="power_platform_simulator" data-analytics-action="copilot_query" data-analytics-project="copilot-studio-hr-it-policy-bot" data-analytics-manual="true">"Can I carry over 18 leave days under the merged entity annex?"</button>
           </div>
           <div class="chat-box" id="copilotChat"></div>
         </div>
@@ -646,6 +647,12 @@
   </footer>
 
   <script>
+    const MODULE_PROJECT_MAP = {
+      rescue: 'canvas-app-performance-rescue',
+      sharepoint: 'power-apps-leave-expense-portal',
+      dataverse: 'dataverse-hr-onboarding-tracker'
+    };
+
     // Top-level module tab switching + URL hash deep linking (#rescue, #sharepoint, #dataverse)
     function activatePowerPlatformTab(tabId) {
       const targetBtn = document.querySelector(`.module-tab-btn[data-tab="${tabId}"]`);
@@ -664,6 +671,15 @@
         activatePowerPlatformTab(tabId);
         if (history.replaceState) {
           history.replaceState(null, '', '#' + tabId);
+        }
+        if (typeof window.trackEvent === 'function') {
+          window.trackEvent('demo_interaction', {
+            event_category: 'demo_engagement',
+            event_label: `module_${tabId}`,
+            demo_name: 'power_platform_suite',
+            demo_action: 'tab_switch',
+            project_id: MODULE_PROJECT_MAP[tabId] || undefined
+          });
         }
       });
     });
@@ -745,7 +761,7 @@ With(
       }
     };
 
-    function renderRescue(mode) {
+    function renderRescue(mode, isUserAction = false) {
       const s = rescueStates[mode];
       document.getElementById('btnBeforeRescue').classList.toggle('active', mode === 'before');
       document.getElementById('btnAfterRescue').classList.toggle('active', mode === 'after');
@@ -759,10 +775,20 @@ With(
           <div class="kpi-sub">${k.sub}</div>
         </div>
       `).join('');
+
+      if (isUserAction && typeof window.trackEvent === 'function') {
+        window.trackEvent('demo_interaction', {
+          event_category: 'demo_engagement',
+          event_label: `rescue_${mode}`,
+          demo_name: 'power_platform_suite',
+          demo_action: 'tab_switch',
+          project_id: 'canvas-app-performance-rescue'
+        });
+      }
     }
-    document.getElementById('btnBeforeRescue').addEventListener('click', () => renderRescue('before'));
-    document.getElementById('btnAfterRescue').addEventListener('click', () => renderRescue('after'));
-    renderRescue('after');
+    document.getElementById('btnBeforeRescue').addEventListener('click', () => renderRescue('before', true));
+    document.getElementById('btnAfterRescue').addEventListener('click', () => renderRescue('after', true));
+    renderRescue('after', false);
 
     // TAB 2 DATA: 5 SharePoint Lists
     const spLists = {
@@ -803,6 +829,16 @@ With(
         document.querySelectorAll('.list-pill').forEach(x => x.classList.remove('active'));
         b.classList.add('active');
         renderSpTable(name);
+        if (typeof window.trackEvent === 'function') {
+          const cleanName = name.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
+          window.trackEvent('demo_interaction', {
+            event_category: 'demo_engagement',
+            event_label: `sp_list_${cleanName}`,
+            demo_name: 'power_platform_suite',
+            demo_action: 'preset_select',
+            project_id: 'power-apps-leave-expense-portal'
+          });
+        }
       });
       spButtonsEl.appendChild(b);
     });
@@ -841,12 +877,21 @@ With(
       ]
     };
 
-    function runFlowSimulation(type) {
+    function runFlowSimulation(type, isUserAction = true) {
       document.getElementById('flowLog').innerHTML = flowScenarios[type]
         .map(s => `<div class="flow-step ${s.cls}">${s.text}</div>`)
         .join('');
+      if (isUserAction !== false && typeof window.trackEvent === 'function') {
+        window.trackEvent('demo_interaction', {
+          event_category: 'demo_engagement',
+          event_label: `flow_sim_${type}`,
+          demo_name: 'power_platform_suite',
+          demo_action: 'workflow_run',
+          project_id: 'power-apps-leave-expense-portal'
+        });
+      }
     }
-    runFlowSimulation('normal');
+    runFlowSimulation('normal', false);
 
     // TAB 3 DATA: Copilot Studio Simulator
     const copilotPrompts = [
@@ -867,7 +912,7 @@ With(
       }
     ];
 
-    function askCopilot(idx, btnEl) {
+    function askCopilot(idx, btnEl, isUserAction = true) {
       document.querySelectorAll('.prompt-btn').forEach(b => b.classList.remove('active'));
       if (btnEl) btnEl.classList.add('active');
       const item = copilotPrompts[idx];
@@ -875,8 +920,17 @@ With(
         <div class="chat-msg user"><strong>Staff Member (Teams):</strong> ${item.q}</div>
         <div class="chat-msg ${item.cls}">${item.a}</div>
       `;
+      if (isUserAction !== false && typeof window.trackEvent === 'function') {
+        window.trackEvent('demo_interaction', {
+          event_category: 'demo_engagement',
+          event_label: `copilot_prompt_${idx + 1}`,
+          demo_name: 'power_platform_suite',
+          demo_action: 'preset_select',
+          project_id: 'copilot-studio-hr-it-policy-bot'
+        });
+      }
     }
-    askCopilot(0, document.querySelector('.prompt-btn'));
+    askCopilot(0, document.querySelector('.prompt-btn'), false);
   </script>
 </body>
 

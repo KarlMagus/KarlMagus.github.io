@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="../../project-detail.css?v=20261116" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":"Automated SQL Generation Tool","description":"Eliminates days of manual query writing during banking data migrations by letting analysts upload Excel mapping sheets to generate ANSI SQL locally on a single GPU with full on-premise privacy.","url":"https://karlmagus.github.io/projects/mapping-to-sql-gemma/","creator":{"@type":"Person","name":"Ishraq Ahmad","url":"https://karlmagus.github.io/"},"keywords":"Mistral-7B, 8-bit LoRA, PyTorch, FastAPI, ANSI SQL"}</script>
 </head>
-<body class="project-detail-body">
+<body class="project-detail-body" data-project-id="mapping-to-sql-gemma">
   <div class="tech-grid-bg" aria-hidden="true"></div>
   <header class="navbar">
     <div class="nav-container">
@@ -32,14 +32,18 @@
         <a href="../../index.html#contact" class="nav-link">Contact</a>
       </nav>
       <div class="nav-cta">
-        <a href="../../index.html#projects" class="btn btn-sm btn-secondary"><i class="fa-solid fa-arrow-left"></i><span>All Projects</span></a>
+        <a href="../../index.html#projects" class="btn btn-sm btn-secondary"
+          data-analytics-event="select_content" data-analytics-category="case_study_nav"
+          data-analytics-label="top_nav_all_projects"><i class="fa-solid fa-arrow-left"></i><span>All Projects</span></a>
       </div>
     </div>
   </header>
   <main class="project-detail-main">
     <div class="container">
       <nav class="detail-breadcrumb" aria-label="Breadcrumb">
-        <a href="../../index.html#projects"><i class="fa-solid fa-chevron-left"></i> Portfolio</a>
+        <a href="../../index.html#projects"
+          data-analytics-event="select_content" data-analytics-category="case_study_nav"
+          data-analytics-label="breadcrumb_portfolio"><i class="fa-solid fa-chevron-left"></i> Portfolio</a>
         <span class="breadcrumb-separator">/</span>
         <span class="breadcrumb-current">Fine-tuning</span>
       </nav>
@@ -70,7 +74,9 @@
         <h3>Interactive Model Evaluation &amp; Fine-Tuning Inspector</h3>
         <p>Inspect step-by-step training loss curves (1.049 → 0.184), compare base vs. fine-tuned sample SQL generation, and test pre-inference schema and mapping rule normalization in an interactive browser simulation.</p>
       </div>
-      <a href="../../demo-sql-finetuning.html" class="btn btn-primary">
+      <a href="../../demo-sql-finetuning.html" class="btn btn-primary"
+        data-analytics-event="select_content" data-analytics-category="demo_launch"
+        data-analytics-label="mapping-to-sql-gemma_demo_banner" data-analytics-project="mapping-to-sql-gemma">
         <i class="fa-solid fa-play"></i>
         <span>Launch Interactive Demo</span>
       </a>
@@ -114,7 +120,7 @@
         <section class="detail-section">
           <h2 class="detail-section-title">
             <i class="fa-solid fa-bullseye"></i>
-            <span>Business Workflow & On-Premise Need</span>
+            <span>Business Workflow &amp; On-Premise Need</span>
           </h2>
           <div class="detail-prose">
             
@@ -126,7 +132,7 @@
         <section class="detail-section">
           <h2 class="detail-section-title">
             <i class="fa-solid fa-brain"></i>
-            <span>Iterative Model Adaptation & Pre-Inference Normalization</span>
+            <span>Iterative Model Adaptation &amp; Pre-Inference Normalization</span>
           </h2>
           <div class="detail-prose">
             
@@ -143,7 +149,7 @@
         <section class="detail-section">
           <h2 class="detail-section-title">
             <i class="fa-solid fa-server"></i>
-            <span>Self-Serve Delivery, Handover & Demo</span>
+            <span>Self-Serve Delivery, Handover &amp; Demo</span>
           </h2>
           <div class="detail-prose">
             
@@ -152,7 +158,7 @@
             <li><strong>On-Premise Self-Service Web Portal:</strong> Delivered a browser-based FastAPI upload portal where analysts drop in Excel/CSV mapping workbooks, inspect generated SQL and JSON manifests, and export production queries with zero external cloud exposure.</li>
             <li><strong>Verified Convergence:</strong> Cross-entropy loss decreased from 1.049 (step 10) to 0.184 (step 700), with a minimum of 0.173 at step 500.</li>
             <li><strong>Live Handover:</strong> Ran a live walkthrough demonstrating upload-to-SQL workflows and delivered weights, source repository, and setup runbooks to the client team.</li>
-            <li><strong>Interactive Demo:</strong> Inspect loss curves, sample SQL outputs, and pre-inference rule normalization in the <a href="../../demo-sql-finetuning.html" style="color:var(--accent-bright); text-decoration:underline; font-weight:600;">Interactive SQL Fine-Tuning Demo</a>.</li>
+            <li><strong>Interactive Demo:</strong> Inspect loss curves, sample SQL outputs, and pre-inference rule normalization in the <a href="../../demo-sql-finetuning.html" data-analytics-event="select_content" data-analytics-category="demo_launch" data-analytics-label="mapping-to-sql-gemma_inline_demo" data-analytics-project="mapping-to-sql-gemma" style="color:var(--accent-bright); text-decoration:underline; font-weight:600;">Interactive SQL Fine-Tuning Demo</a>.</li>
           </ul>
         
           </div>
@@ -169,19 +175,29 @@
             <div class="sidebar-divider"></div>
             
             
-    <a href="../../demo-sql-finetuning.html" class="btn btn-primary btn-block" style="margin-bottom: 0.75rem;">
+    <a href="../../demo-sql-finetuning.html" class="btn btn-primary btn-block" style="margin-bottom: 0.75rem;"
+      data-analytics-event="select_content" data-analytics-category="demo_launch"
+      data-analytics-label="mapping-to-sql-gemma_sidebar_demo" data-analytics-project="mapping-to-sql-gemma">
       <i class="fa-solid fa-play"></i>
       <span>Open Interactive Demo</span>
     </a>
   
-            <a href="../../index.html#contact" class="btn btn-secondary btn-block"><span>Discuss Similar Work</span></a>
+            <a href="../../index.html#contact" class="btn btn-secondary btn-block"
+              data-analytics-event="select_content" data-analytics-category="case_study_cta"
+              data-analytics-label="mapping-to-sql-gemma_discuss_work" data-analytics-project="mapping-to-sql-gemma"><span>Discuss Similar Work</span></a>
           </div>
         </aside>
       </div>
       <nav class="detail-footer-nav" aria-label="Project navigation">
-        <a href="../copilot-studio-hr-it-policy-bot/" class="nav-project-btn"><i class="fa-solid fa-arrow-left"></i><span><span class="nav-hint">Previous Project</span><span class="nav-name">HR &amp; IT Service Desk Policy Bot</span></span></a>
-        <a href="../../index.html#projects" class="nav-all-btn"><i class="fa-solid fa-grid-2"></i><span>View All 12 Projects</span></a>
-        <a href="../enterprise-json-query-enhancer/" class="nav-project-btn"><span><span class="nav-hint">Next Project</span><span class="nav-name">Automated Data Pipeline Builder</span></span><i class="fa-solid fa-arrow-right"></i></a>
+        <a href="../copilot-studio-hr-it-policy-bot/" class="nav-project-btn"
+          data-analytics-event="select_content" data-analytics-category="case_study_nav"
+          data-analytics-label="prev_copilot-studio-hr-it-policy-bot" data-analytics-project="copilot-studio-hr-it-policy-bot"><i class="fa-solid fa-arrow-left"></i><span><span class="nav-hint">Previous Project</span><span class="nav-name">HR &amp; IT Service Desk Policy Bot</span></span></a>
+        <a href="../../index.html#projects" class="nav-all-btn"
+          data-analytics-event="select_content" data-analytics-category="case_study_nav"
+          data-analytics-label="view_all_projects"><i class="fa-solid fa-grid-2"></i><span>View All 12 Projects</span></a>
+        <a href="../enterprise-json-query-enhancer/" class="nav-project-btn"
+          data-analytics-event="select_content" data-analytics-category="case_study_nav"
+          data-analytics-label="next_enterprise-json-query-enhancer" data-analytics-project="enterprise-json-query-enhancer"><span><span class="nav-hint">Next Project</span><span class="nav-name">Automated Data Pipeline Builder</span></span><i class="fa-solid fa-arrow-right"></i></a>
       </nav>
     </div>
   </main>

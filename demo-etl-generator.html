@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&amp;display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css?v=20261116" />
@@ -540,29 +540,30 @@
 
         <!-- Demos Dropdown -->
         <div class="demos-dropdown" id="demosDropdown">
-          <button class="demos-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+          <button class="demos-dropdown-toggle" aria-expanded="false" aria-haspopup="true"
+            data-analytics-event="select_content" data-analytics-category="demo_nav" data-analytics-label="demos_dropdown_toggle">
             <i class="fa-solid fa-play" style="font-size: 0.7rem; color: var(--accent-text);"></i>
             <span>Demos</span>
             <i class="fa-solid fa-chevron-down dd-chevron"></i>
           </button>
           <div class="demos-dropdown-menu" role="menu">
             <div class="dd-section-label">Interactive Demos</div>
-            <a href="demo-sql-finetuning.html" class="dd-item" role="menuitem">
+            <a href="demo-sql-finetuning.html" class="dd-item" role="menuitem" data-analytics-event="select_content" data-analytics-category="demo_nav" data-analytics-label="nav_demo_sql_finetuning">
               <span class="dd-item-icon live"><i class="fa-solid fa-database"></i></span>
               <span class="dd-item-text"><span class="dd-item-title">01 · Excel-to-SQL Model</span></span>
               <span class="dd-item-badge dd-badge-live">Demo</span>
             </a>
-            <a href="demo-etl-generator.html" class="dd-item dd-active" role="menuitem">
+            <a href="demo-etl-generator.html" class="dd-item dd-active" role="menuitem" data-analytics-event="select_content" data-analytics-category="demo_nav" data-analytics-label="nav_demo_etl_generator">
               <span class="dd-item-icon live"><i class="fa-solid fa-diagram-project"></i></span>
               <span class="dd-item-text"><span class="dd-item-title">02 · Spark Pipeline Compiler</span></span>
               <span class="dd-item-badge dd-badge-live">Demo</span>
             </a>
-            <a href="demo-classroom-cv.html" class="dd-item" role="menuitem">
+            <a href="demo-classroom-cv.html" class="dd-item" role="menuitem" data-analytics-event="select_content" data-analytics-category="demo_nav" data-analytics-label="nav_demo_classroom_cv">
               <span class="dd-item-icon live"><i class="fa-solid fa-video"></i></span>
               <span class="dd-item-text"><span class="dd-item-title">03 · Classroom Video Analytics</span></span>
               <span class="dd-item-badge dd-badge-live">Demo</span>
             </a>
-            <a href="demo-power-platform.html" class="dd-item" role="menuitem">
+            <a href="demo-power-platform.html" class="dd-item" role="menuitem" data-analytics-event="select_content" data-analytics-category="demo_nav" data-analytics-label="nav_demo_power_platform">
               <span class="dd-item-icon live"><i class="fa-solid fa-layer-group"></i></span>
               <span class="dd-item-text"><span class="dd-item-title">09–12 · Power Platform &amp; M365</span></span>
               <span class="dd-item-badge dd-badge-live">Demo</span>
@@ -575,7 +576,7 @@
       </nav>
 
       <div class="nav-cta">
-        <a href="projects/enterprise-json-query-enhancer/" class="btn btn-sm btn-secondary">
+        <a href="projects/enterprise-json-query-enhancer/" class="btn btn-sm btn-secondary" data-analytics-event="select_content" data-analytics-category="demo_nav" data-analytics-label="back_to_case_study" data-analytics-project="enterprise-json-query-enhancer">
           <i class="fa-solid fa-arrow-left"></i>
           <span>Case Study</span>
         </a>
@@ -640,10 +641,10 @@
           <div>
             <span class="control-label">Mode</span>
             <div class="segmented-tabs">
-              <button class="seg-tab-btn active" id="modeGenBtn" onclick="setMode('generator')">
+              <button class="seg-tab-btn active" id="modeGenBtn" onclick="setMode('generator')" data-analytics-event="demo_interaction" data-analytics-category="demo_engagement" data-analytics-label="mode_generator" data-analytics-demo="etl_dag_compiler" data-analytics-action="tab_switch" data-analytics-project="enterprise-json-query-enhancer" data-analytics-manual="true">
                 <i class="fa-solid fa-bolt"></i> Compile Full Pipeline
               </button>
-              <button class="seg-tab-btn" id="modeEnhBtn" onclick="setMode('enhancer')">
+              <button class="seg-tab-btn" id="modeEnhBtn" onclick="setMode('enhancer')" data-analytics-event="demo_interaction" data-analytics-category="demo_engagement" data-analytics-label="mode_enhancer" data-analytics-demo="etl_dag_compiler" data-analytics-action="tab_switch" data-analytics-project="enterprise-json-query-enhancer" data-analytics-manual="true">
                 <i class="fa-solid fa-code-merge"></i> Incremental Patch (Add Table)
               </button>
             </div>
@@ -662,7 +663,7 @@
           <!-- Run Button -->
           <div>
             <span class="control-label" style="color:transparent;">Action</span>
-            <button class="run-btn" id="runPipelineBtn" onclick="executePipeline()">
+            <button class="run-btn" id="runPipelineBtn" onclick="executePipeline()" data-analytics-event="demo_interaction" data-analytics-category="demo_engagement" data-analytics-label="compile_pipeline" data-analytics-demo="etl_dag_compiler" data-analytics-action="workflow_run" data-analytics-project="enterprise-json-query-enhancer" data-analytics-manual="true">
               <i class="fa-solid fa-play"></i> Compile Pipeline
             </button>
           </div>
@@ -711,13 +712,13 @@
       <!-- Results Workspace -->
       <div class="output-card" id="resultsSection">
         <div class="output-tabs-header">
-          <button class="output-tab-btn active" id="tabSqlBtn" onclick="switchTab('sql')">
+          <button class="output-tab-btn active" id="tabSqlBtn" onclick="switchTab('sql')" data-analytics-event="demo_interaction" data-analytics-category="demo_engagement" data-analytics-label="output_tab_sql" data-analytics-demo="etl_dag_compiler" data-analytics-action="tab_switch" data-analytics-project="enterprise-json-query-enhancer" data-analytics-manual="true">
             <i class="fa-solid fa-database"></i> Generated Spark SQL
           </button>
-          <button class="output-tab-btn" id="tabJsonBtn" onclick="switchTab('json')">
+          <button class="output-tab-btn" id="tabJsonBtn" onclick="switchTab('json')" data-analytics-event="demo_interaction" data-analytics-category="demo_engagement" data-analytics-label="output_tab_json" data-analytics-demo="etl_dag_compiler" data-analytics-action="tab_switch" data-analytics-project="enterprise-json-query-enhancer" data-analytics-manual="true">
             <i class="fa-solid fa-code"></i> DAG Manifest (JSON)
           </button>
-          <button class="output-tab-btn" id="tabDagBtn" onclick="switchTab('dag')">
+          <button class="output-tab-btn" id="tabDagBtn" onclick="switchTab('dag')" data-analytics-event="demo_interaction" data-analytics-category="demo_engagement" data-analytics-label="output_tab_dag" data-analytics-demo="etl_dag_compiler" data-analytics-action="tab_switch" data-analytics-project="enterprise-json-query-enhancer" data-analytics-manual="true">
             <i class="fa-solid fa-diagram-project"></i> Stages &amp; Pre-Flight Checks
           </button>
         </div>
@@ -727,7 +728,7 @@
           <div id="tabSql">
             <div class="code-box-wrapper">
               <div class="action-btn-group">
-                <button class="action-btn-sm" onclick="copyCode('generatedSqlCode')">
+                <button class="action-btn-sm" onclick="copyCode('generatedSqlCode')" data-analytics-event="demo_interaction" data-analytics-category="demo_engagement" data-analytics-label="copy_spark_sql" data-analytics-demo="etl_dag_compiler" data-analytics-action="export_output" data-analytics-project="enterprise-json-query-enhancer" data-analytics-manual="true">
                   <i class="fa-regular fa-copy"></i> Copy SQL
                 </button>
               </div>
@@ -739,10 +740,10 @@
           <div id="tabJson" style="display:none;">
             <div class="code-box-wrapper">
               <div class="action-btn-group">
-                <button class="action-btn-sm" onclick="downloadJsonFile()">
+                <button class="action-btn-sm" onclick="downloadJsonFile()" data-analytics-event="demo_interaction" data-analytics-category="demo_engagement" data-analytics-label="download_dag_json" data-analytics-demo="etl_dag_compiler" data-analytics-action="export_output" data-analytics-project="enterprise-json-query-enhancer" data-analytics-manual="true">
                   <i class="fa-solid fa-download"></i> Download .json
                 </button>
-                <button class="action-btn-sm" onclick="copyCode('generatedJsonCode')">
+                <button class="action-btn-sm" onclick="copyCode('generatedJsonCode')" data-analytics-event="demo_interaction" data-analytics-category="demo_engagement" data-analytics-label="copy_dag_json" data-analytics-demo="etl_dag_compiler" data-analytics-action="export_output" data-analytics-project="enterprise-json-query-enhancer" data-analytics-manual="true">
                   <i class="fa-regular fa-copy"></i> Copy JSON
                 </button>
               </div>
@@ -777,7 +778,7 @@
 
   <footer class="site-footer">
     <div class="container footer-bottom">
-      <p>&copy; 2026 Ishraq Ahmad · Forward Deployed AI & Machine Learning Engineering</p>
+      <p>&copy; 2026 Ishraq Ahmad · Forward Deployed AI &amp; Machine Learning Engineering</p>
     </div>
   </footer>
 
@@ -789,7 +790,7 @@
     let currentResult = null;
 
     window.addEventListener('DOMContentLoaded', () => {
-      loadScenario('financial');
+      loadScenario('financial', false);
     });
 
     function setMode(mode) {
@@ -802,20 +803,39 @@
       if (mode === 'enhancer') {
         explainer.innerHTML = `<strong>Incremental Patch Mode:</strong> Appends a newly requested table into an existing Spark DAG manifest without rewriting verified upstream stages.`;
         document.getElementById('scenarioSelect').value = 'enhancer_delta';
-        loadScenario('enhancer_delta');
+        loadScenario('enhancer_delta', false);
       } else {
         explainer.innerHTML = `<strong>Full Pipeline Mode:</strong> Compiles the selected mapping sheet into a multi-stage Spark DAG manifest with SQL transformations and validation checks.`;
         if (document.getElementById('scenarioSelect').value === 'enhancer_delta') {
           document.getElementById('scenarioSelect').value = 'financial';
-          loadScenario('financial');
+          loadScenario('financial', false);
         }
+      }
+
+      if (typeof window.trackEvent === 'function') {
+        window.trackEvent('demo_interaction', {
+          event_category: 'demo_engagement',
+          event_label: `mode_${mode}`,
+          demo_name: 'etl_dag_compiler',
+          demo_action: 'tab_switch',
+          project_id: 'enterprise-json-query-enhancer'
+        });
       }
     }
 
-    function loadScenario(key) {
+    function loadScenario(key, isUserAction = true) {
       if (ETLEngine.PRESET_DATASETS[key]) {
         currentRawTsv = ETLEngine.PRESET_DATASETS[key].tsv;
         renderMappingTable(currentRawTsv);
+        if (isUserAction && typeof window.trackEvent === 'function') {
+          window.trackEvent('demo_interaction', {
+            event_category: 'demo_engagement',
+            event_label: `dataset_${key}`,
+            demo_name: 'etl_dag_compiler',
+            demo_action: 'preset_select',
+            project_id: 'enterprise-json-query-enhancer'
+          });
+        }
       }
     }
 
@@ -848,6 +868,17 @@
       const progressBox = document.getElementById('pipelineProgress');
       const terminal = document.getElementById('terminalLog');
       const resultsSection = document.getElementById('resultsSection');
+
+      if (typeof window.trackEvent === 'function') {
+        const scenarioVal = document.getElementById('scenarioSelect').value;
+        window.trackEvent('demo_interaction', {
+          event_category: 'demo_engagement',
+          event_label: `compile_${currentMode}_${scenarioVal}`,
+          demo_name: 'etl_dag_compiler',
+          demo_action: 'workflow_run',
+          project_id: 'enterprise-json-query-enhancer'
+        });
+      }
 
       progressBox.style.display = 'block';
       resultsSection.style.display = 'none';
@@ -972,10 +1003,29 @@
       document.getElementById('tabSql').style.display = tab === 'sql' ? 'block' : 'none';
       document.getElementById('tabJson').style.display = tab === 'json' ? 'block' : 'none';
       document.getElementById('tabDag').style.display = tab === 'dag' ? 'block' : 'none';
+
+      if (typeof window.trackEvent === 'function') {
+        window.trackEvent('demo_interaction', {
+          event_category: 'demo_engagement',
+          event_label: `output_tab_${tab}`,
+          demo_name: 'etl_dag_compiler',
+          demo_action: 'tab_switch',
+          project_id: 'enterprise-json-query-enhancer'
+        });
+      }
     }
 
     function copyCode(elementId) {
       const code = document.getElementById(elementId).textContent;
+      if (typeof window.trackEvent === 'function') {
+        window.trackEvent('demo_interaction', {
+          event_category: 'demo_engagement',
+          event_label: elementId === 'generatedSqlCode' ? 'copy_spark_sql' : 'copy_dag_json',
+          demo_name: 'etl_dag_compiler',
+          demo_action: 'export_output',
+          project_id: 'enterprise-json-query-enhancer'
+        });
+      }
       navigator.clipboard.writeText(code).then(() => {
         alert("Copied to clipboard!");
       });
@@ -983,6 +1033,15 @@
 
     function downloadJsonFile() {
       if (!currentResult) return;
+      if (typeof window.trackEvent === 'function') {
+        window.trackEvent('demo_interaction', {
+          event_category: 'demo_engagement',
+          event_label: 'download_dag_json',
+          demo_name: 'etl_dag_compiler',
+          demo_action: 'export_output',
+          project_id: 'enterprise-json-query-enhancer'
+        });
+      }
       const jsonStr = JSON.stringify(currentResult.json_config, null, 2);
       const blob = new Blob([jsonStr], { type: "application/json" });
       const url = URL.createObjectURL(blob);

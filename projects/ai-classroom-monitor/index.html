@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="../../project-detail.css?v=20261116" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":"Classroom Attendance & Engagement Monitor","description":"Replaces hours of manual lecture video review with automated student enrollment matching, phone and sleeping distraction alerts, color-coded video overlays, and a 0–100 attentiveness scorecard.","url":"https://karlmagus.github.io/projects/ai-classroom-monitor/","creator":{"@type":"Person","name":"Ishraq Ahmad","url":"https://karlmagus.github.io/"},"keywords":"AWS Rekognition, OpenCV, MoviePy, Django 5, AWS S3"}</script>
 </head>
-<body class="project-detail-body">
+<body class="project-detail-body" data-project-id="ai-classroom-monitor">
   <div class="tech-grid-bg" aria-hidden="true"></div>
   <header class="navbar">
     <div class="nav-container">
@@ -32,14 +32,18 @@
         <a href="../../index.html#contact" class="nav-link">Contact</a>
       </nav>
       <div class="nav-cta">
-        <a href="../../index.html#projects" class="btn btn-sm btn-secondary"><i class="fa-solid fa-arrow-left"></i><span>All Projects</span></a>
+        <a href="../../index.html#projects" class="btn btn-sm btn-secondary"
+          data-analytics-event="select_content" data-analytics-category="case_study_nav"
+          data-analytics-label="top_nav_all_projects"><i class="fa-solid fa-arrow-left"></i><span>All Projects</span></a>
       </div>
     </div>
   </header>
   <main class="project-detail-main">
     <div class="container">
       <nav class="detail-breadcrumb" aria-label="Breadcrumb">
-        <a href="../../index.html#projects"><i class="fa-solid fa-chevron-left"></i> Portfolio</a>
+        <a href="../../index.html#projects"
+          data-analytics-event="select_content" data-analytics-category="case_study_nav"
+          data-analytics-label="breadcrumb_portfolio"><i class="fa-solid fa-chevron-left"></i> Portfolio</a>
         <span class="breadcrumb-separator">/</span>
         <span class="breadcrumb-current">Production ML</span>
       </nav>
@@ -70,7 +74,9 @@
         <h3>Interactive Computer Vision Telemetry Demo</h3>
         <p>Experience live video telemetry simulation: inspect bounding boxes (faces, laptops, phones, sleeping alerts), scrub time-aligned events, and test the attentiveness scoring formula.</p>
       </div>
-      <a href="../../demo-classroom-cv.html" class="btn btn-primary">
+      <a href="../../demo-classroom-cv.html" class="btn btn-primary"
+        data-analytics-event="select_content" data-analytics-category="demo_launch"
+        data-analytics-label="ai-classroom-monitor_demo_banner" data-analytics-project="ai-classroom-monitor">
         <i class="fa-solid fa-play"></i>
         <span>Launch Interactive Demo</span>
       </a>
@@ -114,7 +120,7 @@
         <section class="detail-section">
           <h2 class="detail-section-title">
             <i class="fa-solid fa-graduation-cap"></i>
-            <span>Stakeholder Problem & Admin Workflow</span>
+            <span>Stakeholder Problem &amp; Admin Workflow</span>
           </h2>
           <div class="detail-prose">
             
@@ -126,7 +132,7 @@
         <section class="detail-section">
           <h2 class="detail-section-title">
             <i class="fa-solid fa-video"></i>
-            <span>Automated Engagement & Distraction Scoring</span>
+            <span>Automated Engagement &amp; Distraction Scoring</span>
           </h2>
           <div class="detail-prose">
             
@@ -143,7 +149,7 @@
         <section class="detail-section">
           <h2 class="detail-section-title">
             <i class="fa-solid fa-server"></i>
-            <span>Video Overlay Rendering, Cloud Storage & Demo</span>
+            <span>Video Overlay Rendering, Cloud Storage &amp; Demo</span>
           </h2>
           <div class="detail-prose">
             
@@ -151,7 +157,7 @@
           <ul>
             <li><strong>Visual Overlay Rendering:</strong> Server-side OpenCV and MoviePy pipeline burns green boxes for enrolled students and red boxes for distractions/unrecognized faces into H.264 video for instant review.</li>
             <li><strong>Secure Media &amp; Telemetry:</strong> Stores frame-level events in AWS DynamoDB, relational session audit logs on the backend, and serves S3 videos to the Preact/Vite frontend via 1-hour pre-signed URLs with HTTP Range scrubbing.</li>
-            <li><strong>Interactive Demo:</strong> Inspect overlays and test attentiveness scoring in the <a href="../../demo-classroom-cv.html" style="color:var(--accent-bright); text-decoration:underline; font-weight:600;">Interactive Computer Vision Telemetry Demo</a>.</li>
+            <li><strong>Interactive Demo:</strong> Inspect overlays and test attentiveness scoring in the <a href="../../demo-classroom-cv.html" data-analytics-event="select_content" data-analytics-category="demo_launch" data-analytics-label="ai-classroom-monitor_inline_demo" data-analytics-project="ai-classroom-monitor" style="color:var(--accent-bright); text-decoration:underline; font-weight:600;">Interactive Computer Vision Telemetry Demo</a>.</li>
           </ul>
         
           </div>
@@ -168,19 +174,29 @@
             <div class="sidebar-divider"></div>
             
             
-    <a href="../../demo-classroom-cv.html" class="btn btn-primary btn-block" style="margin-bottom: 0.75rem;">
+    <a href="../../demo-classroom-cv.html" class="btn btn-primary btn-block" style="margin-bottom: 0.75rem;"
+      data-analytics-event="select_content" data-analytics-category="demo_launch"
+      data-analytics-label="ai-classroom-monitor_sidebar_demo" data-analytics-project="ai-classroom-monitor">
       <i class="fa-solid fa-play"></i>
       <span>Open Interactive Demo</span>
     </a>
   
-            <a href="../../index.html#contact" class="btn btn-secondary btn-block"><span>Discuss Similar Work</span></a>
+            <a href="../../index.html#contact" class="btn btn-secondary btn-block"
+              data-analytics-event="select_content" data-analytics-category="case_study_cta"
+              data-analytics-label="ai-classroom-monitor_discuss_work" data-analytics-project="ai-classroom-monitor"><span>Discuss Similar Work</span></a>
           </div>
         </aside>
       </div>
       <nav class="detail-footer-nav" aria-label="Project navigation">
-        <a href="../enterprise-json-query-enhancer/" class="nav-project-btn"><i class="fa-solid fa-arrow-left"></i><span><span class="nav-hint">Previous Project</span><span class="nav-name">Automated Data Pipeline Builder</span></span></a>
-        <a href="../../index.html#projects" class="nav-all-btn"><i class="fa-solid fa-grid-2"></i><span>View All 12 Projects</span></a>
-        <a href="../ai-healthcare-scribe/" class="nav-project-btn"><span><span class="nav-hint">Next Project</span><span class="nav-name">CareLoop — AI Clinic Receptionist &amp; Portal</span></span><i class="fa-solid fa-arrow-right"></i></a>
+        <a href="../enterprise-json-query-enhancer/" class="nav-project-btn"
+          data-analytics-event="select_content" data-analytics-category="case_study_nav"
+          data-analytics-label="prev_enterprise-json-query-enhancer" data-analytics-project="enterprise-json-query-enhancer"><i class="fa-solid fa-arrow-left"></i><span><span class="nav-hint">Previous Project</span><span class="nav-name">Automated Data Pipeline Builder</span></span></a>
+        <a href="../../index.html#projects" class="nav-all-btn"
+          data-analytics-event="select_content" data-analytics-category="case_study_nav"
+          data-analytics-label="view_all_projects"><i class="fa-solid fa-grid-2"></i><span>View All 12 Projects</span></a>
+        <a href="../ai-healthcare-scribe/" class="nav-project-btn"
+          data-analytics-event="select_content" data-analytics-category="case_study_nav"
+          data-analytics-label="next_ai-healthcare-scribe" data-analytics-project="ai-healthcare-scribe"><span><span class="nav-hint">Next Project</span><span class="nav-name">CareLoop — AI Clinic Receptionist &amp; Portal</span></span><i class="fa-solid fa-arrow-right"></i></a>
       </nav>
     </div>
   </main>

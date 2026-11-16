@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="../../project-detail.css?v=20261116" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":"Leave & Expense Approval Portal","description":"Replaces scattered email requests and shared Excel reconciliation for ~400 staff with a role-based Power Apps Canvas portal, 5 indexed SharePoint Lists, automated Teams Adaptive Card approvals with 48-hour escalations, and an embedded Power BI reporting tab.","url":"https://karlmagus.github.io/projects/power-apps-leave-expense-portal/","creator":{"@type":"Person","name":"Ishraq Ahmad","url":"https://karlmagus.github.io/"},"keywords":"Power Apps, Power Automate, SharePoint Lists, Power BI, Entra ID"}</script>
 </head>
-<body class="project-detail-body">
+<body class="project-detail-body" data-project-id="power-apps-leave-expense-portal">
   <div class="tech-grid-bg" aria-hidden="true"></div>
   <header class="navbar">
     <div class="nav-container">
@@ -32,14 +32,18 @@
         <a href="../../index.html#contact" class="nav-link">Contact</a>
       </nav>
       <div class="nav-cta">
-        <a href="../../index.html#projects" class="btn btn-sm btn-secondary"><i class="fa-solid fa-arrow-left"></i><span>All Projects</span></a>
+        <a href="../../index.html#projects" class="btn btn-sm btn-secondary"
+          data-analytics-event="select_content" data-analytics-category="case_study_nav"
+          data-analytics-label="top_nav_all_projects"><i class="fa-solid fa-arrow-left"></i><span>All Projects</span></a>
       </div>
     </div>
   </header>
   <main class="project-detail-main">
     <div class="container">
       <nav class="detail-breadcrumb" aria-label="Breadcrumb">
-        <a href="../../index.html#projects"><i class="fa-solid fa-chevron-left"></i> Portfolio</a>
+        <a href="../../index.html#projects"
+          data-analytics-event="select_content" data-analytics-category="case_study_nav"
+          data-analytics-label="breadcrumb_portfolio"><i class="fa-solid fa-chevron-left"></i> Portfolio</a>
         <span class="breadcrumb-separator">/</span>
         <span class="breadcrumb-current">Power Platform</span>
       </nav>
@@ -70,7 +74,9 @@
         <h3>Interactive SharePoint Schema &amp; Approval Flow Simulator</h3>
         <p>Inspect the 5 indexed SharePoint Lists (5,000-item safe), step through Teams Adaptive Card approvals with 48-hour escalations, and simulate Try/Catch admin recovery.</p>
       </div>
-      <a href="../../demo-power-platform.html#sharepoint" class="btn btn-primary">
+      <a href="../../demo-power-platform.html#sharepoint" class="btn btn-primary"
+        data-analytics-event="select_content" data-analytics-category="demo_launch"
+        data-analytics-label="power-apps-leave-expense-portal_demo_banner" data-analytics-project="power-apps-leave-expense-portal">
         <i class="fa-solid fa-play"></i>
         <span>Launch Interactive Demo</span>
       </a>
@@ -114,7 +120,7 @@
         <section class="detail-section">
           <h2 class="detail-section-title">
             <i class="fa-solid fa-table-list"></i>
-            <span>Stakeholder Bottleneck & 5-List SharePoint Data Design</span>
+            <span>Stakeholder Bottleneck &amp; 5-List SharePoint Data Design</span>
           </h2>
           <div class="detail-prose">
             
@@ -131,7 +137,7 @@
         <section class="detail-section">
           <h2 class="detail-section-title">
             <i class="fa-solid fa-code-branch"></i>
-            <span>Multi-Stage Teams Approvals & Try/Catch Resilience</span>
+            <span>Multi-Stage Teams Approvals &amp; Try/Catch Resilience</span>
           </h2>
           <div class="detail-prose">
             
@@ -148,7 +154,7 @@
         <section class="detail-section">
           <h2 class="detail-section-title">
             <i class="fa-solid fa-chart-column"></i>
-            <span>Entra Security Groups, Power BI & Interactive Demo</span>
+            <span>Entra Security Groups, Power BI &amp; Interactive Demo</span>
           </h2>
           <div class="detail-prose">
             
@@ -156,7 +162,7 @@
           <ul>
             <li><strong>Role-Based Access:</strong> Enforced <code>Employee</code>, <code>Manager</code>, and <code>HR</code> Entra ID security groups with item-level SharePoint permissions restricting sensitive items to the requester, approver, and HR.</li>
             <li><strong>Teams Power BI Reporting:</strong> Published a Power BI report inside a Microsoft Teams tab tracking request counts, pending approvals per manager, and approval turnaround (reduced from days to <code>~1 day</code>).</li>
-            <li><strong>Interactive Demo:</strong> Inspect the 5-list schema and simulate approvals or <code>Try/Catch</code> errors in the <a href="../../demo-power-platform.html#sharepoint" style="color:var(--accent-bright); text-decoration:underline; font-weight:600;">SharePoint &amp; Approval Flow Simulator</a>.</li>
+            <li><strong>Interactive Demo:</strong> Inspect the 5-list schema and simulate approvals or <code>Try/Catch</code> errors in the <a href="../../demo-power-platform.html#sharepoint" data-analytics-event="select_content" data-analytics-category="demo_launch" data-analytics-label="power-apps-leave-expense-portal_inline_demo" data-analytics-project="power-apps-leave-expense-portal" style="color:var(--accent-bright); text-decoration:underline; font-weight:600;">SharePoint &amp; Approval Flow Simulator</a>.</li>
           </ul>
         
           </div>
@@ -173,19 +179,29 @@
             <div class="sidebar-divider"></div>
             
             
-    <a href="../../demo-power-platform.html#sharepoint" class="btn btn-primary btn-block" style="margin-bottom: 0.75rem;">
+    <a href="../../demo-power-platform.html#sharepoint" class="btn btn-primary btn-block" style="margin-bottom: 0.75rem;"
+      data-analytics-event="select_content" data-analytics-category="demo_launch"
+      data-analytics-label="power-apps-leave-expense-portal_sidebar_demo" data-analytics-project="power-apps-leave-expense-portal">
       <i class="fa-solid fa-play"></i>
       <span>Open Interactive Demo</span>
     </a>
   
-            <a href="../../index.html#contact" class="btn btn-secondary btn-block"><span>Discuss Similar Work</span></a>
+            <a href="../../index.html#contact" class="btn btn-secondary btn-block"
+              data-analytics-event="select_content" data-analytics-category="case_study_cta"
+              data-analytics-label="power-apps-leave-expense-portal_discuss_work" data-analytics-project="power-apps-leave-expense-portal"><span>Discuss Similar Work</span></a>
           </div>
         </aside>
       </div>
       <nav class="detail-footer-nav" aria-label="Project navigation">
-        <a href="../docuchat-enterprise-agentic-rag/" class="nav-project-btn"><i class="fa-solid fa-arrow-left"></i><span><span class="nav-hint">Previous Project</span><span class="nav-name">DocuChat AI — Contract &amp; Policy Assistant</span></span></a>
-        <a href="../../index.html#projects" class="nav-all-btn"><i class="fa-solid fa-grid-2"></i><span>View All 12 Projects</span></a>
-        <a href="../dataverse-hr-onboarding-tracker/" class="nav-project-btn"><span><span class="nav-hint">Next Project</span><span class="nav-name">Employee Onboarding Tracker</span></span><i class="fa-solid fa-arrow-right"></i></a>
+        <a href="../docuchat-enterprise-agentic-rag/" class="nav-project-btn"
+          data-analytics-event="select_content" data-analytics-category="case_study_nav"
+          data-analytics-label="prev_docuchat-enterprise-agentic-rag" data-analytics-project="docuchat-enterprise-agentic-rag"><i class="fa-solid fa-arrow-left"></i><span><span class="nav-hint">Previous Project</span><span class="nav-name">DocuChat AI — Contract &amp; Policy Assistant</span></span></a>
+        <a href="../../index.html#projects" class="nav-all-btn"
+          data-analytics-event="select_content" data-analytics-category="case_study_nav"
+          data-analytics-label="view_all_projects"><i class="fa-solid fa-grid-2"></i><span>View All 12 Projects</span></a>
+        <a href="../dataverse-hr-onboarding-tracker/" class="nav-project-btn"
+          data-analytics-event="select_content" data-analytics-category="case_study_nav"
+          data-analytics-label="next_dataverse-hr-onboarding-tracker" data-analytics-project="dataverse-hr-onboarding-tracker"><span><span class="nav-hint">Next Project</span><span class="nav-name">Employee Onboarding Tracker</span></span><i class="fa-solid fa-arrow-right"></i></a>
       </nav>
     </div>
   </main>

@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&amp;display=swap"
     rel="stylesheet" />
 
   <!-- Font Awesome -->
@@ -485,29 +485,30 @@
 
         <!-- Demos Dropdown -->
         <div class="demos-dropdown" id="demosDropdown">
-          <button class="demos-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+          <button class="demos-dropdown-toggle" aria-expanded="false" aria-haspopup="true"
+            data-analytics-event="select_content" data-analytics-category="demo_nav" data-analytics-label="demos_dropdown_toggle">
             <i class="fa-solid fa-play" style="font-size: 0.7rem; color: var(--accent-text);"></i>
             <span>Demos</span>
             <i class="fa-solid fa-chevron-down dd-chevron"></i>
           </button>
           <div class="demos-dropdown-menu" role="menu">
             <div class="dd-section-label">Interactive Demos</div>
-            <a href="demo-sql-finetuning.html" class="dd-item" role="menuitem">
+            <a href="demo-sql-finetuning.html" class="dd-item" role="menuitem" data-analytics-event="select_content" data-analytics-category="demo_nav" data-analytics-label="nav_demo_sql_finetuning">
               <span class="dd-item-icon live"><i class="fa-solid fa-database"></i></span>
               <span class="dd-item-text"><span class="dd-item-title">01 · Excel-to-SQL Model</span></span>
               <span class="dd-item-badge dd-badge-live">Demo</span>
             </a>
-            <a href="demo-etl-generator.html" class="dd-item" role="menuitem">
+            <a href="demo-etl-generator.html" class="dd-item" role="menuitem" data-analytics-event="select_content" data-analytics-category="demo_nav" data-analytics-label="nav_demo_etl_generator">
               <span class="dd-item-icon live"><i class="fa-solid fa-diagram-project"></i></span>
               <span class="dd-item-text"><span class="dd-item-title">02 · Spark Pipeline Compiler</span></span>
               <span class="dd-item-badge dd-badge-live">Demo</span>
             </a>
-            <a href="demo-classroom-cv.html" class="dd-item dd-active" role="menuitem">
+            <a href="demo-classroom-cv.html" class="dd-item dd-active" role="menuitem" data-analytics-event="select_content" data-analytics-category="demo_nav" data-analytics-label="nav_demo_classroom_cv">
               <span class="dd-item-icon live"><i class="fa-solid fa-video"></i></span>
               <span class="dd-item-text"><span class="dd-item-title">03 · Classroom Video Analytics</span></span>
               <span class="dd-item-badge dd-badge-live">Demo</span>
             </a>
-            <a href="demo-power-platform.html" class="dd-item" role="menuitem">
+            <a href="demo-power-platform.html" class="dd-item" role="menuitem" data-analytics-event="select_content" data-analytics-category="demo_nav" data-analytics-label="nav_demo_power_platform">
               <span class="dd-item-icon live"><i class="fa-solid fa-layer-group"></i></span>
               <span class="dd-item-text"><span class="dd-item-title">09–12 · Power Platform &amp; M365</span></span>
               <span class="dd-item-badge dd-badge-live">Demo</span>
@@ -520,7 +521,7 @@
       </nav>
 
       <div class="nav-cta">
-        <a href="projects/ai-classroom-monitor/" class="btn btn-sm btn-secondary">
+        <a href="projects/ai-classroom-monitor/" class="btn btn-sm btn-secondary" data-analytics-event="select_content" data-analytics-category="demo_nav" data-analytics-label="back_to_case_study" data-analytics-project="ai-classroom-monitor">
           <i class="fa-solid fa-arrow-left"></i>
           <span>Case Study</span>
         </a>
@@ -572,27 +573,27 @@
 
             <!-- Video Timeline Controls -->
             <div class="video-controls-bar">
-              <button class="btn-icon-play" id="playBtn" onclick="togglePlay()">
+              <button class="btn-icon-play" id="playBtn" onclick="togglePlay()" data-analytics-event="demo_interaction" data-analytics-category="demo_engagement" data-analytics-label="video_play_toggle" data-analytics-demo="classroom_cv_telemetry" data-analytics-action="playback_toggle" data-analytics-project="ai-classroom-monitor" data-analytics-manual="true">
                 <i class="fa-solid fa-play" id="playIcon"></i>
               </button>
               <input type="range" class="timeline-slider" id="timeSlider" min="0" max="45" step="0.5" value="0"
-                oninput="handleSeek(this.value)" />
+                oninput="handleSeek(this.value)" onchange="trackSliderSeek(this.value)" />
               <span class="time-badge" id="timeDisplay">00:00 / 00:45</span>
             </div>
 
             <!-- Quick Jump Event Bar -->
             <div class="event-jump-bar">
               <span style="font-size:0.75rem; color:var(--text-muted); align-self:center; font-weight:600;">JUMP TO EVENT:</span>
-              <button class="jump-btn" onclick="seekTo(4)">
+              <button class="jump-btn" onclick="seekTo(4)" data-analytics-event="demo_interaction" data-analytics-category="demo_engagement" data-analytics-label="seek_00_04_baseline" data-analytics-demo="classroom_cv_telemetry" data-analytics-action="timestamp_seek" data-analytics-project="ai-classroom-monitor" data-analytics-manual="true">
                 <i class="fa-solid fa-user-check" style="color:var(--accent);"></i> 00:04 Baseline Attendance
               </button>
-              <button class="jump-btn" onclick="seekTo(16)">
+              <button class="jump-btn" onclick="seekTo(16)" data-analytics-event="demo_interaction" data-analytics-category="demo_engagement" data-analytics-label="seek_00_16_phone" data-analytics-demo="classroom_cv_telemetry" data-analytics-action="timestamp_seek" data-analytics-project="ai-classroom-monitor" data-analytics-manual="true">
                 <i class="fa-solid fa-mobile-screen" style="color:#f43f5e;"></i> 00:16 Phone Distraction
               </button>
-              <button class="jump-btn" onclick="seekTo(28)">
+              <button class="jump-btn" onclick="seekTo(28)" data-analytics-event="demo_interaction" data-analytics-category="demo_engagement" data-analytics-label="seek_00_28_sleeping" data-analytics-demo="classroom_cv_telemetry" data-analytics-action="timestamp_seek" data-analytics-project="ai-classroom-monitor" data-analytics-manual="true">
                 <i class="fa-solid fa-bed" style="color:#f59e0b;"></i> 00:28 Sleeping Alert
               </button>
-              <button class="jump-btn" onclick="seekTo(38)">
+              <button class="jump-btn" onclick="seekTo(38)" data-analytics-event="demo_interaction" data-analytics-category="demo_engagement" data-analytics-label="seek_00_38_hand_raised" data-analytics-demo="classroom_cv_telemetry" data-analytics-action="timestamp_seek" data-analytics-project="ai-classroom-monitor" data-analytics-manual="true">
                 <i class="fa-solid fa-hand" style="color:var(--accent);"></i> 00:38 Hand Raised
               </button>
             </div>
@@ -608,10 +609,10 @@
             </h3>
             <pre class="code-box-mini" id="rekognitionJsonBox">Loading telemetry payload...</pre>
             <div style="display:flex; justify-content:flex-end; gap:0.75rem; margin-top:0.75rem;">
-              <button class="btn btn-secondary btn-sm" onclick="copyRekognitionJson()">
+              <button class="btn btn-secondary btn-sm" onclick="copyRekognitionJson()" data-analytics-event="demo_interaction" data-analytics-category="demo_engagement" data-analytics-label="copy_rekognition_json" data-analytics-demo="classroom_cv_telemetry" data-analytics-action="export_data" data-analytics-project="ai-classroom-monitor" data-analytics-manual="true">
                 <i class="fa-regular fa-copy"></i> Copy JSON
               </button>
-              <button class="btn btn-primary btn-sm" onclick="exportRekognitionJson()">
+              <button class="btn btn-primary btn-sm" onclick="exportRekognitionJson()" data-analytics-event="demo_interaction" data-analytics-category="demo_engagement" data-analytics-label="export_rekognition_json" data-analytics-demo="classroom_cv_telemetry" data-analytics-action="export_data" data-analytics-project="ai-classroom-monitor" data-analytics-manual="true">
                 <i class="fa-solid fa-download"></i> Export JSON
               </button>
             </div>
@@ -722,6 +723,15 @@
       } else {
         play();
       }
+      if (typeof window.trackEvent === 'function') {
+        window.trackEvent('demo_interaction', {
+          event_category: 'demo_engagement',
+          event_label: isPlaying ? 'video_play' : 'video_pause',
+          demo_name: 'classroom_cv',
+          demo_action: 'workflow_run',
+          project_id: 'ai-classroom-monitor'
+        });
+      }
     }
 
     function play() {
@@ -750,11 +760,32 @@
       updateDashboard(currentTime);
     }
 
+    function trackSliderSeek(val) {
+      if (typeof window.trackEvent === 'function') {
+        window.trackEvent('demo_interaction', {
+          event_category: 'demo_engagement',
+          event_label: `timeline_scrub_${Math.round(parseFloat(val) || 0)}s`,
+          demo_name: 'classroom_cv',
+          demo_action: 'preset_select',
+          project_id: 'ai-classroom-monitor'
+        });
+      }
+    }
+
     function seekTo(timeSec) {
       currentTime = timeSec;
       document.getElementById('timeSlider').value = timeSec;
       renderFrame(currentTime);
       updateDashboard(currentTime);
+      if (typeof window.trackEvent === 'function') {
+        window.trackEvent('demo_interaction', {
+          event_category: 'demo_engagement',
+          event_label: `jump_to_${timeSec}s`,
+          demo_name: 'classroom_cv',
+          demo_action: 'preset_select',
+          project_id: 'ai-classroom-monitor'
+        });
+      }
     }
 
     // -------------------------------------------------------------
@@ -1048,6 +1079,15 @@
 
     function copyRekognitionJson() {
       const text = document.getElementById('rekognitionJsonBox').textContent;
+      if (typeof window.trackEvent === 'function') {
+        window.trackEvent('demo_interaction', {
+          event_category: 'demo_engagement',
+          event_label: 'copy_rekognition_json',
+          demo_name: 'classroom_cv',
+          demo_action: 'export_output',
+          project_id: 'ai-classroom-monitor'
+        });
+      }
       navigator.clipboard.writeText(text).then(() => {
         alert("Synthetic demo payload copied to clipboard.");
       });
@@ -1055,6 +1095,15 @@
 
     function exportRekognitionJson() {
       const text = document.getElementById('rekognitionJsonBox').textContent;
+      if (typeof window.trackEvent === 'function') {
+        window.trackEvent('demo_interaction', {
+          event_category: 'demo_engagement',
+          event_label: 'export_rekognition_json',
+          demo_name: 'classroom_cv',
+          demo_action: 'export_output',
+          project_id: 'ai-classroom-monitor'
+        });
+      }
       const blob = new Blob([text], { type: 'application/json' });
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');

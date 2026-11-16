@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="../../project-detail.css?v=20261116" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":"Quizentia — AI Quiz & Assessment Builder","description":"Live EdTech SaaS (quizentia.com) that turns PDFs, diagrams, YouTube videos, and web links into editable assessments across 4 question types—cutting hours of manual test writing down to seconds.","url":"https://karlmagus.github.io/projects/ai-quiz-generation-saas/","creator":{"@type":"Person","name":"Ishraq Ahmad","url":"https://karlmagus.github.io/"},"keywords":"FastAPI, React 19, OpenAI GPT-4o & Vision, MySQL 8.0, Docker"}</script>
 </head>
-<body class="project-detail-body">
+<body class="project-detail-body" data-project-id="ai-quiz-generation-saas">
   <div class="tech-grid-bg" aria-hidden="true"></div>
   <header class="navbar">
     <div class="nav-container">
@@ -32,14 +32,18 @@
         <a href="../../index.html#contact" class="nav-link">Contact</a>
       </nav>
       <div class="nav-cta">
-        <a href="../../index.html#projects" class="btn btn-sm btn-secondary"><i class="fa-solid fa-arrow-left"></i><span>All Projects</span></a>
+        <a href="../../index.html#projects" class="btn btn-sm btn-secondary"
+          data-analytics-event="select_content" data-analytics-category="case_study_nav"
+          data-analytics-label="top_nav_all_projects"><i class="fa-solid fa-arrow-left"></i><span>All Projects</span></a>
       </div>
     </div>
   </header>
   <main class="project-detail-main">
     <div class="container">
       <nav class="detail-breadcrumb" aria-label="Breadcrumb">
-        <a href="../../index.html#projects"><i class="fa-solid fa-chevron-left"></i> Portfolio</a>
+        <a href="../../index.html#projects"
+          data-analytics-event="select_content" data-analytics-category="case_study_nav"
+          data-analytics-label="breadcrumb_portfolio"><i class="fa-solid fa-chevron-left"></i> Portfolio</a>
         <span class="breadcrumb-separator">/</span>
         <span class="breadcrumb-current">LLM applications</span>
       </nav>
@@ -53,7 +57,11 @@
         <p class="detail-subtitle">Live EdTech SaaS (quizentia.com) that turns PDFs, diagrams, YouTube videos, and web links into editable assessments across 4 question types—cutting hours of manual test writing down to seconds.</p>
         
     <div style="margin-bottom: 1.75rem;">
-      <a href="https://quizentia.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+      <a href="https://quizentia.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary"
+        data-analytics-event="outbound_click" data-analytics-category="outbound_proof"
+        data-analytics-label="ai-quiz-generation-saas_hero_live_site"
+        data-analytics-target="live_product_quizentia"
+        data-analytics-project="ai-quiz-generation-saas">
         <span>Visit Live Product</span>
         <i class="fa-solid fa-arrow-up-right-from-square"></i>
       </a>
@@ -106,11 +114,11 @@
         <section class="detail-section">
           <h2 class="detail-section-title">
             <i class="fa-solid fa-graduation-cap"></i>
-            <span>Stakeholder Need & Live SaaS Product (quizentia.com)</span>
+            <span>Stakeholder Need &amp; Live SaaS Product (quizentia.com)</span>
           </h2>
           <div class="detail-prose">
             
-          <p>Course creators and educators needed a single workspace to convert real study materials—multi-page textbooks, diagram screenshots, lecture videos, and online articles—directly into structured assessments without tedious copy-pasting. Live at <a href="https://quizentia.com/" target="_blank" rel="noopener noreferrer" style="color:var(--accent-bright); text-decoration:underline;">quizentia.com</a>, Quizentia handles ingestion, interactive practice, editing, and document export end to end.</p>
+          <p>Course creators and educators needed a single workspace to convert real study materials—multi-page textbooks, diagram screenshots, lecture videos, and online articles—directly into structured assessments without tedious copy-pasting. Live at <a href="https://quizentia.com/" target="_blank" rel="noopener noreferrer" data-analytics-event="outbound_click" data-analytics-category="outbound_proof" data-analytics-label="ai-quiz-generation-saas_inline_live_site" data-analytics-target="live_product_quizentia" data-analytics-project="ai-quiz-generation-saas" style="color:var(--accent-bright); text-decoration:underline;">quizentia.com</a>, Quizentia handles ingestion, interactive practice, editing, and document export end to end.</p>
         
           </div>
         </section>
@@ -118,7 +126,7 @@
         <section class="detail-section">
           <h2 class="detail-section-title">
             <i class="fa-solid fa-file-lines"></i>
-            <span>5 Multimodal Ingestion Pipelines & 4 Question Formats</span>
+            <span>5 Multimodal Ingestion Pipelines &amp; 4 Question Formats</span>
           </h2>
           <div class="detail-prose">
             
@@ -136,7 +144,7 @@
         <section class="detail-section">
           <h2 class="detail-section-title">
             <i class="fa-solid fa-server"></i>
-            <span>Interactive Workspace & SaaS Infrastructure</span>
+            <span>Interactive Workspace &amp; SaaS Infrastructure</span>
           </h2>
           <div class="detail-prose">
             
@@ -159,20 +167,32 @@
             <ul class="sidebar-highlights-list"><li>Live at quizentia.com: eliminates hours of manual assessment creation for educators, trainers, and students</li><li>5 input parsers: PDFs (PyMuPDF), up to 5 images/diagrams (Vision + EasyOCR), YouTube videos, Web URLs, and raw text</li><li>Generates 4 editable question formats (MCQ, True/False, Fill in the Blanks, Matching Pairs) validated via Pydantic</li><li>Interactive React 19 + Zustand practice mode with instant grading, inline question editing, and PDF/JSON/TXT export</li><li>Full SaaS billing/quota readiness: JWT HTTP-only refresh rotation, free vs. paid weekly quotas, SlowAPI limits, MySQL 8.0</li></ul>
             <div class="sidebar-divider"></div>
             
-    <a href="https://quizentia.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block" style="margin-bottom: 0.75rem;">
+    <a href="https://quizentia.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block" style="margin-bottom: 0.75rem;"
+      data-analytics-event="outbound_click" data-analytics-category="outbound_proof"
+      data-analytics-label="ai-quiz-generation-saas_sidebar_live_site"
+      data-analytics-target="live_product_quizentia"
+      data-analytics-project="ai-quiz-generation-saas">
       <span>Visit Live Product</span>
       <i class="fa-solid fa-arrow-up-right-from-square"></i>
     </a>
   
             
-            <a href="../../index.html#contact" class="btn btn-secondary btn-block"><span>Discuss Similar Work</span></a>
+            <a href="../../index.html#contact" class="btn btn-secondary btn-block"
+              data-analytics-event="select_content" data-analytics-category="case_study_cta"
+              data-analytics-label="ai-quiz-generation-saas_discuss_work" data-analytics-project="ai-quiz-generation-saas"><span>Discuss Similar Work</span></a>
           </div>
         </aside>
       </div>
       <nav class="detail-footer-nav" aria-label="Project navigation">
-        <a href="../ai-healthcare-scribe/" class="nav-project-btn"><i class="fa-solid fa-arrow-left"></i><span><span class="nav-hint">Previous Project</span><span class="nav-name">CareLoop — AI Clinic Receptionist &amp; Portal</span></span></a>
-        <a href="../../index.html#projects" class="nav-all-btn"><i class="fa-solid fa-grid-2"></i><span>View All 12 Projects</span></a>
-        <a href="../enterprise-pms-innovation-analytics/" class="nav-project-btn"><span><span class="nav-hint">Next Project</span><span class="nav-name">Compelion — Enterprise Strategy &amp; Project Platform</span></span><i class="fa-solid fa-arrow-right"></i></a>
+        <a href="../ai-healthcare-scribe/" class="nav-project-btn"
+          data-analytics-event="select_content" data-analytics-category="case_study_nav"
+          data-analytics-label="prev_ai-healthcare-scribe" data-analytics-project="ai-healthcare-scribe"><i class="fa-solid fa-arrow-left"></i><span><span class="nav-hint">Previous Project</span><span class="nav-name">CareLoop — AI Clinic Receptionist &amp; Portal</span></span></a>
+        <a href="../../index.html#projects" class="nav-all-btn"
+          data-analytics-event="select_content" data-analytics-category="case_study_nav"
+          data-analytics-label="view_all_projects"><i class="fa-solid fa-grid-2"></i><span>View All 12 Projects</span></a>
+        <a href="../enterprise-pms-innovation-analytics/" class="nav-project-btn"
+          data-analytics-event="select_content" data-analytics-category="case_study_nav"
+          data-analytics-label="next_enterprise-pms-innovation-analytics" data-analytics-project="enterprise-pms-innovation-analytics"><span><span class="nav-hint">Next Project</span><span class="nav-name">Compelion — Enterprise Strategy &amp; Project Platform</span></span><i class="fa-solid fa-arrow-right"></i></a>
       </nav>
     </div>
   </main>

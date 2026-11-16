@@ -18,12 +18,20 @@ document.addEventListener('DOMContentLoaded', () => {
       downloadLink.click();
       downloadLink.remove();
 
-      if (typeof window.gtag === 'function') {
-        window.gtag('event', 'file_download', {
-          file_name: fileName,
-          file_extension: 'pdf',
-          link_text: 'Download Resume'
-        });
+      const downloadParams = {
+        event_category: 'conversion',
+        event_label: fileName,
+        file_name: fileName,
+        file_extension: 'pdf',
+        link_text: 'Download Resume',
+        link_url: 'Ishraq_Ahmad_Resume.pdf',
+        transport_type: 'beacon'
+      };
+
+      if (typeof window.trackEvent === 'function') {
+        window.trackEvent('file_download', downloadParams);
+      } else if (typeof window.gtag === 'function') {
+        window.gtag('event', 'file_download', downloadParams);
       }
 
       button.innerHTML = '<i class="fa-solid fa-check"></i> <span>Resume Downloaded!</span>';
